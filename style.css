@@ -1,0 +1,17 @@
+
+body{
+	background-color: #f9f9d9;
+	border: 3px solid;
+}
+
+#Idiomas {
+	width: 50%;
+	background-color:#f9f9d9;
+	border: 4px solid;
+	padding: 8px solid;
+	margin: 20px auto;
+}
+
+i{
+	color: blue;
+}
