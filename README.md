@@ -18,3 +18,9 @@ Paralelo: 02.
 * Stounson. (2022). Steven Mollett. Retrieved 26 May 2022, from https://stounson.com/
 * Sousilviamarquez. (2022). Silvia Marquez. Retrieved 26 May 2022, from https://www.soysilviamarquez.com/
 * HTML Table Sizes. (2022). Retrieved 26 May 2022, from https://www.w3schools.com/html/html_table_sizes.asp
+* HTML Responsive Web Design. (2022). Retrieved 27 May 2022, from https://www.w3schools.com/html/html_responsive.asp
+* CSS3 Media Queries - Examples. (2022). Retrieved 28 May 2022, from https://www.w3schools.com/css/css3_mediaqueries_ex.asp
+* W3.CSS Containers. (2022). Retrieved 28 May 2022, from https://www.w3schools.com/w3css/w3css_containers.asp
+* CSS z-index property. (2022). Retrieved 28 May 2022, from https://www.w3schools.com/cssref/pr_pos_z-index.asp
+* CSS Layout - The position Property. (2022). Retrieved 28 May 2022, from https://www.w3schools.com/css/css_positioning.asp#:~:text=An%20element%20with%20position%3A%20relative,gap%20left%20by%20the%20element.
+* CSS Grid Layout. (2022). Retrieved 28 May 2022, from https://www.w3schools.com/css/css_grid.asp

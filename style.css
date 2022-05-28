@@ -1,112 +1,186 @@
+* {
+	font-family: Verdana;
+}
 
 html{
 	height: 100%;
 	width: 100%;
-  }
+}
   
-  body{
+body{
 	background: black;
-  }
+	margin: 0;
+}
 
-  #main-img{
-	width: 900px;
-  }
-  
-  h1{
-	font-family: Verdana;
-	color: #F9FF00;
-	font-size: 50px;
-  }
-  
-  #Logo_in{
+/* Barra de navegación */
+
+header{
+	background-color: black;
+	display: flex;
+	height: 20px;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	padding: 13px;
+	position: fixed;
+}
+
+#logo_in{
 	color: #F9FF00;
 	font-size: 20px;
-  }
+}
+
+.indice{
+	padding-right: 13px;
+	font-size: 14px;
+}
+
+.indice:hover{
+	color: #033473;
+}
+
+/* Sección Inicio */
+
+#main-img {
+	width: 79%;
+	position: absolute;
+	z-index: -1;
+	left: 21%;
+}
+
+.grid-container {
+	width: 35%;
+	display: grid;
+	grid-template-columns: auto;
+	top: 20px;
+}
+
+.grid-item, .align-text-inicio, .align-button-explorar, .align-button-contactar {
+	padding-left: 5%;
+}
+
+.grid-item, .align-text-inicio {
+	padding-top: 4%;
+}
+
+.align-text-inicio {
+	padding-right: 40%;
+}
+
+.align-button-explorar{
+  	padding-left: 45%;
+}
+
+.align-button-contactar{
+	padding-left: 8%;
+}
+
+h1{
+	color: #F9FF00;
+	font-size: 50px;
+}
+
+.in_text{
+	color: #F9FF00;
+	font-size: 23px;
+}
+
+#video-contenedor{
+
+}
+
+#vid-presentation{
+	width: 900px;
+	height: 480px;
+}
   
-  a{
-	font-family: Verdana;
+a{
 	text-decoration: none;  
 	color: white;
-  }
+}
   
-  li{
+li{
 	color: #F9FF00;
-  }
+}
   
-  .subtitle{
-	  border: 2px solid #dbdf01;
-	  border-radius: 7px;
-	  font-family: Verdana;
-	  font-size: 20px;
-	  background-color: #F9FF00;
-  }
+.subtitle{
+  	border: 2px solid #dbdf01;
+	border-radius: 7px;
+	font-size: 20px;
+	background-color: #F9FF00;
+}
   
-  .in_text{
-	color: #F9FF00;
-	font-size: 25px;
-  }
   
-  .celda{
+.celda, .in_text{
 	font-weight: normal;
-  }
+}
   
-  video{
+video{
 	border: 10px #F9FF00;
-  }
+}
 
-  fieldset{
-	  background-color: #033473;
-  }
+fieldset{
+	background-color: #033473;
+}
   
-  legend{
+legend{
 	background-color: white;
 	color: black;
 	text-decoration: bold;
-	  border: 2px solid white;
-	  border-radius: 7px;
-	  font-family: Verdana;
-	  font-size: 20px;
+	border: 2px solid white;
+	border-radius: 7px;
+	font-size: 20px;
 	width: 90px;
 	padding-left: 50px;
-  }
+}
   
-  #info{
+#info{
 	border-color: black;
 	background-color: white;
 	width: 50%;
-  }
+}
 
-  .type-project-cell{
+.type-project-cell{
 	background-color: #0550AF;
 	border-radius: 35px;
-  }
+}
 
-  .type-project-img{
-	width: 250.23px;
-	height: 250.23px;
-  }
+.type-project-img{
+	width: 60%;
+	height: 60%;
+}
   
-  #project-table{
+#project-table{
 	width:70%;
 	padding: 8px solid;
 	margin: 20px auto;
-  }
+}
 
-  #project-blank{
-	  width: 10%;
-  }
+#project-blank{
+	width: 10%;
+}
   
-  footer{
+footer{
 	background-color: #033473;
 	height: 200px;
 	padding-top: 30px;
-  }
+}
   
-  .foot-text{
+.foot-text{
 	color: #F9FF00;
-	font-family: Verdana;
-  }
+}
   
-  #projects-col{
+#projects-col{
 	width:70%
-  }
+}
+
+@media screen and (max-width: 700px) {
+	header{
+		height: 80px;
+		flex-direction: column;
+	}
+
+	.indice{
+		padding-right: 10px;
+	}
+}
