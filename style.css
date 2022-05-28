@@ -12,7 +12,35 @@ body{
 	margin: 0;
 }
 
-/* Barra de navegación */
+a{
+	text-decoration: none;  
+	color: white;
+}
+  
+li{
+	color: #F9FF00;
+}
+
+.button1 {
+	width: 50%;
+	height: 150%;
+	font-size: 0.85vw;
+	border-radius: 17px;
+}
+
+.button2 {
+	width: 50%;
+	font-size: 1.3vw;
+	border-radius: 17px;
+}
+
+.button1:hover, .button2:hover {
+	color: white;
+	background-color: #0550AF;
+	cursor: pointer;
+}
+
+/* BARRA DE NAVEGACIÓN */
 
 header{
 	background-color: black;
@@ -39,7 +67,7 @@ header{
 	color: #033473;
 }
 
-/* Sección Inicio */
+/* INICIO */
 
 #main-img {
 	width: 79%;
@@ -55,15 +83,12 @@ header{
 	top: 20px;
 }
 
-.grid-item, .align-text-inicio, .align-button-explorar, .align-button-contactar {
-	padding-left: 5%;
-}
-
 .grid-item, .align-text-inicio {
+	padding-left: 5%;
 	padding-top: 4%;
 }
 
-.align-text-inicio {
+.align-text-inicio, .align-button-contactar {
 	padding-right: 40%;
 }
 
@@ -77,39 +102,71 @@ header{
 
 h1{
 	color: #F9FF00;
-	font-size: 50px;
+	font-size: 3.225vw;
 }
 
 .in_text{
 	color: #F9FF00;
-	font-size: 23px;
+	font-size: 1.498vw;
 }
 
-#video-contenedor{
-
+.video-contenedor{
+	padding-top: 20%;
 }
 
-#vid-presentation{
-	width: 900px;
-	height: 480px;
+.vid-presentation{
+	width: 58%;
+	height: 20%;
+	padding-left: 21%;
 }
-  
-a{
-	text-decoration: none;  
-	color: white;
-}
-  
-li{
-	color: #F9FF00;
-}
-  
+
+/* SECCIONES */
 .subtitle{
-  	border: 2px solid #dbdf01;
-	border-radius: 7px;
-	font-size: 20px;
+	border: 2px solid #dbdf01;
+	border-radius: 17px;
+	font-size: 2.5vw;
 	background-color: #F9FF00;
 }
+
+.centrar-seccion{
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+/* SECCIÓN PROYECTOS */
+
+.type-project-cell{
+	width: 35%;
+	background-color: #0550AF;
+	border-radius: 17px;
+}
+
+.type-project-img{
+	padding-top: 5%;
+	width: 70%;
+	height: 70%;
+}
   
+.project-table{
+	width:70%;
+	padding: 8px solid;
+	margin: 20px auto;
+}
+
+.project-blank{
+	width: 13%;
+}
+
+.type-project-title {
+	font-size: 2vw;
+	color: white;
+}
+
+.project-button{
+	padding: 20px;
+}
+
+/* SECCIÓN ACERCA DE */
   
 .celda, .in_text{
 	font-weight: normal;
@@ -138,26 +195,6 @@ legend{
 	border-color: black;
 	background-color: white;
 	width: 50%;
-}
-
-.type-project-cell{
-	background-color: #0550AF;
-	border-radius: 35px;
-}
-
-.type-project-img{
-	width: 60%;
-	height: 60%;
-}
-  
-#project-table{
-	width:70%;
-	padding: 8px solid;
-	margin: 20px auto;
-}
-
-#project-blank{
-	width: 10%;
 }
   
 footer{

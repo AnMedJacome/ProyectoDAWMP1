@@ -24,3 +24,5 @@ Paralelo: 02.
 * CSS z-index property. (2022). Retrieved 28 May 2022, from https://www.w3schools.com/cssref/pr_pos_z-index.asp
 * CSS Layout - The position Property. (2022). Retrieved 28 May 2022, from https://www.w3schools.com/css/css_positioning.asp#:~:text=An%20element%20with%20position%3A%20relative,gap%20left%20by%20the%20element.
 * CSS Grid Layout. (2022). Retrieved 28 May 2022, from https://www.w3schools.com/css/css_grid.asp
+* How To Create a Responsive Text. (2022). Retrieved 28 May 2022, from https://www.w3schools.com/howto/howto_css_responsive_text.asp
+* HTML button tag. (2022). Retrieved 28 May 2022, from https://www.w3schools.com/tags/tag_button.asp
