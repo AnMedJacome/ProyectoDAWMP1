@@ -25,7 +25,7 @@
   <main>
     <section id="Inicio">
       <img id="main-img" src="recursos/secciones/inicio/maincroppedpic.png">
-      <div class="grid-container">
+      <div class="contenedor-malla">
         <div class="grid-item"><h1>Bienvenid@ a</h1></div>
         <div class="grid-item"><p align="right" class="in_text">Me llamo Andrés Medina, pero me puedes llamar AJ</p></div>
         <div class="grid-item"><p class="in_text">Te invito a explorar los proyectos que se han realizado y están en desarrollo...</p></div>
@@ -48,7 +48,7 @@
               <img class="type-project-img" src="recursos/secciones/proyectos/papps.png">
               <p class="type-project-title">Aplicaciones Web o Móviles</p>
             </th>
-            <th class="project-blank">  </th>
+            <th class="cell-blank">  </th>
             <th class="type-project-cell">
               <img class="type-project-img" src="recursos/secciones/proyectos/pgames.png">
               <p class="type-project-title">Juegos</p>
@@ -58,7 +58,7 @@
             <th class="project-button">
               <button class="button2">Ver lista</button>
             </th>
-            <th class="project-blank">  </th>
+            <th class="cell-blank">  </th>
             <th class="project-button">
               <button class="button2">Ver lista</button>
             </th>
@@ -71,76 +71,137 @@
       <div class="centrar-seccion">
         <h2 class="subtitle">Acerca de</h2>
         <fieldset>
-          <legend><h2>AJ</h2></legend>
-          <table id="info" border="1">
-            <tr>
-              <th>Nombres:</th>
-              <td>Andrés Javier</td>
-            </tr>
-            <tr>
-              <th>Apellidos:</th>
-              <td>Medina Jácome</td>
-            </tr>
-            <tr>
-              <th>Fecha de nacimiento:</th>
-              <td>
-                <table>
-                  <tr>
-                    <th>Según Registro Civil</th>
-                    <td>  <td>
-                    <th>Según Maternidad</th>
-                  </tr>
-                  <tr>
-                    <td align="center">11/02/2001</td>
-                    <td>  <td>
-                    <td align="center">10/02/2001<td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <th>Signo Zodiacal:</th>
-              <td>Acuario</td>
-            </tr>
-            <tr>
-              <th>Signo de Ascendencia:</th>
-              <td>Virgo</td>
-            </tr>
-          </table>
-          <h3>Educación</h3>
-          <h4>Primaria</h4>
-          <ul>
-            <li>Unidad Educativa El Libertador  <a href="https://ellibertador.edu.ec/"><img src="recursos/otros/enlace.png" width="10"></a></li>
-            <i>Guayaquil (2005 - 2016)</i>
-          </ul>
-          <h4>Secundaria</h4>
-          <ul>
-            <li>Unidad Educativa El Libertador  <a href="https://ellibertador.edu.ec/"><img src="recursos/otros/enlace.png" width="10"></a></li>
-            <i>Guayaquil (2016 - 2019) - Bachiller en Ciencias</i>
-          </ul>
-          <h4>Tercer Grado</h4>
-          <ul>
-            <li>Escuela Superior Politécnica del Litoral  <a href="https://www.espol.edu.ec/"><img src="recursos/otros/enlace.png" width="10"></a></li>
-            <i>Guayaquil (2019 - Presente) - Ingeniería en Computación</i>
-          </ul>
-          <h3>Idiomas</h3>
-          <table id="Idiomas">
+          <legend><h2 class="legend-text" align="center">AJ</h2></legend>
+          <div class="contenedor-acerca">
+            <img class="fondo-foto-perfil" align="right" src="">
+            <table class="tabla-perfil">
+              <tr>
+                <th class="titulo-dato">Nombres:</th>
+                <td class="area-dato">Andrés Javier</td>
+              </tr>
+              <tr>
+                <th class="titulo-dato">Apellidos:</th>
+                <td class="area-dato">Medina Jácome</td>
+              </tr>
+              <tr>
+                <th class="titulo-dato">Lugar de nacimiento:</th>
+                <td class="area-dato">Guayaquil, Ecuador</td>
+              </tr>
+              <tr>
+                <th class="titulo-dato">Fecha de nacimiento:</th>
+                <td class="area-dato-tabla" align="center">
+                  <table>
+                    <tr>
+                      <th class="tabla-nacimiento">Según Registro Civil</th>
+                      <td class="cell-blank">  <td>
+                      <th class="tabla-nacimiento">Según Maternidad</th>
+                    </tr>
+                    <tr>
+                      <td  class="tabla-nacimiento" align="center">11/02/2001</td>
+                      <td class="cell-blank">  <td>
+                      <td  class="tabla-nacimiento" align="center">10/02/2001<td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th class="titulo-dato-sin-borde">Descripción:</th>
+                <td class="ultima-area-dato"><p>Futuro ingeniero en computación dedicado y dispuesto a ayudar con el desarrollo de soluciones mediante software, además de realizar proyectos que ofrezcan beneficios/entretenimiento a los usuarios.</p></td>
+              </tr>
+            </table>
+          </div>
+          <h3 class="info-perfil-titulo">Formación académica</h3>
+          <div class="malla-forma-academica">
+            <div class="malla-forma-academica-item">
+              <table class="tabla-info-educacion">
+                <tr>
+                  <td>
+                    <h4>Primaria</h4>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <ul class="institucion">
+                      <li>
+                        <span class="institucion-nombre">Unidad Educativa El Libertador</span>
+                        &nbsp;
+                        <a href="https://ellibertador.edu.ec/">
+                          <img class="ico-enlace" src="recursos/otros/enlace.png" alt="Enlace a página web">
+                        </a>
+                      </li>
+                      <i class="institucion-periodo">
+                        Guayaquil (2005 - 2016)
+                      </i>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h4>Secundaria</h4>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <ul class="institucion">
+                      <li>
+                        <span class="institucion-nombre">Unidad Educativa El Libertador</span>
+                        &nbsp;
+                        <a href="https://ellibertador.edu.ec/">
+                          <img class="ico-enlace" src="recursos/otros/enlace.png" alt="Enlace a página web">
+                        </a>
+                      </li>
+                      <i class="institucion-periodo">
+                        Guayaquil (2016 - 2019) - Bachiller en Ciencias
+                      </i>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h4>Tercer Grado</h4>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <ul class="institucion">
+                      <li>
+                        <span class="institucion-nombre">Escuela Superior Politécnica del Litoral</span>
+                        &nbsp;
+                        <a href="https://www.espol.edu.ec/">
+                          <img class="ico-enlace" src="recursos/otros/enlace.png" alt="Enlace a página web">
+                        </a>
+                      </li>
+                      <i class="institucion-periodo">
+                        Guayaquil (2019 - Presente) - Ingeniería en Computación
+                      </i>
+                    </ul>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="malla-forma-academica-item">
+              <iframe class="mapa-integrado" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.9546083217037!2d-79.89222168546017!3d-2.1709594984175418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6dc741c6d8b3%3A0x7bf2e31eb42d0213!2sUnidad%20Educativa%20El%20Libertador!5e0!3m2!1ses-419!2sec!4v1653788368346!5m2!1ses-419!2sec" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+          <h3 class="info-perfil-titulo">Idiomas</h3>
+          <table class="tabla-idiomas">
             <tr>
               <th></th>
-              <th>Hablado</th>
-              <th>Escrito</th>
+              <th class="habilidad-idioma">Hablado</th>
+              <th class="habilidad-idioma">Escrito</th>
             <tr>
             <tr>
-              <th>Español</th>
-              <td align="center" id="Celda"><i>Nativo</i></td>
-              <td align="center" id="Celda"><i>Nativo</i></td>
+              <th class="titulo-dato-sin-borde">Español</th>
+              <td class="celda-idioma"><i>Nativo</i></td>
+              <td class="celda-idioma"><i>Nativo</i></td>
             <tr>
             <tr>
-              <th>Inglés</th>
-              <td align="center" id="Celda"><i>Intermedio</i></td>
-              <td align="center" id="Celda"><i>Intermedio</i></td>
+              <th class="titulo-dato-sin-borde">Inglés</th>
+              <td class="celda-idioma-sin-borde"><i>Intermedio</i></td>
+              <td class="celda-idioma-sin-borde"><i>Intermedio</i></td>
             <tr>
           </table>
+          <br>
         </fieldset>
       </div>
     </section>
@@ -154,23 +215,29 @@
       <br>
       <div class="centrar-seccion">
         <h2 class="subtitle">Contacto</h2>
-        <h3>Correo Electrónico</h3>
-        <ul>
-          <li>ajmedina_jacome@hotmail.com</li>
-        </ul>
-        <h3>Redes Sociales</h3>
-          <table>
-            <tr>
-              <td><img src="recursos/redes/facebook.png" alt="Facebook - AJ Medina" width="30" target="_blank"></td>
-              <td><a href="https://www.facebook.com/AJmj03">AJ Medina</a></td>
-            </tr>
-          </table>
-          <table>
-            <tr>
-              <td><img src="recursos/redes/twitter.png" alt="Twitter - AJ_zro3" width="30" target="_blank"></td>
-              <td><a href="https://twitter.com/AJ_zro3">@AJ_zro3</a></td>
-            </tr>
-          </table>
+        <table class="info-contacto">
+          <tr>
+            <td>
+              <h5>Correo Electrónico</h4>
+              <ul>
+                <li class="texto-correo">ajmedina_jacome@hotmail.com</li>
+              </ul>
+            </td>
+            <td>
+              <h5>Redes Sociales</h4>
+              <table>
+                <tr>
+                  <td><img src="recursos/redes/facebook.png" alt="Facebook - AJ Medina" width="30"></td>
+                  <td><a class="texto-redes" href="https://www.facebook.com/AJmj03" target="_blank">AJ Medina</a></td>
+                  <td><img src="recursos/redes/twitter.png" alt="Twitter - AJ_zro3" width="30"></td>
+                  <td><a href="https://twitter.com/AJ_zro3" target="_blank">@AJ_zro3</a></td>
+                  <td><img src="recursos/redes/instagram.png" alt="Instagram - aJ_zro3" width="30"></td>
+                  <td><a href="https://www.instagram.com/aj_zro3/" target="_blank">aj_zro3</a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
       </div>
     </section>
   </main>

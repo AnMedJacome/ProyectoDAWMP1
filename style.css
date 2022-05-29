@@ -1,48 +1,63 @@
+/* VARIABLES GLOBALES */
+
+:root {
+	--am: #F9FF00;
+	--az-o: #033473;
+	--az-c: #0550AF;
+	--tshadow: -0.25vw -0.25vw 0vw;
+}
+
+/* EFECTOS CSS */
+
 * {
 	font-family: Verdana;
 }
 
-html{
+html {
 	height: 100%;
 	width: 100%;
 }
   
-body{
+body {
 	background: black;
 	margin: 0;
 }
 
-a{
+a {
 	text-decoration: none;  
 	color: white;
 }
   
-li{
-	color: #F9FF00;
+li {
+	color: white;
+	margin: 0;
 }
 
 .button1 {
-	width: 50%;
-	height: 150%;
-	font-size: 0.85vw;
-	border-radius: 17px;
+	width: 40%;
+	font-size: 1vw;
+	border-radius: 1vw;
 }
 
 .button2 {
 	width: 50%;
 	font-size: 1.3vw;
-	border-radius: 17px;
+	border-radius: 1vw;
 }
 
 .button1:hover, .button2:hover {
 	color: white;
-	background-color: #0550AF;
+	background-color: var(--az-c);
 	cursor: pointer;
+}
+
+.cell-blank {
+	width: 13%;
 }
 
 /* BARRA DE NAVEGACIÓN */
 
-header{
+header {
 	background-color: black;
 	display: flex;
 	height: 20px;
@@ -53,18 +68,18 @@ header{
 	position: fixed;
 }
 
-#logo_in{
-	color: #F9FF00;
+#logo_in {
+	color: var(--am);
 	font-size: 20px;
 }
 
-.indice{
+.indice {
 	padding-right: 13px;
 	font-size: 14px;
 }
 
-.indice:hover{
-	color: #033473;
+.indice:hover {
+	color: var(--az-o);
 }
 
 /* INICIO */
@@ -76,7 +91,7 @@ header{
 	left: 21%;
 }
 
-.grid-container {
+.contenedor-malla {
 	width: 35%;
 	display: grid;
 	grid-template-columns: auto;
@@ -92,69 +107,68 @@ header{
 	padding-right: 40%;
 }
 
-.align-button-explorar{
+.align-button-explorar {
   	padding-left: 45%;
 }
 
-.align-button-contactar{
+.align-button-contactar {
 	padding-left: 8%;
 }
 
-h1{
-	color: #F9FF00;
+h1 {
+	color: var(--am);
 	font-size: 3.225vw;
+	text-shadow: var(--tshadow) var(--az-o);
 }
 
-.in_text{
-	color: #F9FF00;
+.in_text {
+	color: var(--am);
 	font-size: 1.498vw;
 }
 
-.video-contenedor{
+.video-contenedor {
 	padding-top: 20%;
 }
 
-.vid-presentation{
+.vid-presentation {
 	width: 58%;
 	height: 20%;
 	padding-left: 21%;
 }
 
 /* SECCIONES */
-.subtitle{
+.subtitle {
 	border: 2px solid #dbdf01;
-	border-radius: 17px;
+	border-radius: 1vw;
 	font-size: 2.5vw;
-	background-color: #F9FF00;
+	background-color: var(--am);
+	padding-left: 2%;
 }
 
-.centrar-seccion{
+.centrar-seccion {
 	padding-left: 5%;
 	padding-right: 5%;
 }
 
 /* SECCIÓN PROYECTOS */
 
-.type-project-cell{
+.type-project-cell {
 	width: 35%;
-	background-color: #0550AF;
-	border-radius: 17px;
+	background-color: var(--az-c);
+	border-radius: 1vw;
+	box-shadow: -0.02vw -0.02vw 0.75vw 0.15vw black inset;
 }
 
-.type-project-img{
+.type-project-img {
 	padding-top: 5%;
 	width: 70%;
 	height: 70%;
 }
   
-.project-table{
+.project-table {
 	width:70%;
 	padding: 8px solid;
 	margin: 20px auto;
-}
-
-.project-blank{
-	width: 13%;
 }
 
 .type-project-title {
@@ -162,53 +176,196 @@ h1{
 	color: white;
 }
 
-.project-button{
+.project-button {
 	padding: 20px;
 }
 
 /* SECCIÓN ACERCA DE */
   
-.celda, .in_text{
+.celda, .in_text {
 	font-weight: normal;
 }
+
+fieldset {
+	background-color: var(--az-c);
+	border-color: var(--az-c);
+	border-radius: 1vw;
+}
   
-video{
-	border: 10px #F9FF00;
+legend {
+	background-color: white;
+	text-decoration: bold;
+	border-radius: 1vw;
+	width: 15%;
+	height: 4.7vw;
 }
 
-fieldset{
-	background-color: #033473;
-}
-  
-legend{
-	background-color: white;
+.legend-text {
 	color: black;
-	text-decoration: bold;
-	border: 2px solid white;
-	border-radius: 7px;
-	font-size: 20px;
-	width: 90px;
-	padding-left: 50px;
+	font-size: 1.7vw;
 }
-  
-#info{
-	border-color: black;
+
+.contenedor-acerca {
+	width: 100%;
+}
+
+.tabla-perfil, .tabla-idiomas {
+	border: solid black;
+	border-radius: 1vw;
 	background-color: white;
-	width: 50%;
+	width: 60%;
+	box-shadow: 0vw 0vw 4vw -1.25vw;
 }
-  
+
+.tabla-perfil {
+	margin-left: 3%;
+	margin-top: 3%;
+}
+
+.area-dato, .area-dato-tabla, .titulo-dato, .ultima-area-dato, .titulo-dato-sin-borde {
+	font-size: 1vw;
+}
+
+.area-dato, .titulo-dato, .ultima-area-dato, .titulo-dato-sin-borde {
+	padding-left: 4%;
+	text-align: left;
+}
+
+.area-dato{
+	width: 70%;
+}
+
+.titulo-dato{
+	width: 30%;
+}
+
+.area-dato, .area-dato-tabla, .titulo-dato {
+	border-bottom: solid;
+	border-color: black;
+	padding-top: 1.75%;
+	padding-bottom: 1.75%;
+}
+
+.area-dato, .area-dato-tabla, .ultima-area-dato, .celda-idioma, .celda-idioma-sin-borde {
+	color: var(--az-o);
+}
+
+.tabla-nacimiento {
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+.fondo-foto-perfil {
+	width: 25%;
+	border: solid#919406;
+	border-radius: 1vw;
+	background-color: #919406;
+	padding: 1%;
+	margin-right: 3%;
+	margin-top: 2.5%;
+	box-shadow: 0vw 0vw 5vw -1.25vw;
+}
+
+.info-perfil-titulo {
+	font-size: 2.4vw;
+	margin-left: 3%;
+	margin-top: 2.3%;
+	color: var(--am);
+	text-shadow: var(--tshadow) black;
+}
+
+.malla-forma-academica {
+	width: 80%;
+	margin-left: 12%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	gap: 25px 25px;
+}
+
+h4 {
+	color: white;
+	font-size: 1.45vw;
+	text-shadow: var(--tshadow) black;
+	margin: 0;
+}
+
+.institucion {
+	color: white;
+}
+
+.institucion-nombre {
+	font-weight: bold;
+	font-size: 0.9vw;
+}
+
+.institucion-nombre:hover {
+	cursor: pointer;
+	color: var(--am);
+}
+
+.institucion-periodo {
+	font-size: 0.85vw;
+}
+
+.ico-enlace {
+	width: 3%;
+}
+
+.mapa-integrado {
+	margin: 3% 0 0 13%;
+	width: 80%;
+	height: 90%;
+	border:0;
+	box-shadow: 0vw 0vw 0vw 1vw white, 0vw 0vw 5vw -1.25vw black;
+}
+
+.tabla-idiomas {
+	margin: auto;
+}
+
+.celda-idioma, .celda-idioma-sin-borde, .habilidad-idioma {
+	font-size: 1vw;
+	text-align: center;
+}
+
+.celda-idioma {
+	border-style: solid;
+	border-bottom: black;
+}
+
+/* SECCIÓN NOVEDADES */
+
+
+
+/* SECCIÓN CONTACTO */
+
+.info-contacto {
+	width: 100%;
+}
+
+.texto-correo {
+	font-size: 1vw;
+}
+
+h5 {
+	color: var(--am);
+	font-size: 1.4vw;
+}
+
+.texto-redes {
+	font-size: 1vw;
+}
+
+/* PIE DE PÁGINA */
+
 footer{
-	background-color: #033473;
+	background-color: var(--az-o);
 	height: 200px;
 	padding-top: 30px;
 }
   
 .foot-text{
-	color: #F9FF00;
-}
-  
-#projects-col{
-	width:70%
+	color: var(--am);
 }
 
 @media screen and (max-width: 700px) {
