@@ -359,24 +359,15 @@ div.malla-perfil-boton {
 	text-align: center;
 }
 
-.malla-nov {
-	display: grid;
-	grid-template-columns: auto auto;
+.tabla-nov {
+	background-color: violet;
+	height: 30vw;
 }
 
 .malla-nov-lista-proyectos {
-	display: grid;
-	grid-template-rows: auto;
+	width: 50%;
+	background-color: green;
 	text-align: center;
-	gap: 1vw;
-}
-
-.pantalla-votacion {
-	border: 0.5rem solid white;
-	border-radius: 1vw;
-	display: grid;
-	grid-template-rows: auto;
-	padding-left: 4%;
 }
 
 .subt-sec-nov, .subt-nov-vot {
@@ -386,14 +377,17 @@ div.malla-perfil-boton {
 
 .subt-sec-nov {
 	font-size: 2vw;
+	padding-top: 1%;
+	padding-bottom: 1%;
 }
 
-.subt-nov-vot {
-	font-size: 1.3vw;
+.lista-proyecto {
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;
 }
 
 .btn-project, .btn-project-seleccionado  {
-	width: 60%;
+	width: 80%;
 	border-radius: 1vw;
 	font-size: 2vw;
 	font-weight: bold;
@@ -415,24 +409,71 @@ div.malla-perfil-boton {
 	cursor: pointer;
 }
 
+.pantalla-votacion {
+	background-color: aqua;
+	overflow-y: scroll;
+	border: 0.5rem solid white;
+	border-radius: 1vw;
+	padding-left: 4%;
+}
+
+.subt-nov-vot {
+	font-size: 1.3vw;
+}
+
 .texto-descripcion-votacion {
 	color: var(--am);
-	width: 50%;
+	width: 95%;
+	text-align: justify;
 }
 
 /* SECCIÓN CONTACTO */
 
+.centrar-subseccion {
+	padding-left: 3%;
+	padding-right: 3%;
+}
+
+.subseccion-contacto {
+	color: white;
+	border-radius: 1vw;
+	padding-left: 2%;
+	background-color: var(--az-o);
+}
+
 .info-contacto {
 	width: 100%;
+	display: grid;
+	grid-template-columns: auto auto;
+	column-gap: 5vw;
 }
 
 .texto-correo {
 	font-size: 1vw;
+	color: white;
+	padding-bottom: 2%;
+}
+
+.lista-contacto {
+	margin-top: 2%;
+	margin-bottom: 2%;
 }
 
 h5 {
 	color: var(--am);
 	font-size: 1.4vw;
+}
+
+.malla-redes {
+	margin-left: 20%;
+}
+
+.lista-contacto-redes {
+	padding-bottom: 2%;
+}
+
+.ico-redes {
+	width: 3%;
 }
 
 .texto-redes {

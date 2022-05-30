@@ -27,3 +27,5 @@ Paralelo: 02.
 * How To Create a Responsive Text. (2022). Retrieved 28 May 2022, from https://www.w3schools.com/howto/howto_css_responsive_text.asp
 * HTML button tag. (2022). Retrieved 28 May 2022, from https://www.w3schools.com/tags/tag_button.asp
 * CSS Box Shadow. (2022). Retrieved 29 May 2022, from https://www.w3schools.com/css/css3_shadows_box.asp
+* overflow-y - CSS | MDN. (2022). Retrieved 30 May 2022, from https://developer.mozilla.org/es/docs/Web/CSS/overflow-y
+* CSS Flexbox (Flexible Box). (2022). Retrieved 30 May 2022, from https://www.w3schools.com/css/css3_flexbox.asp
