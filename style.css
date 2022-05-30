@@ -274,12 +274,19 @@ legend {
 	text-shadow: var(--tshadow) black;
 }
 
+.malla-forma-academica, .malla-perfil-botones {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 1vw 9vw;
+}
+
 .malla-forma-academica {
 	width: 80%;
-	margin-left: 12%;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-	gap: 25px 25px;
+	margin: auto;
+}
+
+.tabla-info-educacion {
+	width: 80%;
 }
 
 h4 {
@@ -312,10 +319,9 @@ h4 {
 }
 
 .mapa-integrado {
-	margin: 3% 0 0 13%;
-	width: 80%;
-	height: 90%;
-	border:0;
+	width: 100%;
+	height: 100%;
+	border: 0;
 	box-shadow: 0vw 0vw 0vw 1vw white, 0vw 0vw 5vw -1.25vw black;
 }
 
@@ -324,18 +330,95 @@ h4 {
 }
 
 .celda-idioma, .celda-idioma-sin-borde, .habilidad-idioma {
+	padding-top: 1.75%;
+	padding-bottom: 1.75%;
 	font-size: 1vw;
 	text-align: center;
 }
 
 .celda-idioma {
-	border-style: solid;
-	border-bottom: black;
+	border-bottom: solid;
+	border-color: black;
+}
+
+.malla-perfil-botones {
+	width: 80%;
+	margin: auto;
+	padding: 5% 0% 5% 0%;
+}
+
+div.malla-perfil-boton {
+	text-align: center;
 }
 
 /* SECCIÓN NOVEDADES */
 
+.texto-introductorio-novedad {
+	font-size: 1.25vw;
+	color: var(--am);
+	text-align: center;
+}
 
+.malla-nov {
+	display: grid;
+	grid-template-columns: auto auto;
+}
+
+.malla-nov-lista-proyectos {
+	display: grid;
+	grid-template-rows: auto;
+	text-align: center;
+	gap: 1vw;
+}
+
+.pantalla-votacion {
+	border: 0.5rem solid white;
+	border-radius: 1vw;
+	display: grid;
+	grid-template-rows: auto;
+	padding-left: 4%;
+}
+
+.subt-sec-nov, .subt-nov-vot {
+	color: var(--am);
+	font-weight: bold;
+}
+
+.subt-sec-nov {
+	font-size: 2vw;
+}
+
+.subt-nov-vot {
+	font-size: 1.3vw;
+}
+
+.btn-project, .btn-project-seleccionado  {
+	width: 60%;
+	border-radius: 1vw;
+	font-size: 2vw;
+	font-weight: bold;
+}
+
+.btn-project-seleccionado {
+	background-color: var(--az-o);
+	color: white;
+}
+
+.btn-project  {
+	color: black;
+	background-color: white;
+}
+
+.btn-project:hover  {
+	color: var(--am);
+	background-color: var(--az-c);
+	cursor: pointer;
+}
+
+.texto-descripcion-votacion {
+	color: var(--am);
+	width: 50%;
+}
 
 /* SECCIÓN CONTACTO */
 
