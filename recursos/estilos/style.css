@@ -5,12 +5,13 @@
 	--az-o: #033473;
 	--az-c: #0550AF;
 	--tshadow: -0.25vw -0.25vw 0vw;
+  	--b-radio: 1vw;
 }
 
 /* EFECTOS CSS */
 
 * {
-	font-family: Verdana;
+	font-family: Verdana, Arial, sans-serif;
 }
 
 html {
@@ -36,13 +37,13 @@ li {
 .button1 {
 	width: 40%;
 	font-size: 1vw;
-	border-radius: 1vw;
+	border-radius: var(--b-radio);
 }
 
 .button2 {
 	width: 50%;
 	font-size: 1.3vw;
-	border-radius: 1vw;
+	border-radius: var(--b-radio);
 }
 
 .button1:hover, .button2:hover {
@@ -108,7 +109,7 @@ header {
 }
 
 .align-button-explorar {
-  	padding-left: 45%;
+  padding-left: 45%;
 }
 
 .align-button-contactar {
@@ -139,7 +140,7 @@ h1 {
 /* SECCIONES */
 .subtitle {
 	border: 2px solid #dbdf01;
-	border-radius: 1vw;
+	border-radius: var(--b-radio);
 	font-size: 2.5vw;
 	background-color: var(--am);
 	padding-left: 2%;
@@ -155,7 +156,7 @@ h1 {
 .type-project-cell {
 	width: 35%;
 	background-color: var(--az-c);
-	border-radius: 1vw;
+	border-radius: var(--b-radio);
 	box-shadow: -0.02vw -0.02vw 0.75vw 0.15vw black inset;
 }
 
@@ -165,7 +166,7 @@ h1 {
 	height: 70%;
 }
   
-.project-table {
+#project-table {
 	width:70%;
 	padding: 8px solid;
 	margin: 20px auto;
@@ -189,13 +190,13 @@ h1 {
 fieldset {
 	background-color: var(--az-c);
 	border-color: var(--az-c);
-	border-radius: 1vw;
+	border-radius: var(--b-radio);
 }
   
 legend {
 	background-color: white;
 	text-decoration: bold;
-	border-radius: 1vw;
+	border-radius: var(--b-radio);
 	width: 15%;
 	height: 4.7vw;
 }
@@ -211,7 +212,7 @@ legend {
 
 .tabla-perfil, .tabla-idiomas {
 	border: solid black;
-	border-radius: 1vw;
+	border-radius: var(--b-radio);
 	background-color: white;
 	width: 60%;
 	box-shadow: 0vw 0vw 4vw -1.25vw;
@@ -250,15 +251,20 @@ legend {
 	color: var(--az-o);
 }
 
+.area-dato-tabla {
+  text-align: center;
+}
+
 .tabla-nacimiento {
 	padding-top: 2%;
 	padding-bottom: 2%;
+  text-align: center;
 }
 
 .fondo-foto-perfil {
 	width: 25%;
 	border: solid#919406;
-	border-radius: 1vw;
+	border-radius: var(--b-radio);
 	background-color: #919406;
 	padding: 1%;
 	margin-right: 3%;
@@ -353,29 +359,28 @@ div.malla-perfil-boton {
 
 /* SECCIÓN NOVEDADES */
 
-.texto-introductorio-novedad {
+#texto-introductorio-novedad {
 	font-size: 1.25vw;
 	color: var(--am);
 	text-align: center;
 }
 
-.tabla-nov {
+#tabla-nov {
 	background-color: violet;
 	height: 30vw;
 }
 
-.malla-nov-lista-proyectos {
+#malla-nov-lista-proyectos {
 	width: 50%;
 	background-color: green;
 	text-align: center;
 }
-
-.subt-sec-nov, .subt-nov-vot {
+#subt-sec-nov, .subt-nov-vot {
 	color: var(--am);
 	font-weight: bold;
 }
 
-.subt-sec-nov {
+#subt-sec-nov {
 	font-size: 2vw;
 	padding-top: 1%;
 	padding-bottom: 1%;
@@ -388,7 +393,7 @@ div.malla-perfil-boton {
 
 .btn-project, .btn-project-seleccionado  {
 	width: 80%;
-	border-radius: 1vw;
+	border-radius: var(--b-radio);
 	font-size: 2vw;
 	font-weight: bold;
 }
@@ -409,11 +414,11 @@ div.malla-perfil-boton {
 	cursor: pointer;
 }
 
-.pantalla-votacion {
-	background-color: aqua;
+#pantalla-votacion {
+	background-color: blue;
 	overflow-y: scroll;
 	border: 0.5rem solid white;
-	border-radius: 1vw;
+	border-radius: var(--b-radio);
 	padding-left: 4%;
 }
 
@@ -436,7 +441,7 @@ div.malla-perfil-boton {
 
 .subseccion-contacto {
 	color: white;
-	border-radius: 1vw;
+	border-radius: var(--b-radio);
 	padding-left: 2%;
 	background-color: var(--az-o);
 }
@@ -473,7 +478,7 @@ h5 {
 }
 
 .ico-redes {
-	width: 3%;
+	height: 1.6vw;
 }
 
 .texto-redes {
@@ -486,10 +491,15 @@ footer{
 	background-color: var(--az-o);
 	height: 200px;
 	padding-top: 30px;
+  text-align: center;
 }
-  
-.foot-text{
+
+#foot-text{
 	color: var(--am);
+}
+
+.icono-redes-nebou {
+	height: 1.6vw;
 }
 
 @media screen and (max-width: 700px) {
