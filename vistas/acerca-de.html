@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
   <title>ImagiNeboulux</title>
-  <link href="recursos/estilos/style.css" rel="stylesheet" type="text/css" />
-  <link rel="icon" href="recursos/img/otros/neboulux.png" type="image/x-icon">
+  <link href="../recursos/estilos/style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="../recursos/img/otros/neboulux.png" type="image/x-icon">
   <meta name="author" content="Andrés Medina">
 </head>
 
@@ -24,8 +24,8 @@
   </header>
   <main>
     <section id="Inicio">
-      <img id="main-img" src="recursos/img/secciones/inicio/maincroppedpic.png">
-      <div class="contenedor-malla">
+      <img id="main-img" src="../recursos/img/secciones/inicio/maincroppedpic.png">
+      <div class="contenedor-malla-inicio">
         <div class="grid-item"><h1>Bienvenid@ a</h1></div>
         <div class="grid-item"><p align="right" class="in_text">Me llamo Andrés Medina, pero me puedes llamar AJ</p></div>
         <div class="grid-item"><p class="in_text">Te invito a explorar los proyectos que se han realizado y están en desarrollo...</p></div>
@@ -35,7 +35,7 @@
       </div>
       <div class="video-contenedor">
         <h1 align="center">Presentación</h1>
-        <video class="vid-presentation" poster="recursos/img/otros/portada.png" controls><source src="" type="video/mp4"></video>
+        <video class="vid-presentation" poster="../recursos/img/otros/portada.png" controls><source src="" type="video/mp4"></video>
       </div>
     </section>
     <section id="Proyectos">
@@ -45,12 +45,12 @@
         <table id="project-table">
           <tr>
             <th class="type-project-cell">
-              <img class="type-project-img" src="recursos/img/secciones/proyectos/papps.png">
+              <img class="type-project-img" src="../recursos/img/secciones/proyectos/papps.png">
               <p class="type-project-title">Aplicaciones Web o Móviles</p>
             </th>
             <th class="cell-blank">  </th>
             <th class="type-project-cell">
-              <img class="type-project-img" src="recursos/img/secciones/proyectos/pgames.png">
+              <img class="type-project-img" src="../recursos/img/secciones/proyectos/pgames.png">
               <p class="type-project-title">Juegos</p>
             </th>
           </tr>
@@ -73,7 +73,6 @@
         <fieldset>
           <legend><h2 class="legend-text" align="center">AJ</h2></legend>
           <div class="contenedor-acerca">
-            <img class="fondo-foto-perfil" align="right" src="">
             <table class="tabla-perfil">
               <tr>
                 <th class="titulo-dato">Nombres:</th>
@@ -94,16 +93,14 @@
               <tr>
                 <th class="titulo-dato">Fecha de nacimiento:</th>
                 <td class="area-dato-tabla">
-                  <table>
+                  <table class="tabla-nacimiento">
                     <tr>
-                      <th class="tabla-nacimiento">Según Registro Civil</th>
-                      <td class="cell-blank">  <td>
-                      <th class="tabla-nacimiento">Según Maternidad</th>
+                      <th class="area-dato-nacimiento">Según Registro Civil</th>
+                      <th class="area-dato-nacimiento">Según Maternidad</th>
                     </tr>
                     <tr>
-                      <td  class="tabla-nacimiento">11/02/2001</td>
-                      <td class="cell-blank">  <td>
-                      <td  class="tabla-nacimiento">10/02/2001<td>
+                      <td  class="area-dato-nacimiento">11/02/2001</td>
+                      <td  class="area-dato-nacimiento">10/02/2001<td>
                     </tr>
                   </table>
                 </td>
@@ -113,6 +110,9 @@
                 <td class="ultima-area-dato"><p>Futuro ingeniero en computación dedicado y dispuesto a ayudar con el desarrollo de soluciones mediante software, además de realizar proyectos que ofrezcan beneficios/entretenimiento a los usuarios.</p></td>
               </tr>
             </table>
+            <div class="fondo-foto-perfil">
+              <img class="foto-perfil" src="../recursos/img/perfiles/aj/perfil-1.jpg">
+            </div>
           </div>
           <h3 class="info-perfil-titulo">Formación académica</h3>
           <div class="malla-forma-academica">
@@ -130,7 +130,7 @@
                         <span class="institucion-nombre">Unidad Educativa El Libertador</span>
                         &nbsp;
                         <a href="https://ellibertador.edu.ec/">
-                          <img class="ico-enlace" src="recursos/img/otros/enlace.png" alt="Enlace a página web">
+                          <img class="ico-enlace" src="../recursos/img/otros/enlace.png" alt="Enlace a página web">
                         </a>
                       </li>
                       <i class="institucion-periodo">
@@ -151,7 +151,7 @@
                         <span class="institucion-nombre">Unidad Educativa El Libertador</span>
                         &nbsp;
                         <a href="https://ellibertador.edu.ec/">
-                          <img class="ico-enlace" src="recursos/img/otros/enlace.png" alt="Enlace a página web">
+                          <img class="ico-enlace" src="../recursos/img/otros/enlace.png" alt="Enlace a página web">
                         </a>
                       </li>
                       <i class="institucion-periodo">
@@ -172,7 +172,7 @@
                         <span class="institucion-nombre">Escuela Superior Politécnica del Litoral</span>
                         &nbsp;
                         <a href="https://www.espol.edu.ec/">
-                          <img class="ico-enlace" src="recursos/img/otros/enlace.png" alt="Enlace a página web">
+                          <img class="ico-enlace" src="../recursos/img/otros/enlace.png" alt="Enlace a página web">
                         </a>
                       </li>
                       <i class="institucion-periodo">
@@ -211,7 +211,7 @@
               <button class="button2">Descargar CV</button>
             </div>
             <div class="malla-perfil-boton">
-                <a href="index.html#Acercade"><button class="button2">Ver menos</button></a>
+                <a href="../index.html#Acercade"><button class="button2">Ver menos</button></a>
             </div>
           </div>
           <br>
@@ -227,46 +227,40 @@
             Revisa las próximas actualizaciones, califícalas y envía tu opinión sobre cada uno de los proyectos que le interesa. Recuerda que la calificación es completamente OPCIONAL pero sirve de apoyo para mejorar.
           </b>
         </p>
-        <table id="tabla-nov">
-          <tr>
-            <td>
-              <div id="malla-nov-lista-proyectos">
-                <div><p id="subt-sec-nov">Proyectos</p></div>
-                <div class="lista-proyecto"><button class="btn-project-seleccionado">Proyecto 1</button></div>
-                <div class="lista-proyecto"><button class="btn-project">Proyecto 2</button></div>
-                <div class="lista-proyecto"><button class="btn-project">Proyecto 3</button></div>
-                <div class="lista-proyecto"><button class="btn-project">Proyecto 4</button></div>
-              </div>
-            </td>
-            <td>
-              <div class="pantalla-votacion">
-                <div><p class="subt-nov-vot">Descripción</p></div>
-                <div class="texto-descripcion-votacion">
-                  Descripción del proyecto 1... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur sem mi, in hendrerit magna consectetur porttitor. Aliquam pharetra feugiat odio in sagittis. Aliquam vel orci tempus, lobortis lorem nec, porta erat. Vestibulum odio mi, tincidunt sed mi et, aliquam facilisis quam. Nam felis neque, venenatis vitae bibendum aliquam, convallis et nulla. In in est a orci tristique vulputate. Donec a justo nunc. Morbi ornare hendrerit dictum. Proin et leo a est pretium tempor. Sed vestibulum magna blandit nulla dignissim aliquam.
-                </div>
-                <div><p class="subt-nov-vot">Descripción</p></div>
-                <div class="texto-descripcion-votacion">
-                  Descripción del proyecto 1... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur sem mi, in hendrerit magna consectetur porttitor. Aliquam pharetra feugiat odio in sagittis. Aliquam vel orci tempus, lobortis lorem nec, porta erat. Vestibulum odio mi, tincidunt sed mi et, aliquam facilisis quam. Nam felis neque, venenatis vitae bibendum aliquam, convallis et nulla. In in est a orci tristique vulputate. Donec a justo nunc. Morbi ornare hendrerit dictum. Proin et leo a est pretium tempor. Sed vestibulum magna blandit nulla dignissim aliquam.
-                </div>
-                <div><p class="subt-nov-vot">Descripción</p></div>
-                <div class="texto-descripcion-votacion">
-                  Descripción del proyecto 1... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur sem mi, in hendrerit magna consectetur porttitor. Aliquam pharetra feugiat odio in sagittis. Aliquam vel orci tempus, lobortis lorem nec, porta erat. Vestibulum odio mi, tincidunt sed mi et, aliquam facilisis quam. Nam felis neque, venenatis vitae bibendum aliquam, convallis et nulla. In in est a orci tristique vulputate. Donec a justo nunc. Morbi ornare hendrerit dictum. Proin et leo a est pretium tempor. Sed vestibulum magna blandit nulla dignissim aliquam.
-                </div>
-                <div><p class="subt-nov-vot">Descripción</p></div>
-                <div class="texto-descripcion-votacion">
-                  Descripción del proyecto 1... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur sem mi, in hendrerit magna consectetur porttitor. Aliquam pharetra feugiat odio in sagittis. Aliquam vel orci tempus, lobortis lorem nec, porta erat. Vestibulum odio mi, tincidunt sed mi et, aliquam facilisis quam. Nam felis neque, venenatis vitae bibendum aliquam, convallis et nulla. In in est a orci tristique vulputate. Donec a justo nunc. Morbi ornare hendrerit dictum. Proin et leo a est pretium tempor. Sed vestibulum magna blandit nulla dignissim aliquam.
-                </div>
-                <div><p class="subt-nov-vot">Descripción</p></div>
-                <div class="texto-descripcion-votacion">
-                  Descripción del proyecto 1... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur sem mi, in hendrerit magna consectetur porttitor. Aliquam pharetra feugiat odio in sagittis. Aliquam vel orci tempus, lobortis lorem nec, porta erat. Vestibulum odio mi, tincidunt sed mi et, aliquam facilisis quam. Nam felis neque, venenatis vitae bibendum aliquam, convallis et nulla. In in est a orci tristique vulputate. Donec a justo nunc. Morbi ornare hendrerit dictum. Proin et leo a est pretium tempor. Sed vestibulum magna blandit nulla dignissim aliquam.
-                </div>
-                <div><p class="subt-nov-vot">Descripción</p></div>
-                <div class="texto-descripcion-votacion">
-                  Descripción del proyecto 1... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur sem mi, in hendrerit magna consectetur porttitor. Aliquam pharetra feugiat odio in sagittis. Aliquam vel orci tempus, lobortis lorem nec, porta erat. Vestibulum odio mi, tincidunt sed mi et, aliquam facilisis quam. Nam felis neque, venenatis vitae bibendum aliquam, convallis et nulla. In in est a orci tristique vulputate. Donec a justo nunc. Morbi ornare hendrerit dictum. Proin et leo a est pretium tempor. Sed vestibulum magna blandit nulla dignissim aliquam.
-                </div>
-              </td>
-            </tr>
-          </table>
+        <div id="flex-nov">
+          <div id="malla-nov-lista-proyectos">
+            <div><p id="subt-sec-nov">Proyectos</p></div>
+            <div class="lista-proyecto"><button class="btn-project-seleccionado">Proyecto 1</button></div>
+            <div class="lista-proyecto"><button class="btn-project">Proyecto 2</button></div>
+            <div class="lista-proyecto"><button class="btn-project">Proyecto 3</button></div>
+            <div class="lista-proyecto"><button class="btn-project">Proyecto 4</button></div>
+          </div>
+          <div id="pantalla-votacion">
+            <div><p class="subt-nov-vot">Descripción</p></div>
+            <div class="texto-descripcion-votacion">
+              Descripción del proyecto 1... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur sem mi, in hendrerit magna consectetur porttitor. Aliquam pharetra feugiat odio in sagittis. Aliquam vel orci tempus, lobortis lorem nec, porta erat. Vestibulum odio mi, tincidunt sed mi et, aliquam facilisis quam. Nam felis neque, venenatis vitae bibendum aliquam, convallis et nulla. In in est a orci tristique vulputate. Donec a justo nunc. Morbi ornare hendrerit dictum. Proin et leo a est pretium tempor. Sed vestibulum magna blandit nulla dignissim aliquam.
+            </div>
+            <div><p class="subt-nov-vot">Descripción</p></div>
+            <div class="texto-descripcion-votacion">
+              Descripción del proyecto 1... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur sem mi, in hendrerit magna consectetur porttitor. Aliquam pharetra feugiat odio in sagittis. Aliquam vel orci tempus, lobortis lorem nec, porta erat. Vestibulum odio mi, tincidunt sed mi et, aliquam facilisis quam. Nam felis neque, venenatis vitae bibendum aliquam, convallis et nulla. In in est a orci tristique vulputate. Donec a justo nunc. Morbi ornare hendrerit dictum. Proin et leo a est pretium tempor. Sed vestibulum magna blandit nulla dignissim aliquam.
+            </div>
+            <div><p class="subt-nov-vot">Descripción</p></div>
+            <div class="texto-descripcion-votacion">
+              Descripción del proyecto 1... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur sem mi, in hendrerit magna consectetur porttitor. Aliquam pharetra feugiat odio in sagittis. Aliquam vel orci tempus, lobortis lorem nec, porta erat. Vestibulum odio mi, tincidunt sed mi et, aliquam facilisis quam. Nam felis neque, venenatis vitae bibendum aliquam, convallis et nulla. In in est a orci tristique vulputate. Donec a justo nunc. Morbi ornare hendrerit dictum. Proin et leo a est pretium tempor. Sed vestibulum magna blandit nulla dignissim aliquam.
+            </div>
+            <div><p class="subt-nov-vot">Descripción</p></div>
+            <div class="texto-descripcion-votacion">
+              Descripción del proyecto 1... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur sem mi, in hendrerit magna consectetur porttitor. Aliquam pharetra feugiat odio in sagittis. Aliquam vel orci tempus, lobortis lorem nec, porta erat. Vestibulum odio mi, tincidunt sed mi et, aliquam facilisis quam. Nam felis neque, venenatis vitae bibendum aliquam, convallis et nulla. In in est a orci tristique vulputate. Donec a justo nunc. Morbi ornare hendrerit dictum. Proin et leo a est pretium tempor. Sed vestibulum magna blandit nulla dignissim aliquam.
+            </div>
+            <div><p class="subt-nov-vot">Descripción</p></div>
+            <div class="texto-descripcion-votacion">
+              Descripción del proyecto 1... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur sem mi, in hendrerit magna consectetur porttitor. Aliquam pharetra feugiat odio in sagittis. Aliquam vel orci tempus, lobortis lorem nec, porta erat. Vestibulum odio mi, tincidunt sed mi et, aliquam facilisis quam. Nam felis neque, venenatis vitae bibendum aliquam, convallis et nulla. In in est a orci tristique vulputate. Donec a justo nunc. Morbi ornare hendrerit dictum. Proin et leo a est pretium tempor. Sed vestibulum magna blandit nulla dignissim aliquam.
+            </div>
+            <div><p class="subt-nov-vot">Descripción</p></div>
+            <div class="texto-descripcion-votacion">
+              Descripción del proyecto 1... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur sem mi, in hendrerit magna consectetur porttitor. Aliquam pharetra feugiat odio in sagittis. Aliquam vel orci tempus, lobortis lorem nec, porta erat. Vestibulum odio mi, tincidunt sed mi et, aliquam facilisis quam. Nam felis neque, venenatis vitae bibendum aliquam, convallis et nulla. In in est a orci tristique vulputate. Donec a justo nunc. Morbi ornare hendrerit dictum. Proin et leo a est pretium tempor. Sed vestibulum magna blandit nulla dignissim aliquam.
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -287,19 +281,19 @@
               <h5>Redes Sociales</h5>
               <ul class="lista-contacto">
                   <li class="lista-contacto-redes">
-                    <img class="ico-redes" src="recursos/img/redes/facebook.png" alt="Facebook - AJ Medina">
+                    <img class="ico-redes" src="../recursos/img/redes/facebook.png" alt="Facebook - AJ Medina">
                     <span>
                       <a class="texto-redes" href="https://www.facebook.com/AJmj03" target="_blank">AJ Medina</a>
                     </span>
                   </li>
                   <li class="lista-contacto-redes">
-                    <img class="ico-redes" src="recursos/img/redes/twitter.png" alt="Twitter - AJ_zro3"></td>
+                    <img class="ico-redes" src="../recursos/img/redes/twitter.png" alt="Twitter - AJ_zro3"></td>
                     <span>
                       <a class="texto-redes" href="https://twitter.com/AJ_zro3" target="_blank">@AJ_zro3</a>
                     </span>
                   </li>
                   <li class="lista-contacto-redes">
-                    <img class="ico-redes" src="recursos/img/redes/instagram.png" alt="Instagram - aJ_zro3">
+                    <img class="ico-redes" src="../recursos/img/redes/instagram.png" alt="Instagram - aJ_zro3">
                     <span>
                       <a class="texto-redes" href="https://www.instagram.com/aj_zro3/" target="_blank">aj_zro3</a>
                     </span>
@@ -313,7 +307,7 @@
   </main>
   <footer>
     <p id="foot-text">ImagiNeboulux 2022</p>
-    <a href="https://www.twitch.tv/neboulux" target="_blank"><img class="icono-redes-nebou" src="recursos/img/redes/twitch.png" alt="Twitch - neboulux"></a>
+    <a href="https://www.twitch.tv/neboulux" target="_blank"><img class="icono-redes-nebou" src="../recursos/img/redes/twitch.png" alt="Twitch - neboulux"></a>
   </footer>
   <!-- 
   <script src="script.js"></script>
