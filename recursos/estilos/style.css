@@ -438,18 +438,30 @@ div.malla-perfil-boton {
 	overflow-y: scroll;
 	border: 0.5rem solid white;
 	border-radius: var(--b-radio);
-	padding-left: 4%;
 	margin: auto;
 }
 
 .subt-nov-vot {
 	font-size: 1.3vw;
+	margin: 8%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+
 }
 
-.texto-descripcion-votacion {
-	color: var(--am);
+.contenedor-votacion {
 	width: 95%;
+	margin-left: 3%;
+	background-color: var(--az-o);
+	border-radius: var(--b-radio);
+}
+
+.texto-votacion {
+	color: white;
+	padding: 3% 4%;
 	text-align: justify;
+	font-size: 1vw;
+	font-weight: normal;
 }
 
 /* SECCIÓN CONTACTO */
