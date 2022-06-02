@@ -34,22 +34,25 @@ li {
 	margin: 0;
 }
 
-.button1 {
-	width: 40%;
+.button1, #button1-1 {
+	width: 10vw;
 	font-size: 1vw;
 	border-radius: var(--b-radio);
+	box-shadow: 0 0 1rem black;
 }
 
 .button2 {
-	width: 50%;
+	width: 15vw;
 	font-size: 1.3vw;
 	border-radius: var(--b-radio);
+	box-shadow: 0 0 1rem black;
 }
 
-.button1:hover, .button2:hover {
+.button1:hover, .button2:hover, #button1-1:hover {
 	color: white;
 	background-color: var(--az-c);
 	cursor: pointer;
+	box-shadow: 0 0 1rem white;
 }
 
 .cell-blank {
@@ -435,6 +438,8 @@ div.malla-perfil-boton {
 #pantalla-votacion {
 	width: 50%;
 	height: 90%;
+	display: flex;
+	flex-direction: column;
 	overflow-y: scroll;
 	border: 0.5rem solid white;
 	border-radius: var(--b-radio);
@@ -446,7 +451,6 @@ div.malla-perfil-boton {
 	margin: 8%;
 	margin-top: 2%;
 	margin-bottom: 2%;
-
 }
 
 .contenedor-votacion {
@@ -465,72 +469,128 @@ div.malla-perfil-boton {
 }
 
 .malla-calificacion {
-  display: grid;
-  grid-template-areas:
-    'bad1 blank good1'
-    'bad2 blank good2'
-    'star star star'
-    'text text text';
-  color: white;
-  font-size: 1vw;
+	background-color: var(--az-c);
+	box-shadow: 0 0 2rem black;
+	border-radius: var(--b-radio);
+	margin: 0% 3%;
+	display: grid;
+	grid-template-columns: 0.2fr 0.8fr 0.3fr 1.4fr 1.1fr 1.4fr 0.2fr;
+	grid-template-rows: 0.3fr 1fr 0.4fr 0.4fr 1fr 3.6fr 0.3fr;
+	grid-template-areas:
+		'. . . . . . .'
+		'. title title title title title .'
+		'. . . bad1 . good1 .'
+		'. . . bad2 . good2 .'
+		'. check . star star star .'
+		'. sug . text text text .'
+		'. . . . . . .';
+	color: white;
+	font-size: 1vw;
+}
+
+.titulo-caracteristica {
+	grid-area: title;
+	text-align: center;
+	font-weight: bold;
+}
+
+.calificar-caracteristica {
+	grid-area: check;
+	text-align: right;
+	font-weight: bold;
+}
+
+.sugerir-por-caracteristica {
+	grid-area: sug;
+	text-align: right;
+	font-weight: bold;
 }
 
 .bad-title {
-  grid-area: bad1;
-  text-align: left;
+	grid-area: bad1;
+	text-align: left;
+	font-weight: bold;
 }
 
 .bad-number {
-  grid-area: bad2;
-  text-align: left;
+	grid-area: bad2;
+	text-align: left;
 }
 
 .good-title {
-  grid-area: good1;
-  text-align: right;
+	grid-area: good1;
+	text-align: right;
+	font-weight: bold;
 }
 
 .good-number {
-  grid-area: good2;
-  text-align: right;
+	grid-area: good2;
+	text-align: right;
 }
 
 .check-stars {
-  grid-area: star;
-}
-
-.all-stars {
-  direction: rtl;
-  unicode-bidi: bidi-override;
-  text-align: center;
-  display: flex;
-  justify-content: space-between;
-}
-
-.estrella {
-  font-size: 2.5vw;
-  color: gray;
-}
-
-.estrella:hover, .estrella:hover ~ .estrella {
-  color: var(--am);
-  text-shadow: 0vw 0vw 0.6vw #FFA200;
+	grid-area: star;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	direction: rtl;
+	unicode-bidi: bidi-override;
 }
 
 input[type="radio"] {
-  display: none;
+	display: none;
+}
+
+.estrella {
+	font-size: 2.5vw;
+	color: gray;
+}
+
+.estrella:hover, .estrella:hover ~ .estrella {
+	color: var(--am);
+	text-shadow: 0vw 0vw 0.6vw #FFA200;
 }
 
 input[type="radio"]:checked ~ .estrella {
-  color: orange;
+  	color: var(--am);
 }
 
-input[type="radio"]:unchecked ~ .estrella {
-  color: gray;
+.cuadro-sugerencia, .area-sugerencia-general {
+	grid-area: text;
+	border-radius: var(--b-radio);
+	font-size: 1vw;
+	padding: 2% 3%;
+	resize: none;
 }
 
-.cuadro-sugerencia {
-  grid-area: text;
+.cuadro-sugerencia:focus {
+	background-color: #f5f6a8;
+}
+
+.cuadro-sugerencia::placeholder {
+	font-size: 1vw;
+}
+
+.flexbox-sugerencia {
+	display: flex;
+	flex-direction: column;
+	margin: 0% 3%;
+	height: 10vw;
+}
+
+.sugerencia-general {
+	font-size: 1vw;
+	color: white;
+	text-align: left;
+	font-weight: bold;
+}
+
+.area-sugerencia-general {
+	height: 100%;
+}
+
+#button1-1 {
+	margin: auto;
 }
 
 /* SECCIÓN CONTACTO */

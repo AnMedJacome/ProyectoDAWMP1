@@ -29,3 +29,7 @@ Paralelo: 02.
 * CSS Box Shadow. (2022). Retrieved 29 May 2022, from https://www.w3schools.com/css/css3_shadows_box.asp
 * overflow-y - CSS | MDN. (2022). Retrieved 30 May 2022, from https://developer.mozilla.org/es/docs/Web/CSS/overflow-y
 * CSS Flexbox (Flexible Box). (2022). Retrieved 30 May 2022, from https://www.w3schools.com/css/css3_flexbox.asp
+* Clasificación de 5 estrellas. (2022). Retrieved 2 June 2022, from http://w3.unpocodetodo.info/css3/estrellas.php
+* letter-spacing - CSS Reference. (2022). Retrieved 2 June 2022, from https://cssreference.io/property/letter-spacing/
+* Pseudo-classes - CSS | MDN. (2022). Retrieved 2 June 2022, from https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes
+* Pseudoelementos - CSS | MDN. (2022). Retrieved 2 June 2022, from https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-elements
