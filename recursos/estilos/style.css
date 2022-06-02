@@ -464,6 +464,75 @@ div.malla-perfil-boton {
 	font-weight: normal;
 }
 
+.malla-calificacion {
+  display: grid;
+  grid-template-areas:
+    'bad1 blank good1'
+    'bad2 blank good2'
+    'star star star'
+    'text text text';
+  color: white;
+  font-size: 1vw;
+}
+
+.bad-title {
+  grid-area: bad1;
+  text-align: left;
+}
+
+.bad-number {
+  grid-area: bad2;
+  text-align: left;
+}
+
+.good-title {
+  grid-area: good1;
+  text-align: right;
+}
+
+.good-number {
+  grid-area: good2;
+  text-align: right;
+}
+
+.check-stars {
+  grid-area: star;
+}
+
+.all-stars {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.estrella {
+  font-size: 2.5vw;
+  color: gray;
+}
+
+.estrella:hover, .estrella:hover ~ .estrella {
+  color: var(--am);
+  text-shadow: 0vw 0vw 0.6vw #FFA200;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked ~ .estrella {
+  color: orange;
+}
+
+input[type="radio"]:unchecked ~ .estrella {
+  color: gray;
+}
+
+.cuadro-sugerencia {
+  grid-area: text;
+}
+
 /* SECCIÓN CONTACTO */
 
 .centrar-subseccion {
