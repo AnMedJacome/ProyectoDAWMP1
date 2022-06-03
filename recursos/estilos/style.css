@@ -544,9 +544,13 @@ input[type="radio"] {
 .estrella {
 	font-size: 2.5vw;
 	color: gray;
+	position: relative;
+	transition: all 0.3s ease-in;
+	top: 0;
 }
 
 .estrella:hover, .estrella:hover ~ .estrella {
+	top: -0.3vw;
 	color: var(--am);
 	text-shadow: 0vw 0vw 0.6vw #FFA200;
 }
@@ -614,10 +618,8 @@ input[type="radio"]:checked ~ .estrella {
 	column-gap: 5vw;
 }
 
-.texto-correo {
+.info-contacto span {
 	font-size: 1vw;
-	color: white;
-	padding-bottom: 2%;
 }
 
 .lista-contacto {
@@ -632,18 +634,35 @@ h5 {
 
 .malla-redes {
 	margin-left: 20%;
+	width: 50%;
 }
 
-.lista-contacto-redes {
+.lista-contacto-redes, .texto-correo {
 	padding-bottom: 2%;
+	width: 55%;
+	position: relative;
+	transition: all 0.3s ease-in;
+	top: 0;
 }
 
-.ico-redes {
+.lista-contacto-redes:hover, .texto-correo:hover {
+	top: -0.3vw;
+}
+
+.ico-correo {
+	height: 1.2vw;
+}
+
+.ico-facebook {
+	height: 1.75vw;
+}
+
+.ico-twitter {
 	height: 1.6vw;
 }
 
-.texto-redes {
-	font-size: 1vw;
+.ico-instagram {
+	height: 1.75vw;
 }
 
 /* PIE DE PÁGINA */
@@ -668,6 +687,12 @@ footer{
 	grid-area: page-name;
 	color: var(--am);
 	width: 100%;
+}
+
+#link-twitch, #link-telegram, #link-discord {
+	top: 0;
+	position: relative;
+	transition: all 0.3s ease;
 }
 
 #link-twitch {
@@ -698,6 +723,10 @@ footer{
 	display: block;
 	height: 1.6vw;
 	width: 2.3vw;
+}
+
+footer > a:hover {
+	top: -1vw !important;
 }
 
 @media screen and (max-width: 700px) {
