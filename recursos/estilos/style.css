@@ -82,13 +82,18 @@ nav {
 	font-size: 20px;
 }
 
+#logo_in:hover {
+	text-shadow: 0vw 0vw 0.7vw white;
+}
+
 .indice {
 	padding-right: 13px;
 	font-size: 14px;
 }
 
 .indice:hover {
-	color: var(--az-o);
+	color: var(--am);
+	text-shadow: 0vw -0.1vw 0.3vw white;
 }
 
 /* INICIO */
