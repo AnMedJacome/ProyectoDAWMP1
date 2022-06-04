@@ -1,0 +1,56 @@
+#project-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    text-align: center;
+	margin: 3% 0%;
+}
+
+.type-project-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.type-project-cell {
+    margin: 0.5vw 0.4vw;
+    height: 100%;
+    width: 95%;
+	background-color: var(--az-c);
+	border-radius: var(--b-radio);
+	box-shadow: -0.02vw -0.02vw 0.75vw 0.15vw black inset;
+}
+
+.type-project-img {
+    margin-top: 5%;
+	width: 65%;
+	height: 60%;
+}
+
+.type-project-title {
+	font-size: 2vw;
+	color: white;
+    margin-bottom: 5%;
+}
+
+/* LISTAS DE PROYECTOS OCULTAS */
+
+.flex-proyectos {
+
+}
+
+.proyecto-ico {
+
+}
+
+.proyecto-ico-size {
+	display: block;
+	background-image: url(../recursos/img/otros/neboulux.png);
+	background-color: white;
+	border-radius: var(--b-radio);
+}
+
+.proyecto-ico-title {
+
+}

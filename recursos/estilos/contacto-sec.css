@@ -1,0 +1,63 @@
+.centrar-subseccion {
+	margin: 3%;
+}
+
+.subseccion-contacto {
+	color: white;
+	border-radius: var(--b-radio);
+	padding-left: 2%;
+	background-color: var(--az-o);
+}
+
+.info-contacto {
+	width: 100%;
+	display: grid;
+	grid-template-columns: auto auto;
+	column-gap: 5vw;
+}
+
+h5 {
+	color: var(--am);
+	font-size: 1.4vw;
+}
+
+.info-contacto span {
+	font-size: 1vw;
+}
+
+.lista-contacto {
+	margin: 2% 0%;
+}
+
+.malla-redes {
+	margin-left: 20%;
+	width: 50%;
+}
+
+.lista-contacto-redes, .texto-correo {
+	margin-bottom: 7%;
+	width: 55%;
+	position: relative;
+	transition: all 0.1s ease-in;
+	top: 0;
+}
+
+.lista-contacto-redes:hover, .texto-correo:hover {
+	top: -0.3vw;
+}
+
+.ico-correo {
+	height: 1.2vw;
+}
+
+.ico-facebook {
+	height: 1.75vw;
+}
+
+.ico-twitter {
+	height: 1.6vw;
+}
+
+.ico-instagram {
+	height: 1.75vw;
+}

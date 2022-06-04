@@ -1,0 +1,228 @@
+#texto-introductorio-novedad {
+	font-size: 1.25vw;
+	color: var(--am);
+	text-align: center;
+}
+
+#flex-nov {
+	display: flex;
+	height: 30vw;
+	justify-content: space-evenly;
+}
+
+#malla-nov-lista-proyectos {
+	width: 50%;
+	text-align: center;
+}
+
+#subt-sec-nov, .subt-nov-vot {
+	color: var(--am);
+	font-weight: bold;
+}
+
+#subt-sec-nov {
+	font-size: 2vw;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+
+.lista-proyecto {
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;
+}
+
+.btn-project, .btn-project-seleccionado  {
+	width: 80%;
+	border-radius: var(--b-radio);
+	font-size: 2vw;
+	font-weight: bold;
+}
+
+.btn-project-seleccionado {
+	background-color: var(--az-o);
+	color: white;
+}
+
+.btn-project  {
+	color: black;
+	background-color: white;
+}
+
+.btn-project:hover  {
+	color: var(--am);
+	background-color: var(--az-c);
+	cursor: pointer;
+}
+
+#pantalla-votacion {
+	width: 50%;
+	height: 90%;
+	display: flex;
+	flex-direction: column;
+	overflow-y: scroll;
+	border: 0.5rem solid white;
+	border-radius: var(--b-radio);
+	margin: auto;
+}
+
+.subt-nov-vot {
+	font-size: 1.3vw;
+	margin: 8%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+.contenedor-votacion {
+	width: 95%;
+	margin-left: 3%;
+	background-color: var(--az-o);
+	border-radius: var(--b-radio);
+}
+
+.texto-votacion {
+	color: white;
+	padding: 3% 4%;
+	text-align: justify;
+	font-size: 1vw;
+	font-weight: normal;
+}
+
+.malla-calificacion  {
+	background-color: var(--az-c);
+	box-shadow: 0 0 2rem black;
+	border-radius: var(--b-radio);
+	margin: 0% 3%;
+	display: grid;
+	grid-template-columns: 0.2fr 0.8fr 0.3fr 1.4fr 1.1fr 1.4fr 0.2fr;
+	grid-template-rows: 0.3fr 1fr 0.4fr 0.4fr 1fr 3.6fr 0.3fr;
+	grid-template-areas:
+		'. . . . . . .'
+		'. title title title title title .'
+		'. . . bad1 . good1 .'
+		'. . . bad2 . good2 .'
+		'. check . star star star .'
+		'. sug . text text text .'
+		'. . . . . . .';
+	color: white;
+	font-size: 1vw;
+}
+
+.titulo-caracteristica {
+	grid-area: title;
+	text-align: center;
+	font-weight: bold;
+}
+
+.calificar-caracteristica {
+	grid-area: check;
+	text-align: right;
+	font-weight: bold;
+}
+
+.sugerir-por-caracteristica {
+	grid-area: sug;
+	text-align: right;
+	font-weight: bold;
+}
+
+.bad-title {
+	grid-area: bad1;
+	text-align: left;
+	font-weight: bold;
+}
+
+.bad-number {
+	grid-area: bad2;
+	text-align: left;
+}
+
+.good-title {
+	grid-area: good1;
+	text-align: right;
+	font-weight: bold;
+}
+
+.good-number {
+	grid-area: good2;
+	text-align: right;
+}
+
+.check-stars {
+	grid-area: star;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	direction: rtl;
+	unicode-bidi: bidi-override;
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+.estrella {
+	font-size: 2.5vw;
+	color: gray;
+	position: relative;
+	transition: all 0.3s ease-in;
+	top: 0;
+}
+
+.estrella:hover, .estrella:hover ~ .estrella {
+	top: -0.3vw;
+	color: var(--am);
+	text-shadow: 0vw 0vw 0.6vw #FFA200;
+}
+
+input[type="radio"]:checked ~ .estrella {
+  	color: var(--am);
+}
+
+.cuadro-sugerencia, .area-sugerencia-general {
+	grid-area: text;
+	border-radius: var(--b-radio);
+	font-size: 1vw;
+	padding: 2% 3%;
+	resize: none;
+}
+
+.cuadro-sugerencia:focus {
+	background-color: #f5f6a8;
+}
+
+.cuadro-sugerencia::placeholder {
+	font-size: 1vw;
+}
+
+.flexbox-sugerencia {
+	display: flex;
+	flex-direction: column;
+	margin: 0% 3%;
+	height: 10vw;
+}
+
+.sugerencia-general {
+	font-size: 1vw;
+	color: white;
+	text-align: left;
+	font-weight: bold;
+}
+
+.area-sugerencia-general {
+	height: 100%;
+}
+
+#button1-1 {
+	width: 10vw;
+	font-size: 1vw;
+	border-radius: var(--b-radio);
+	box-shadow: 0 0 1rem black;
+	margin: auto;
+}
+
+#button1-1:hover {
+	color: white;
+	background-color: var(--az-c);
+	cursor: pointer;
+	box-shadow: 0 0 1rem white;
+}

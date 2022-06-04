@@ -1,0 +1,61 @@
+footer{
+	display: grid;
+	grid-template-columns: 1.9fr 0.4fr 0.4fr 0.4fr 1.9fr;
+	grid-template-rows: 0.4fr 1.6fr 1.6fr 0.4fr;
+	grid-template-areas:
+	'. . . . .'
+	'. page-name page-name page-name .'
+	'. r1 r2 r3 .'
+	'. . . . .';
+	background-color: var(--az-o);
+	height: 200px;
+	padding: 30px;
+  	text-align: center;
+	justify-items: center;
+}
+
+#foot-text{
+	grid-area: page-name;
+	color: var(--am);
+	width: 100%;
+}
+
+#link-twitch, #link-telegram, #link-discord {
+	top: 0;
+	position: relative;
+	transition: all 0.3s ease-in;
+}
+
+#link-twitch {
+	grid-area: r1;
+}
+
+#icono-twitch-footer {
+	display: block;
+	height: 2vw;
+	width: 1.8vw;
+}
+
+#link-telegram {
+	grid-area: r2;
+}
+
+#icono-telegram-footer {
+	display: block;
+	height: 1.8vw;
+	width: 1.8vw;
+}
+
+#link-discord {
+	grid-area: r3;
+}
+
+#icono-discord-footer {
+	display: block;
+	height: 1.6vw;
+	width: 2.3vw;
+}
+
+footer > a:hover {
+	top: -1vw !important;
+}

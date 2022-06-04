@@ -1,0 +1,54 @@
+#main-img {
+	width: 79%;
+	position: absolute;
+	z-index: -1;
+	left: 21%;
+}
+
+.contenedor-malla-inicio {
+	width: 35%;
+	display: grid;
+	grid-template-columns: auto;
+	top: 20px;
+}
+
+.grid-item, .align-text-inicio {
+	padding-left: 5%;
+	padding-top: 4%;
+}
+
+.align-text-inicio, .align-button-contactar {
+	padding-right: 40%;
+}
+
+.align-button-explorar {
+  padding-left: 45%;
+}
+
+.align-button-contactar {
+	padding-left: 8%;
+}
+
+h1 {
+	color: var(--am);
+	font-size: 3.225vw;
+	text-shadow: var(--tshadow) var(--az-o);
+}
+
+.in_text {
+	font-weight: normal;
+	color: var(--am);
+	font-size: 1.498vw;
+}
+
+#video-contenedor {
+	margin-top: 20%;
+	text-align: center;
+}
+
+#vid-presentation {
+	border-radius: var(--b-radio);
+	width: 58rem;
+	height: 35rem;
+	box-shadow: 0vw 0vw 2vw 0.2vw var(--az-o);
+}
