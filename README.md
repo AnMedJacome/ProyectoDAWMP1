@@ -33,3 +33,4 @@ Paralelo: 02.
 * letter-spacing - CSS Reference. (2022). Retrieved 2 June 2022, from https://cssreference.io/property/letter-spacing/
 * Pseudo-classes - CSS | MDN. (2022). Retrieved 2 June 2022, from https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes
 * Pseudoelementos - CSS | MDN. (2022). Retrieved 2 June 2022, from https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-elements
+* CSS Transitions. (2022). Retrieved 4 June 2022, from https://www.w3schools.com/css/css3_transitions.asp

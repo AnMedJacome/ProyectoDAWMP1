@@ -116,7 +116,6 @@ legend {
 .malla-info-educacion {
 	width: 30vw;
 	height: 35vw;
-	height: 32vw;
 	display: grid;
 	gap: 0px;
 	grid-template-rows: 1fr 1fr 0.5fr 1fr 1fr 0.5fr 1fr 1fr;
