@@ -36,9 +36,9 @@ h5 {
 
 .lista-contacto-redes, .texto-correo {
 	margin-bottom: 7%;
-	width: 55%;
+	width: 56%;
 	position: relative;
-	transition: all 0.1s ease-in;
+	transition: all 0.1s ease;
 	top: 0;
 }
 

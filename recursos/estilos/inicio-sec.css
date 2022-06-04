@@ -48,7 +48,7 @@ h1 {
 
 #vid-presentation {
 	border-radius: var(--b-radio);
-	width: 58rem;
-	height: 35rem;
+	width: 58vw;
+	height: 35vw;
 	box-shadow: 0vw 0vw 2vw 0.2vw var(--az-o);
 }

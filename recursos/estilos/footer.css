@@ -8,8 +8,7 @@ footer{
 	'. r1 r2 r3 .'
 	'. . . . .';
 	background-color: var(--az-o);
-	height: 200px;
-	padding: 30px;
+	height: 10vw;
   	text-align: center;
 	justify-items: center;
 }
@@ -18,12 +17,13 @@ footer{
 	grid-area: page-name;
 	color: var(--am);
 	width: 100%;
+	font-size: 1.5vw;
 }
 
 #link-twitch, #link-telegram, #link-discord {
 	top: 0;
 	position: relative;
-	transition: all 0.3s ease-in;
+	transition: all 0.3s ease;
 }
 
 #link-twitch {

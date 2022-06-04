@@ -34,18 +34,20 @@ li {
 	margin: 0;
 }
 
+.button1, .button2 {
+	border-radius: var(--b-radio);
+	box-shadow: 0 0 1rem black;
+	transition: width 0.2 ease;
+}
+
 .button1 {
 	width: 10vw;
 	font-size: 1vw;
-	border-radius: var(--b-radio);
-	box-shadow: 0 0 1rem black;
 }
 
 .button2 {
 	width: 15vw;
 	font-size: 1.3vw;
-	border-radius: var(--b-radio);
-	box-shadow: 0 0 1rem black;
 }
 
 .button1:hover, .button2:hover {
@@ -53,6 +55,16 @@ li {
 	background-color: var(--az-c);
 	cursor: pointer;
 	box-shadow: 0 0 1rem white;
+}
+
+.button1:hover {
+	font-size: 1.1vw;
+	width: 11vw;
+}
+
+.button2:hover {
+	font-size: 1.4vw;
+	width: 16vw;
 }
 
 /* SECCIONES */
@@ -64,6 +76,7 @@ li {
 	font-size: 2.5vw;
 	background-color: var(--am);
 	padding-left: 2%;
+	z-index: 3;
 }
 
 .centrar-seccion {
