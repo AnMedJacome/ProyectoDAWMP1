@@ -1,0 +1,34 @@
+header {
+	background-color: black;
+	display: flex;
+	height: 20px;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	padding: 13px;
+	position: fixed;
+	z-index: 2;
+}
+
+nav {
+	margin-right: 2%;
+}
+
+#logo_in {
+	color: var(--am);
+	font-size: 20px;
+}
+
+#logo_in:hover {
+	text-shadow: 0vw 0vw 0.7vw white;
+}
+
+.indice {
+	padding-right: 13px;
+	font-size: 14px;
+}
+
+.indice:hover {
+	color: var(--am);
+	text-shadow: 0vw -0.1vw 0.3vw white;
+}

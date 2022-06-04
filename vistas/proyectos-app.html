@@ -7,8 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
   <title>ImagiNeboulux</title>
-  <link href="recursos/estilos/style.css" rel="stylesheet" type="text/css" />
-  <link rel="icon" href="recursos/img/otros/neboulux.png" type="image/x-icon">
+  <link href="../recursos/estilos/style.css" rel="stylesheet" type="text/css" />
+  <link href="../recursos/estilos/navegacion.css" rel="stylesheet" type="text/css" />
+  <link href="../recursos/estilos/inicio-sec.css" rel="stylesheet" type="text/css" />
+  <link href="../recursos/estilos/project-sec.css" rel="stylesheet" type="text/css" />
+  <link href="../recursos/estilos/acerca-sec.css" rel="stylesheet" type="text/css" />
+  <link href="../recursos/estilos/novedades-sec.css" rel="stylesheet" type="text/css" />
+  <link href="../recursos/estilos/contacto-sec.css" rel="stylesheet" type="text/css" />
+  <link href="../recursos/estilos/footer.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="../recursos/img/otros/neboulux.png" type="image/x-icon">
   <meta name="author" content="Andrés Medina">
 </head>
 
@@ -24,7 +31,7 @@
   </header>
   <main>
     <section id="Inicio">
-      <img id="main-img" src="recursos/img/secciones/inicio/maincroppedpic.png">
+      <img id="main-img" src="../recursos/img/secciones/inicio/maincroppedpic.png">
       <div class="contenedor-malla-inicio">
         <div class="grid-item"><h1>Bienvenid@ a</h1></div>
         <div class="grid-item"><p align="right" class="in_text">Me llamo Andrés Medina, pero me puedes llamar AJ</p></div>
@@ -33,7 +40,7 @@
         <div class="align-text-inicio"><p align="right" class="in_text">¡¡Si algún proyecto en mente, puedes contactarme para ponerlo en marcha!!</p></div>
         <div class="align-button-contactar"><a href="#Contacto"><button class="button1">Contactar</button></a></div>
       </div>
-      <div class="video-contenedor">
+      <div id="video-contenedor">
         <h1>Presentación</h1>
         <iframe id="vid-presentation" src="https://www.youtube.com/embed/R7p15hG3BWo" title="Presentacion Neboulux - prueba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
@@ -42,28 +49,22 @@
       <br>
       <div class="centrar-seccion">
         <h2 class="subtitle">Proyectos</h2>
-        <table id="project-table">
-          <tr>
-            <th class="type-project-cell">
-              <img class="type-project-img" src="recursos/img/secciones/proyectos/papps.png">
+        <div id="project-grid">
+          <div class="type-project-column">
+            <div class="type-project-cell">
+              <img class="type-project-img" src="../recursos/img/secciones/proyectos/papps.png">
               <p class="type-project-title">Aplicaciones Web o Móviles</p>
-            </th>
-            <th class="cell-blank">  </th>
-            <th class="type-project-cell">
-              <img class="type-project-img" src="recursos/img/secciones/proyectos/pgames.png">
+            </div>
+            <a href="../index.html#Proyectos"><button class="button2">Cerrar lista</button></a>
+          </div>
+          <div class="type-project-column">
+            <div class="type-project-cell">
+              <img class="type-project-img" src="../recursos/img/secciones/proyectos/pgames.png">
               <p class="type-project-title">Juegos</p>
-            </th>
-          </tr>
-          <tr>
-            <th class="project-button">
-              <button class="button2">Ver lista</button>
-            </th>
-            <th class="cell-blank">  </th>
-            <th class="project-button">
-              <button class="button2">Ver lista</button>
-            </th>
-          </tr>
-        </table>
+            </div>
+            <a href="proyectos-games.html#Proyectos"><button class="button2">Abrir lista</button></a>
+          </div>
+        </div>
         <br>
         <div id="flex-proyectos">
             <div class="proyecto-ico">
@@ -76,11 +77,10 @@
       </div>
     </section>
     <section id="Acercade">
-      <br>
       <div class="centrar-seccion">
         <h2 class="subtitle">Acerca de</h2>
         <fieldset>
-          <legend><h2 class="legend-text" align="center">AJ</h2></legend>
+          <legend><h2 class="legend-text">AJ</h2></legend>
           <div class="contenedor-acerca">
             <table class="tabla-perfil">
               <tr>
@@ -120,12 +120,12 @@
               </tr>
             </table>
             <div class="fondo-foto-perfil">
-              <img class="foto-perfil" src="recursos/img/perfiles/aj/perfil-1.jpg">
+              <img class="foto-perfil" src="../recursos/img/perfiles/aj/perfil-1.jpg">
             </div>
           </div>
           <br>
           <div class="malla-perfil-boton">
-            <a href="vistas/acerca-mapaUEEL.html#Acercade"><button class="button2">Ver más</button></a>
+            <a href="acerca-mapaUEEL.html#Acercade"><button class="button2">Ver más</button></a>
           </div>
           <br>
         </fieldset>
@@ -285,7 +285,6 @@
       </div>
     </section>
     <section id="Contacto">
-      <br>
       <div class="centrar-seccion">
         <h2 class="subtitle">Contacto</h2>
         <div class="centrar-subseccion">
@@ -296,7 +295,7 @@
               <ul class="lista-contacto">
                 <li class="texto-correo">
                   <span>
-                    <img class="ico-correo" src="recursos/img/redes/email.png" alt="Hotmail">
+                    <img class="ico-correo" src="../recursos/img/redes/email.png" alt="Hotmail">
                   </span>
                   <span>
                     ajmedina_jacome@hotmail.com
@@ -309,14 +308,14 @@
               <ul class="lista-contacto">
                   <li class="lista-contacto-redes">
                     <a class="texto-redes" href="https://www.facebook.com/AJmj03" target="_blank">
-                      <img class="ico-facebook" src="recursos/img/redes/facebook.png" alt="Facebook - AJ Medina">
+                      <img class="ico-facebook" src="../recursos/img/redes/facebook.png" alt="Facebook - AJ Medina">
                       AJ Medina
                     </a>
                   </li>
                   <li class="lista-contacto-redes">
                     <a class="texto-redes" href="https://twitter.com/AJ_zro3" target="_blank">
                       <span>
-                        <img class="ico-twitter" src="recursos/img/redes/twitter.png" alt="Twitter - AJ_zro3"></td>
+                        <img class="ico-twitter" src="../recursos/img/redes/twitter.png" alt="Twitter - AJ_zro3"></td>
                       </span>
                       <span>
                         @AJ_zro3
@@ -326,7 +325,7 @@
                   <li class="lista-contacto-redes">
                     <a class="texto-redes" href="https://www.instagram.com/aj_zro3/" target="_blank">
                       <span>
-                        <img class="ico-instagram" src="recursos/img/redes/instagram.svg" alt="Instagram - aJ_zro3">
+                        <img class="ico-instagram" src="../recursos/img/redes/instagram.svg" alt="Instagram - aJ_zro3">
                       </span>
                       <span>
                         aj_zro3
@@ -342,13 +341,10 @@
   </main>
   <footer>
     <p id="foot-text">&copy; 2022 ImagiNeboulux</p>
-    <a id="link-twitch" href="https://www.twitch.tv/neboulux" target="_blank"><img id="icono-twitch-footer" src="recursos/img/redes/twitch.png" alt="Twitch - neboulux"></a>
-    <a id="link-telegram" href="https://t.me/+aEcBczkdVycyNzNh" target="_blank"><img id="icono-telegram-footer" src="recursos/img/redes/telegram.png" alt="Telegram - NebouluxCH"></a>
-    <a id="link-discord" href="https://discord.gg/pPBGP2Pth7" target="_blank"><img id="icono-discord-footer" src="recursos/img/redes/discord.png" alt="Discord - COMNeboulux"></a>
+    <a id="link-twitch" href="https://www.twitch.tv/neboulux" target="_blank"><img id="icono-twitch-footer" src="../recursos/img/redes/twitch.png" alt="Twitch - neboulux"></a>
+    <a id="link-telegram" href="https://t.me/+aEcBczkdVycyNzNh" target="_blank"><img id="icono-telegram-footer" src="../recursos/img/redes/telegram.png" alt="Telegram - NebouluxCH"></a>
+    <a id="link-discord" href="https://discord.gg/pPBGP2Pth7" target="_blank"><img id="icono-discord-footer" src="../recursos/img/redes/discord.png" alt="Discord - COMNeboulux"></a>
   </footer>
-  <!-- 
-  <script src="script.js"></script>
-  -->
 </body>
 
 </html>
