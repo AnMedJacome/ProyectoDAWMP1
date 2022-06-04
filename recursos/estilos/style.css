@@ -141,13 +141,15 @@ h1 {
 }
 
 .video-contenedor {
-	padding-top: 20%;
+	margin-top: 20%;
+	text-align: center;
 }
 
-.vid-presentation {
-	width: 58%;
-	height: 20%;
-	padding-left: 21%;
+#vid-presentation {
+	border-radius: var(--b-radio);
+	width: 58rem;
+	height: 35rem;
+	box-shadow: 0vw 0vw 2vw 0.2vw var(--az-o);
 }
 
 /* SECCIONES */
@@ -380,6 +382,25 @@ h4 {
 
 div.malla-perfil-boton {
 	text-align: center;
+}
+
+.flex-proyectos {
+
+}
+
+.proyecto-ico {
+
+}
+
+.proyecto-ico-size {
+	display: block;
+	background-image: url(../recursos/img/otros/neboulux.png);
+	background-color: white;
+	border-radius: var(--b-radio);
+}
+
+.proyecto-ico-title {
+
 }
 
 /* SECCIÓN NOVEDADES */
