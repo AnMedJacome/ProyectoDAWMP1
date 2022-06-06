@@ -34,3 +34,6 @@ Paralelo: 02.
 * Pseudo-classes - CSS | MDN. (2022). Retrieved 2 June 2022, from https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes
 * Pseudoelementos - CSS | MDN. (2022). Retrieved 2 June 2022, from https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-elements
 * CSS Transitions. (2022). Retrieved 4 June 2022, from https://www.w3schools.com/css/css3_transitions.asp
+* CSS background-size property. (2022). Retrieved 5 June 2022, from https://www.w3schools.com/cssref/css3_pr_background-size.asp
+* Tabler Icons. (2022). Retrieved 5 June 2022, from https://tablericons.com/
+* CSS background-position property. (2022). Retrieved 5 June 2022, from https://www.w3schools.com/cssref/pr_background-position.asp

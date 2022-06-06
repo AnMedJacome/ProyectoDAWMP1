@@ -88,9 +88,9 @@ legend {
 	min-width: 40%;
 	max-height: 80%;
 	min-height: 50%;
-	border: solid#919406;
+	border: solidgray;
 	border-radius: var(--b-radio);
-	background-color: #919406;
+	background-color: gray;
 	box-shadow: 0vw 0vw 5vw -1.25vw black;
 }
 
@@ -100,6 +100,15 @@ legend {
 	margin-top: 2.3%;
 	color: var(--am);
 	text-shadow: var(--tshadow) black;
+}
+
+.malla-perfil-boton {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 80%;
+	margin: auto;
+	padding: 5% 0% 5% 0%;
 }
 
 .flex-forma-academica, .malla-perfil-botones {
@@ -220,6 +229,26 @@ h4 {
 	padding: 5% 0% 5% 0%;
 }
 
-div.malla-perfil-boton {
-	text-align: center;
+
+@media screen and (max-width: 580px) {
+	.contenedor-acerca {
+		flex-direction: column-reverse;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.tabla-perfil {
+		width: 95%;
+	}
+
+	.area-dato, .area-dato-tabla, .titulo-dato, .ultima-area-dato, .titulo-dato-sin-borde {
+		font-size: 1.2vw;
+	}
+
+	.fondo-foto-perfil {
+		width: 50%;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 5%;
+	}
 }

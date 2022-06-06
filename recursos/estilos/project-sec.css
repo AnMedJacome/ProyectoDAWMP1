@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     text-align: center;
-	margin: 3% 0%;
+	margin: 3% 0% 0% 0%;
 }
 
 .type-project-column {
@@ -138,6 +138,46 @@
 	color: var(--az-o);
 }
 
+.malla-nacimiento {
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr 1.5fr 0.5fr;
+    grid-template-rows: 0.5fr 1.5fr 1.5fr 0.5fr;
+    grid-template-areas:
+    '. . . .'
+    '. civil maternidad .'
+    '. f1 f2 .'
+    '. . . .';
+}
+
+.titulo-fecha-civil {
+    grid-area: civil;
+    font-weight: bold;
+}
+
+.titulo-fecha-maternidad {
+    grid-area: maternidad;
+    font-weight: bold;
+}
+
+.fecha1 {
+    grid-area: f1;
+}
+
+.fecha2 {
+    grid-area: f2;
+}
+
+.malla-lanzamiento {
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr 1.5fr 0.5fr;
+    grid-template-rows: 0.5fr 1.5fr 1.5fr 0.5fr;
+    grid-template-areas:
+    '. . . .'
+    '. launch update .'
+    '. d1 d2 .'
+    '. . . .';
+}
+
 .tabla-lanzamiento {
 	width: 90%;
 	border-spacing: 0%;
@@ -150,6 +190,24 @@
 
 .area-dato-lanzamiento {
 	padding: 2% 6%;
+}
+
+.titulo-fecha-launch {
+    grid-area: launch;
+    font-weight: bold;
+}
+
+.titulo-fecha-update {
+    grid-area: update;
+    font-weight: bold;
+}
+
+.date1 {
+    grid-area: d1;
+}
+
+.date2 {
+    grid-area: d2;
 }
 
 #icono-proyecto {

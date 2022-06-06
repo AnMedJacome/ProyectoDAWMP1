@@ -6,6 +6,8 @@
 	--az-c: #0550AF;
 	--tshadow: -0.25vw -0.25vw 0vw;
   	--b-radio: 1vw;
+	--ico-stroke: 2px;
+	--ico-size: 2.5vw;
 }
 
 /* EFECTOS CSS */
@@ -35,9 +37,12 @@ li {
 }
 
 .button1, .button2 {
+	color: black;
+	background-color: white;
 	border-radius: var(--b-radio);
 	box-shadow: 0 0 1rem black;
 	transition: width 0.2 ease;
+	text-align: center;
 }
 
 .button1 {
@@ -59,40 +64,73 @@ li {
 
 .button1:hover {
 	font-size: 1.1vw;
-	width: 11vw;
+	width: 10.5vw;
 }
 
 .button2:hover {
 	font-size: 1.4vw;
-	width: 16vw;
+	width: 15.5vw;
 }
 
 /* SECCIONES */
 .subtitle {
+	display: flex;
+	flex-direction: row;
 	position: sticky;
 	top: 6.5%;
 	border: 2px solid #dbdf01;
 	border-radius: var(--b-radio);
-	font-size: 2.5vw;
 	background-color: var(--am);
 	padding-left: 2%;
+	font-size: 40px;
 	z-index: 3;
+	margin-bottom: 7%;
 }
 
 .centrar-seccion {
-	padding-left: 5%;
-	padding-right: 5%;
+	margin: 3% 5%;
 }
 
-/* VISTA MOVIL */
+#ico-git, #ico-stars, #ico-tabler-message, #ico-user-circle {
+	margin: 0.25% 2%;
+	width: 40px;
+	height: 40px;
+	stroke-width: 2px;
+	stroke: black;
+	fill: none;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
 
-@media screen and (max-width: 700px) {
-	header{
-		height: 80px;
-		flex-direction: column;
+
+@media screen and (max-width: 750px) {
+	.subtitle {
+		top: 8.5%;
+		font-size: 25px;
 	}
 
-	.indice{
-		padding-right: 10px;
+	#ico-git, #ico-stars, #ico-tabler-message, #ico-user-circle {
+		width: 25px;
+		height: 25px;
+	}
+
+	.subtitle {
+		margin-bottom: 20%;
+	}
+
+	.centrar-seccion {
+		margin: 10% 5%;
+	}
+}
+
+
+@media screen and (max-width: 580px) {
+	.subtitle {
+		font-size: 12px;
+	}
+
+	#ico-git, #ico-stars, #ico-tabler-message, #ico-user-circle {
+		width: 12px;
+		height: 12px;
 	}
 }

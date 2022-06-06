@@ -1,4 +1,4 @@
-footer{
+footer {
 	display: grid;
 	grid-template-columns: 1.9fr 0.4fr 0.4fr 0.4fr 1.9fr;
 	grid-template-rows: 0.4fr 1.6fr 1.6fr 0.4fr;
@@ -8,12 +8,12 @@ footer{
 	'. r1 r2 r3 .'
 	'. . . . .';
 	background-color: var(--az-o);
-	height: 10vw;
+	height: 180px;
   	text-align: center;
 	justify-items: center;
 }
 
-#foot-text{
+#foot-text {
 	grid-area: page-name;
 	color: var(--am);
 	width: 100%;
@@ -30,32 +30,50 @@ footer{
 	grid-area: r1;
 }
 
-#icono-twitch-footer {
-	display: block;
-	height: 2vw;
-	width: 1.8vw;
+#icono-twitch-footer, #icono-telegram-footer, #icono-discord-footer {
+	width: var(--ico-size);
+	height: var(--ico-size);
+	stroke-width: var(--ico-stroke);
+	stroke: black;
+	fill: transparent;
+	background-color: white;
+	border-radius: 100%;
+	stroke-linecap: round;
+	stroke-linejoin: round;
 }
 
 #link-telegram {
 	grid-area: r2;
 }
 
-#icono-telegram-footer {
-	display: block;
-	height: 1.8vw;
-	width: 1.8vw;
-}
-
 #link-discord {
 	grid-area: r3;
 }
 
-#icono-discord-footer {
-	display: block;
-	height: 1.6vw;
-	width: 2.3vw;
-}
-
 footer > a:hover {
 	top: -1vw !important;
+}
+
+
+@media screen and (max-width: 750px) {
+	footer {
+		grid-template-columns: 1.4fr 0.7fr 0.8fr 0.7fr 1.4fr;
+		height: 120px;
+	}
+
+	#icono-twitch-footer, #icono-telegram-footer, #icono-discord-footer {
+		width: 20px;
+		height: 20px
+	}
+}
+
+@media screen and (max-width: 580px) {
+	footer {
+		grid-template-columns: 1.4fr 0.7fr 0.8fr 0.7fr 1.4fr;
+	}
+
+	#icono-twitch-footer, #icono-telegram-footer, #icono-discord-footer {
+		width: 15px;
+		height: 15px
+	}
 }

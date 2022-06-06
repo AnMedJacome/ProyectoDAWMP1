@@ -31,105 +31,132 @@
   </header>
   <main>
     <section id="Inicio">
-      <img id="main-img" src="../recursos/img/secciones/inicio/maincroppedpic.png">
-      <div class="contenedor-malla-inicio">
-        <div class="grid-item"><h1>Bienvenid@ a</h1></div>
-        <div class="grid-item"><p align="right" class="in_text">Me llamo Andrés Medina, pero me puedes llamar AJ</p></div>
-        <div class="grid-item"><p class="in_text">Te invito a explorar los proyectos que se han realizado y están en desarrollo...</p></div>
-        <div class="align-button-explorar"><a href="#Proyectos"><button class="button1">Explorar</button></a></div>
-        <div class="align-text-inicio"><p align="right" class="in_text">¡¡Si algún proyecto en mente, puedes contactarme para ponerlo en marcha!!</p></div>
-        <div class="align-button-contactar"><a href="#Contacto"><button class="button1">Contactar</button></a></div>
+      <div id="main-img">
+        <div class="first-title">
+          <h1>Bienvenid@ a</h1>
+        </div>
+        <div class="inicio-item1">
+          <p class="in_text">Me llamo Andrés Medina, pero me puedes llamar AJ</p>
+        </div>
+        <div class="inicio-item2">
+          <p class="in_text">Te invito a explorar los proyectos que se han realizado y están en desarrollo...</p>
+        </div>
+        <div id="align-button-explorar">
+          <a id="btn-explorar" href="#Proyectos">
+            <div class="button1">Explorar</div>
+          </a>
+        </div>
+        <div class="inicio-item3">
+          <p class="in_text">¡¡Si tienes algún proyecto en mente, puedes contactarme para ponerlo en marcha!!</p>
+        </div>
+        <div id="align-button-contactar">
+          <a id="btn-contactar" href="#Contacto">
+            <div class="button1">Contactar</div>
+          </a>
+        </div>
       </div>
       <div id="video-contenedor">
         <h1>Presentación</h1>
-        <iframe id="vid-presentation" src="https://www.youtube.com/embed/R7p15hG3BWo" title="Presentacion Neboulux - prueba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe id="vid-presentation" src="https://www.youtube.com/embed/R7p15hG3BWo" title="Presentacion Neboulux - prueba" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </section>
     <section id="Proyectos">
-      <br>
       <div class="centrar-seccion">
-        <h2 class="subtitle">Proyectos</h2>
+        <h2 class="subtitle">
+          <svg xmlns="http://www.w3.org/2000/svg" id="ico-git" viewBox="0 0 24 24">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <circle cx="16" cy="12" r="1" />
+            <circle cx="12" cy="8" r="1" />
+            <circle cx="12" cy="16" r="1" />
+            <path d="M12 15v-6" />
+            <path d="M15 11l-2 -2" />
+            <path d="M11 7l-1.9 -1.9" />
+            <path d="M10.5 20.4l-6.9 -6.9c-.781 -.781 -.781 -2.219 0 -3l6.9 -6.9c.781 -.781 2.219 -.781 3 0l6.9 6.9c.781 .781 .781 2.219 0 3l-6.9 6.9c-.781 .781 -2.219 .781 -3 0z" />
+          </svg>
+          Proyectos
+        </h2>
         <div id="project-flex">
           <div class="type-project-column">
             <div class="type-project-cell">
-              <img class="type-project-img" src="../recursos/img/secciones/proyectos/papps.png">
+              <img class="type-project-img" src="../recursos/img/secciones/proyectos/papps.png" alt="Proyectos de Aplicaciones Weby Móviles">
               <p class="type-project-title">Aplicaciones Web o Móviles</p>
             </div>
-            <a href="../index.html#Proyectos"><button class="button2">Cerrar lista</button></a>
+            <a href="proyectos-app.html#Proyectos"><div class="button2">Abrir lista</div></a>
           </div>
           <div class="type-project-column">
             <div class="type-project-cell">
-              <img class="type-project-img" src="../recursos/img/secciones/proyectos/pgames.png">
+              <img class="type-project-img" src="../recursos/img/secciones/proyectos/pgames.png" alt="Proyectos de Aplicaciones / Juegos">
               <p class="type-project-title">Juegos</p>
             </div>
-            <a href="proyectos-games.html#Proyectos"><button class="button2">Abrir lista</button></a>
+            <a href="proyectos-games.html#Proyectos"><div class="button2">Abrir lista</div></a>
           </div>
         </div>
-        <br>
 <!--  --------------------  EFECTO DESPLIEGUE  --------------------  -->
         <div id="flex-proyectos">
-            <div class="proyecto-ico-seleccionado">
-                <img class="proyecto-ico-size" src="../recursos/img/otros/neboulux.png">
-                <p class="proyecto-ico-title">"PROYECTO CORTO EJEMPLO 1"</p>
-            </div>
-            <div class="proyecto-ico">
-                <img class="proyecto-ico-size" src="../recursos/img/otros/neboulux.png">
-                <p class="proyecto-ico-title">"PROYECTO EXTENSO EJEMPLO 3"</p>
-            </div>
-            <div class="proyecto-ico">
-                <img class="proyecto-ico-size" src="../recursos/img/otros/neboulux.png">
-                <p class="proyecto-ico-title">"PROYECTO 4"</p>
-            </div>
-        </div>
-        <div id="info-proyecto-flex">
-          <table id="tabla-info-proyecto">
-            <tr>
-              <th class="titulo-dato-proyecto">Título:</th>
-              <td class="area-dato-proyecto">Proyecto corto ejemplo 1</td>
-            </tr>
-            <tr>
-              <th class="titulo-dato-proyecto">Plataforma(s):</th>
-              <td class="area-dato-proyecto">PC</td>
-            </tr>
-            <tr>
-              <th class="titulo-dato-proyecto">Colaboración:</th>
-              <td class="area-dato-proyecto">No</td>
-            </tr>
-            <tr>
-              <th class="titulo-dato-proyecto">Fecha de lanzamiento:</th>
-              <td class="area-dato-tabla-proyecto">
-                <table class="tabla-lanzamiento">
-                  <tr>
-                    <th class="area-dato-lanzamiento">lanzamiento/Entrega</th>
-                    <th class="area-dato-lanzamiento">Última actualización</th>
-                  </tr>
-                  <tr>
-                    <td  class="area-dato-lanzamiento">--/--/----</td>
-                    <td  class="area-dato-lanzamiento">--/--/----<td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <th class="titulo-dato-proyecto-sin-borde">Descripción:</th>
-              <td class="ultima-area-dato-proyecto">
-                <p>Descripción del proyecto 1... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pretium vel augue vel blandit. In vulputate scelerisque nisl, tincidunt tincidunt enim feugiat et.</p>
-              </td>
-            </tr>
-          </table>
-          <div id="icono-proyecto">
-            <h3 id="project-ico-title">Ícono - PROYECTO CORTO EJEMPLO 1</h3>
-            <img id="project-big-img" src="../recursos/img/otros/neboulux.png">
+          <div class="proyecto-ico-seleccionado">
+              <img class="proyecto-ico-size" src="../recursos/img/otros/neboulux.png">
+              <p class="proyecto-ico-title">"PROYECTO CORTO EJEMPLO 1"</p>
+          </div>
+          <div class="proyecto-ico">
+              <img class="proyecto-ico-size" src="../recursos/img/otros/neboulux.png">
+              <p class="proyecto-ico-title">"PROYECTO EXTENSO EJEMPLO 3"</p>
+          </div>
+          <div class="proyecto-ico">
+              <img class="proyecto-ico-size" src="../recursos/img/otros/neboulux.png">
+              <p class="proyecto-ico-title">"PROYECTO 4"</p>
           </div>
         </div>
-        <br>
+        <div id="info-proyecto-flex">
+        <table id="tabla-info-proyecto">
+          <tr>
+            <th class="titulo-dato-proyecto">Título:</th>
+            <td class="area-dato-proyecto">Proyecto corto ejemplo 1</td>
+          </tr>
+          <tr>
+            <th class="titulo-dato-proyecto">Plataforma(s):</th>
+            <td class="area-dato-proyecto">PC</td>
+          </tr>
+          <tr>
+            <th class="titulo-dato-proyecto">Colaboración:</th>
+            <td class="area-dato-proyecto">No</td>
+          </tr>
+          <tr>
+            <th class="titulo-dato-proyecto">Fecha de lanzamiento:</th>
+            <td class="area-dato-tabla-proyecto">
+              <div class="malla-lanzamiento">
+                <div class="area-dato-lanzamiento titulo-fecha-launch">Lanzamiento/Entrega</div>
+                <div class="area-dato-lanzamiento titulo-fecha-update">Última actualización</div>
+                <div class="area-dato-lanzamiento date1">--/--/----</div>
+                <div class="area-dato-lanzamiento date2">--/--/----</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th class="titulo-dato-proyecto-sin-borde">Descripción:</th>
+            <td class="ultima-area-dato-proyecto">
+              <p>Descripción del proyecto 1... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pretium vel augue vel blandit. In vulputate scelerisque nisl, tincidunt tincidunt enim feugiat et.</p>
+            </td>
+          </tr>
+        </table>
+        <div id="icono-proyecto">
+          <h3 id="project-ico-title">Ícono - PROYECTO CORTO EJEMPLO 1</h3>
+          <img id="project-big-img" src="../recursos/img/otros/neboulux.png">
+        </div>
+        </div>
 <!--  --------------------  EFECTO DESPLIEGUE  --------------------  -->
       </div>
     </section>
     <section id="Acercade">
-      <br>
       <div class="centrar-seccion">
-        <h2 class="subtitle">Acerca de</h2>
+        <h2 class="subtitle">
+          <svg xmlns="http://www.w3.org/2000/svg" id="ico-user-circle" viewBox="0 0 24 24">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <circle cx="12" cy="12" r="9" />
+            <circle cx="12" cy="10" r="3" />
+            <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
+          </svg>
+          Acerca de
+        </h2>
         <fieldset>
           <legend><h2 class="legend-text">AJ</h2></legend>
           <div class="contenedor-acerca">
@@ -153,39 +180,46 @@
               <tr>
                 <th class="titulo-dato">Fecha de nacimiento:</th>
                 <td class="area-dato-tabla">
-                  <table class="tabla-nacimiento">
-                    <tr>
-                      <th class="area-dato-nacimiento">Según Registro Civil</th>
-                      <th class="area-dato-nacimiento">Según Maternidad</th>
-                    </tr>
-                    <tr>
-                      <td  class="area-dato-nacimiento">11/02/2001</td>
-                      <td  class="area-dato-nacimiento">10/02/2001<td>
-                    </tr>
-                  </table>
+                  <div class="malla-nacimiento">
+                    <div class="area-dato-nacimiento titulo-fecha-civil">Según Registro Civil</div>
+                    <div class="area-dato-nacimiento titulo-fecha-maternidad">Según Maternidad</div>
+                    <div class="area-dato-nacimiento fecha1">11/02/2001</div>
+                    <div class="area-dato-nacimiento fecha2">10/02/2001</div>
+                  </div>
                 </td>
               </tr>
               <tr>
                 <th class="titulo-dato-sin-borde">Descripción:</th>
-                <td class="ultima-area-dato"><p>Futuro ingeniero en computación dedicado y dispuesto a ayudar con el desarrollo de soluciones mediante software, además de realizar proyectos que ofrezcan beneficios/entretenimiento a los usuarios.</p></td>
+                <td class="ultima-area-dato">
+                  <p>Futuro ingeniero en computación dedicado y dispuesto a ayudar con el desarrollo de soluciones mediante software, además de realizar proyectos que ofrezcan beneficios/entretenimiento a los usuarios.</p>
+                </td>
               </tr>
             </table>
             <div class="fondo-foto-perfil">
-              <img class="foto-perfil" src="../recursos/img/secciones/acerca/aj/perfil-1.jpg">
+              <img class="foto-perfil" src="../recursos/img/secciones/acerca/aj/perfil-1.jpg" alt="Foto perfil - AJ">
             </div>
           </div>
           <br>
           <div class="malla-perfil-boton">
-            <a href="acerca-mapaUEEL.html#Acercade"><button class="button2">Ver más</button></a>
+            <a href="acerca-mapaUEEL.html#Acercade">
+              <div class="button2">Ver más</div>
+            </a>
           </div>
           <br>
         </fieldset>
       </div>
     </section>
     <section id="Novedades">
-      <br>
       <div class="centrar-seccion">
-        <h2 class="subtitle">Novedades</h2>
+        <h2 class="subtitle">
+          <svg xmlns="http://www.w3.org/2000/svg" id="ico-stars" viewBox="0 0 24 24">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M17.8 19.817l-2.172 1.138a0.392 .392 0 0 1 -.568 -.41l.415 -2.411l-1.757 -1.707a0.389 .389 0 0 1 .217 -.665l2.428 -.352l1.086 -2.193a0.392 .392 0 0 1 .702 0l1.086 2.193l2.428 .352a0.39 .39 0 0 1 .217 .665l-1.757 1.707l.414 2.41a0.39 .39 0 0 1 -.567 .411l-2.172 -1.138z" />
+            <path d="M6.2 19.817l-2.172 1.138a0.392 .392 0 0 1 -.568 -.41l.415 -2.411l-1.757 -1.707a0.389 .389 0 0 1 .217 -.665l2.428 -.352l1.086 -2.193a0.392 .392 0 0 1 .702 0l1.086 2.193l2.428 .352a0.39 .39 0 0 1 .217 .665l-1.757 1.707l.414 2.41a0.39 .39 0 0 1 -.567 .411l-2.172 -1.138z" />
+            <path d="M12 9.817l-2.172 1.138a0.392 .392 0 0 1 -.568 -.41l.415 -2.411l-1.757 -1.707a0.389 .389 0 0 1 .217 -.665l2.428 -.352l1.086 -2.193a0.392 .392 0 0 1 .702 0l1.086 2.193l2.428 .352a0.39 .39 0 0 1 .217 .665l-1.757 1.707l.414 2.41a0.39 .39 0 0 1 -.567 .411l-2.172 -1.138z" />
+          </svg>
+          Novedades
+        </h2>
         <p id="texto-introductorio-novedad">
           <b>
             Revisa las próximas actualizaciones, califícalas y envía tu opinión sobre cada uno de los proyectos que le interesa. Recuerda que la calificación es completamente OPCIONAL pero sirve de apoyo para mejorar.
@@ -194,10 +228,12 @@
         <div id="flex-nov">
           <div id="malla-nov-lista-proyectos">
             <div><p id="subt-sec-nov">Proyectos</p></div>
-            <div class="lista-proyecto"><button class="btn-project-seleccionado">PROYECTO CORTO EJEMPLO 1</button></div>
-            <div class="lista-proyecto"><button class="btn-project">PROYECTO 2</button></div>
-            <div class="lista-proyecto"><button class="btn-project">PROYECTO EXTENSO EJEMPLO 3</button></div>
-            <div class="lista-proyecto"><button class="btn-project">PROYECTO 4</button></div>
+            <div class="lista-proyectos">
+              <div class="lista-proyecto-item"><button class="btn-project-seleccionado">PROYECTO CORTO EJEMPLO 1</button></div>
+              <div class="lista-proyecto-item"><button class="btn-project">PROYECTO 2</button></div>
+              <div class="lista-proyecto-item"><button class="btn-project">PROYECTO EXTENSO EJEMPLO 3</button></div>
+              <div class="lista-proyecto-item"><button class="btn-project">PROYECTO 4</button></div>
+            </div>
           </div>
           <div id="pantalla-votacion">
             <div><p class="subt-nov-vot">Descripción</p></div>
@@ -208,7 +244,7 @@
             </div>
             <div><p class="subt-nov-vot">Nuevas características</p></div>
             <div class="contenedor-votacion">
-                <ol>
+                <ol id="caracteristicas-votacion">
                   <li class="texto-votacion">
                     <b>Característica 1:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur sem mi, in hendrerit magna consectetur porttitor.
                   </li>
@@ -331,22 +367,34 @@
             <br>
             <button id="button1-1">Enviar</button>
             <br>
-        </div>
+          </div>
         </div>
       </div>
     </section>
     <section id="Contacto">
       <div class="centrar-seccion">
-        <h2 class="subtitle">Contacto</h2>
+        <h2 class="subtitle">
+          <svg xmlns="http://www.w3.org/2000/svg" id="ico-tabler-message" viewBox="0 0 24 24">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" />
+            <line x1="8" y1="9" x2="16" y2="9" />
+            <line x1="8" y1="13" x2="14" y2="13" />
+          </svg>
+          Contacto
+        </h2>
         <div class="centrar-subseccion">
           <h5 class="subseccion-contacto">AJ</h5>
           <div class="info-contacto">
-            <div>
+            <div >
               <h5>Correo Electrónico</h5>
               <ul class="lista-contacto">
                 <li class="texto-correo">
                   <span>
-                    <img class="ico-correo" src="../recursos/img/redes/email.png" alt="Hotmail">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ico-correo" viewBox="0 0 24 24">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                      <rect x="3" y="5" width="18" height="14" rx="2" />
+                      <polyline points="3 7 12 13 21 7" />
+                    </svg>
                   </span>
                   <span>
                     ajmedina_jacome@hotmail.com
@@ -356,38 +404,43 @@
             </div>
             <div class="malla-redes">
               <h5>Redes Sociales</h5>
-              <ul class="lista-contacto">
-                  <li class="lista-contacto-redes">
-                    <a href="https://www.facebook.com/AJmj03" target="_blank">
-                      <span>
-                        <img class="ico-facebook" src="../recursos/img/redes/facebook.png" alt="Facebook - AJ Medina">
-                      </span>
-                      <span>
-                        AJ Medina
-                      </span>
-                    </a>
-                  </li>
-                  <li class="lista-contacto-redes">
-                    <a href="https://twitter.com/AJ_zro3" target="_blank">
-                      <span>
-                        <img class="ico-twitter" src="../recursos/img/redes/twitter.png" alt="Twitter - AJ_zro3"></td>
-                      </span>
-                      <span>
-                        @AJ_zro3
-                      </span>
-                    </a>
-                  </li>
-                  <li class="lista-contacto-redes">
-                    <a href="https://www.instagram.com/aj_zro3/" target="_blank">
-                      <span>
-                        <img class="ico-instagram" src="../recursos/img/redes/instagram.svg" alt="Instagram - aJ_zro3">
-                      </span>
-                      <span>
-                        aj_zro3
-                      </span>
-                    </a>
-                  </li>
-              </ul>
+              <div class="lista-contacto">
+                <a class="lista-contacto-redes" href="https://www.facebook.com/AJmj03" target="_blank">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ico-facebook" viewBox="0 0 24 24">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+                    </svg>
+                  </span>
+                  <span>
+                    AJ Medina
+                  </span>
+                </a>
+                <a class="lista-contacto-redes" href="https://twitter.com/AJ_zro3" target="_blank">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ico-twitter" viewBox="0 0 24 24">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                      <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+                    </svg>
+                  </span>
+                  <span>
+                    @AJ_zro3
+                  </span>
+                </a>
+                <a class="lista-contacto-redes" href="https://www.instagram.com/aj_zro3/" target="_blank">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ico-instagram" viewBox="0 0 24 24">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                      <rect x="4" y="4" width="16" height="16" rx="4" />
+                      <circle cx="12" cy="12" r="3" />
+                      <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+                    </svg>
+                  </span>
+                  <span>
+                    aj_zro3
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -396,9 +449,31 @@
   </main>
   <footer>
     <p id="foot-text">&copy; 2022 ImagiNeboulux</p>
-    <a id="link-twitch" href="https://www.twitch.tv/neboulux" target="_blank"><img id="icono-twitch-footer" src="../recursos/img/redes/twitch.png" alt="Twitch - neboulux"></a>
-    <a id="link-telegram" href="https://t.me/+aEcBczkdVycyNzNh" target="_blank"><img id="icono-telegram-footer" src="../recursos/img/redes/telegram.png" alt="Telegram - NebouluxCH"></a>
-    <a id="link-discord" href="https://discord.gg/pPBGP2Pth7" target="_blank"><img id="icono-discord-footer" src="../recursos/img/redes/discord.png" alt="Discord - COMNeboulux"></a>
+    <a id="link-twitch" href="https://www.twitch.tv/neboulux" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" id="icono-twitch-footer" viewBox="0 0 24 24">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M4 5v11a1 1 0 0 0 1 1h2v4l4 -4h5.584c.266 0 .52 -.105 .707 -.293l2.415 -2.414c.187 -.188 .293 -.442 .293 -.708v-8.585a1 1 0 0 0 -1 -1h-14a1 1 0 0 0 -1 1z" />
+        <line x1="16" y1="8" x2="16" y2="12" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+      </svg>
+    </a>
+    <a id="link-telegram" href="https://t.me/+aEcBczkdVycyNzNh" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" id="icono-telegram-footer" viewBox="0 0 24 24">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+      </svg>
+    </a>
+    <a id="link-discord" href="https://discord.gg/pPBGP2Pth7" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" id="icono-discord-footer" viewBox="0 0 24 24">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="9" cy="12" r="1" />
+        <circle cx="15" cy="12" r="1" />
+        <path d="M7.5 7.5c3.5 -1 5.5 -1 9 0" />
+        <path d="M7 16.5c3.5 1 6.5 1 10 0" />
+        <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-1 2.5" />
+        <path d="M8.5 17c0 1 -1.356 3 -1.832 3c-1.429 0 -2.698 -1.667 -3.333 -3c-.635 -1.667 -.476 -5.833 1.428 -11.5c1.388 -1.015 2.782 -1.34 4.237 -1.5l1 2.5" />
+      </svg>
+    </a>
   </footer>
 </body>
 

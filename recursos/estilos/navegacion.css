@@ -6,6 +6,7 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	padding: 13px;
+	top: 0;
 	position: fixed;
 	z-index: 4;
 }
@@ -24,11 +25,43 @@ nav {
 }
 
 .indice {
-	padding-right: 13px;
+	margin: 0px 11px;
 	font-size: 14px;
 }
 
 .indice:hover {
 	color: var(--am);
 	text-shadow: 0vw -0.1vw 0.3vw white;
+}
+
+/* VISTA MOVIL */
+
+@media screen and (max-width: 750px) {
+	header {
+		background-color: black;
+		flex-direction: column;
+		height: 5%;
+	}
+
+	#logo_in {
+		font-size: 14px;
+	}
+
+	.indice{
+		font-size: 10px;
+		margin: 0px 10px;
+	}
+}
+
+
+
+@media screen and (max-width: 320px) {
+	#logo_in {
+		font-size: 3.8vw;
+	}
+
+	.indice{
+		font-size: 2.7vw;
+		margin: 0px 10px;
+	}
 }
