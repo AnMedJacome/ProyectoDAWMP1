@@ -60,7 +60,7 @@ h1 {
 
 /* VISTA MOVIL */
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 780px) {
 	#main-img {
 		display: grid;
 		background-image: url(../img/secciones/inicio/mainpic.png);

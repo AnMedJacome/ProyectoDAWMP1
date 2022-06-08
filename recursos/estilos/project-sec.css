@@ -1,17 +1,15 @@
 #project-flex {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-around;
     text-align: center;
-	margin: 3% 0% 0% 0%;
 }
 
 .type-project-column {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30%;
+    width: 25vw;
 }
 
 .type-project-cell {
@@ -224,4 +222,15 @@
 #project-big-img {
     width: 100%;
     background-color: gray;
+}
+
+@media screen and (max-width: 580px) {
+    #project-flex {
+        flex-direction: column;
+    }
+
+    .type-project-cell {
+        height: 90vw;
+        width: 35vw;
+    }
 }

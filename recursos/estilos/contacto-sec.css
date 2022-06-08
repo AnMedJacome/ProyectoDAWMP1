@@ -75,7 +75,7 @@ h5 {
 }
 
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 780px) {
 	
 	.info-contacto {
 		grid-template-columns: 40% 60%;

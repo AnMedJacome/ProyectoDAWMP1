@@ -1,7 +1,7 @@
 header {
 	background-color: black;
 	display: flex;
-	height: 20px;
+	height: 4rem;
 	width: 100%;
 	justify-content: space-between;
 	align-items: center;
@@ -17,7 +17,7 @@ nav {
 
 #logo_in {
 	color: var(--am);
-	font-size: 20px;
+	font-size: 1.5rem;
 }
 
 #logo_in:hover {
@@ -25,8 +25,8 @@ nav {
 }
 
 .indice {
-	margin: 0px 11px;
-	font-size: 14px;
+	margin: 0rem 1rem;
+	font-size: 1rem;
 }
 
 .indice:hover {
@@ -34,34 +34,90 @@ nav {
 	text-shadow: 0vw -0.1vw 0.3vw white;
 }
 
-/* VISTA MOVIL */
-
 @media screen and (max-width: 750px) {
 	header {
 		background-color: black;
 		flex-direction: column;
-		height: 5%;
+		height: 10%;
 	}
 
 	#logo_in {
-		font-size: 14px;
+		font-size: 1rem;
 	}
 
 	.indice{
-		font-size: 10px;
+		font-size: 0.75rem;
 		margin: 0px 10px;
 	}
 }
 
 
-
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 580px) {
+  
 	#logo_in {
-		font-size: 3.8vw;
+		font-size: 0.75rem;
 	}
 
 	.indice{
-		font-size: 2.7vw;
-		margin: 0px 10px;
+		font-size: 0.5rem;
+		margin: 0rem 0.2rem;
+	}
+}
+
+/* VISTA MOVIL */
+
+
+/* HORIZONTAL */
+
+@media (max-device-width: 1024px) and (orientation: landscape) {
+	header {
+		height: 3.8rem;
+	}
+}
+
+/* VERTICAL */
+
+@media (max-device-width: 780px) and (orientation: portrait)  {
+	header {
+		flex-direction: column;
+		height: 4.5rem;
+	}
+
+	#logo_in {
+		color: blue;
+		font-size: 1rem;
+	}
+
+	.indice{
+		font-size: 0.75rem;
+		margin: 0rem 0.2rem;
+	}
+}
+
+@media (max-device-width: 580px) and (orientation: portrait)  {
+	#logo_in {
+		color: green;
+		font-size: 1rem;
+	}
+
+	.indice{
+		font-size: 0.5rem;
+		margin: 0rem 0.1rem;
+	}
+}
+
+@media (max-device-width: 340px) and (orientation: portrait)  {
+	header {
+		height: 3.5rem;
+	}
+
+	#logo_in {
+		color: violet;
+		font-size: 0.8rem;
+	}
+
+	.indice{
+		font-size: 0.5rem;
+		margin: 0rem 0.2rem;
 	}
 }
