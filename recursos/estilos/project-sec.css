@@ -220,17 +220,9 @@
 }
 
 #project-big-img {
-    width: 100%;
+    min-width: 10vw;
+    max-width: 20vw;
+    min-height: 10vw;
+    max-height: 15vw;
     background-color: gray;
-}
-
-@media screen and (max-width: 580px) {
-    #project-flex {
-        flex-direction: column;
-    }
-
-    .type-project-cell {
-        height: 90vw;
-        width: 35vw;
-    }
 }

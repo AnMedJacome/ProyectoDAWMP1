@@ -109,7 +109,7 @@ li {
 }
 
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 780px) and (orientation: portrait) {
 
 	.centrar-seccion {
 		margin-bottom: 3rem;
@@ -117,17 +117,17 @@ li {
 	
 	.subtitle {
 		top: 4.4rem;
-		font-size: 25px;
+		font-size: 2rem;
 	}
 
 	#ico-git, #ico-stars, #ico-tabler-message, #ico-user-circle {
-		width: 1.5rem;
-		height: 1.5rem;
+		width: 2.4rem;
+		height: 2.4rem;
 	}
 }
 
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 580px) and (orientation: portrait) {
 
 	.centrar-seccion {
 		margin-bottom: 1.8rem;
@@ -140,5 +140,80 @@ li {
 	#ico-git, #ico-stars, #ico-tabler-message, #ico-user-circle {
 		width: 0.7rem;
 		height: 0.7rem;
+	}
+}
+
+/* VISTA MÓVIL */
+
+/* HORIZONTAL */
+
+@media (max-device-width: 1024px) and (orientation: landscape) {
+	.subtitle { 
+		top: 3.8rem;
+		font-size: 2rem;
+	}
+
+	#ico-git, #ico-stars, #ico-tabler-message, #ico-user-circle {
+		width: 2.6rem;
+		height: 2.6rem;
+	}
+}
+
+
+/* VERTICAL */
+
+@media (max-device-width: 780px) and (orientation: portrait)  {
+	header {
+		flex-direction: column;
+		height: 4.5rem;
+	}
+
+	#logo_in {
+		font-size: 1rem;
+	}
+
+	.indice{
+		font-size: 0.75rem;
+		margin: 0rem 0.2rem;
+	}
+}
+
+@media (max-device-width: 580px) and (orientation: portrait)  {
+	#logo_in {
+		font-size: 1rem;
+	}
+
+	.indice{
+		font-size: 0.5rem;
+		margin: 0rem 0.1rem;
+	}
+}
+
+@media (max-device-width: 340px) and (orientation: portrait)  {
+	header {
+		height: 3.5rem;
+	}
+
+	#logo_in {
+		font-size: 0.8rem;
+	}
+
+	.indice{
+		font-size: 0.5rem;
+	}
+}
+
+@media (max-device-width: 240px) and (orientation: portrait)  {
+	header {
+		height: 3.3rem;
+	}
+
+	#logo_in {
+		font-size: 0.6rem;
+	}
+
+	.indice{
+		font-size: 0.4rem;
+		margin: 0rem 0.1rem;
 	}
 }
