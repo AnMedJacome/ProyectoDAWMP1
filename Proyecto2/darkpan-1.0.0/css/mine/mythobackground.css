@@ -1,0 +1,18 @@
+.mytho-background-img {
+    display: inline-block;
+    background-image: url('../../img/page-background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.mytho-background-mask {
+    /* fallback for old browsers */
+    background: #3a1254;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to top, rgba(58, 18, 84, 0.85), rgba(5, 61, 47, 0.85));
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to top, rgba(58, 18, 84, 0.85), rgba(5, 61, 47, 0.85))
+}
