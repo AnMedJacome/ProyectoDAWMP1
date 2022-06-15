@@ -1,6 +1,6 @@
 # Página web - Imagine Neboulux
 
-Página web personalizada.
+Sitio web de presentación de mi perfil laboral donde presento mi información pública y una lista de proyectos que he realizado hasta la fecha.
 
 Creado por: Andrés Medina Jácome.
 
@@ -37,3 +37,9 @@ Paralelo: 02.
 * CSS background-size property. (2022). Retrieved 5 June 2022, from https://www.w3schools.com/cssref/css3_pr_background-size.asp
 * Tabler Icons. (2022). Retrieved 5 June 2022, from https://tablericons.com/
 * CSS background-position property. (2022). Retrieved 5 June 2022, from https://www.w3schools.com/cssref/pr_background-position.asp
+
+## Vista previa
+
+Vista web | Vista móvil
+--- | ---
+![Navegador: Chrome](recursos/img/otros/vista-web.png) | ![Navegador: Opera GX](recursos/img/otros/vista-movil.jpg)

@@ -70,7 +70,7 @@
 .spinner-mytho-border {
     display:inline-block;
     background-color: var(--turquesa-claro);
-    background-image: url(../../img/mythoicon.png);
+    background-image: url(../img/mythoicon.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 3rem;
@@ -85,7 +85,7 @@
 .spinner-mytho-grow {
     display:inline-block;
     background-color: var(--turquesa-claro);
-    background-image: url(../../img/mythoicon.png);
+    background-image: url(../img/mythoicon.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 3rem;

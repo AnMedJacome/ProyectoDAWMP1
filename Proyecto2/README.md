@@ -1,6 +1,10 @@
-# ProyectoDAWMP2
+# Página web - Mythocraft Network
+
+Sitio web de un servidor del juego Minecraft cuya finalidad tiene mostrar datos procesados por medio de gráficos estadísticos considerando variables como tiempo de juego en el servidor, número de jugadores, entre otras.
 
 Creado por: Andrés Medina
+
+Paralelo: 02.
 
 ## Referencias
 * (2022). Retrieved 12 June 2022, from https://www.youtube.com/watch?v=_fd5J5k9KZ0
