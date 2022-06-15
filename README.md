@@ -22,7 +22,9 @@ En este repositorio se encuentran proyectos desarrollados con fines académicos 
       <td align="center">
         <img src="Proyecto1/recursos/img/otros/neboulux.png">
       </td>
-      <td align="center">ImagiNeboulux</td>
+      <td align="center">
+        <a href="Proyecto1">ImagiNeboulux</a>
+      </td>
       <td align="center">
         Sitio web de presentación de mi perfil laboral donde presento mi información pública y una lista de proyectos que he realizado hasta la fecha.
       </td>
@@ -32,7 +34,9 @@ En este repositorio se encuentran proyectos desarrollados con fines académicos 
       <td align="center">
         <img src="Proyecto2/recursos/img/mythoicon.png">
       </td>
-      <td align="center">MythoCraft Network</td>
+      <td align="center">
+        <a href="Proyecto2">MythoCraft Network</a>
+      </td>
       <td align="center">
         Sitio web de un servidor del juego Minecraft cuya finalidad tiene mostrar datos procesados por medio de gráficos estadísticos considerando variables como tiempo de juego en el servidor, número de jugadores, entre otras.
       </td>

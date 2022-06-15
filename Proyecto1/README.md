@@ -6,6 +6,12 @@ Creado por: Andrés Medina Jácome.
 
 Paralelo: 02.
 
+## Vista previa
+
+Vista web | Vista móvil
+--- | ---
+![Navegador: Chrome](recursos/img/otros/vista-web.png) | ![Navegador: Opera GX](recursos/img/otros/vista-movil.jpg)
+
 ## Referencias
 * HTML Favicon: A How-To Guide. (2020). Retrieved 21 May 2022, from https://careerkarma.com/blog/html-favicon/#:~:text=What%20is%20an%20HTML%20Favicon,in%20embedded%20lists%20of%20links.
 * HTML fieldset tag. (2022). Retrieved 21 May 2022, from https://www.w3schools.com/tags/tag_fieldset.asp
@@ -37,9 +43,3 @@ Paralelo: 02.
 * CSS background-size property. (2022). Retrieved 5 June 2022, from https://www.w3schools.com/cssref/css3_pr_background-size.asp
 * Tabler Icons. (2022). Retrieved 5 June 2022, from https://tablericons.com/
 * CSS background-position property. (2022). Retrieved 5 June 2022, from https://www.w3schools.com/cssref/pr_background-position.asp
-
-## Vista previa
-
-Vista web | Vista móvil
---- | ---
-![Navegador: Chrome](recursos/img/otros/vista-web.png) | ![Navegador: Opera GX](recursos/img/otros/vista-movil.jpg)
