@@ -1,6 +1,6 @@
 # Página web - AnIndeX
 
-Sitio web enfocado en mostrar en gráficos estadísticos sobre el número de ![animes](https://anime-para-el-kokoro.fandom.com/es/wiki/%C2%BFQue_es_el_anime%3F) y ![mangas](https://anime-para-el-kokoro.fandom.com/es/wiki/%C2%BFQu%C3%A9_es_el_manga%3F) según su género, estado de emisión, temporada (época del año), en el caso de los animes se muestra un indicador de los tipos, ya sean TV, OVA o Pelicula. Cabe recalcar que existen varias formas de filtrar información con estas dos variables, en especial porque los valores son relativamente grandes. Además, tambien presenta una lista de anime y manga con la opción de filtrar por género especifico o estado de emisión del mismo y ordenarlos según su popularidad.
+Sitio web enfocado en mostrar en gráficos estadísticos sobre el número de [animes](https://anime-para-el-kokoro.fandom.com/es/wiki/%C2%BFQue_es_el_anime%3F) y [mangas](https://anime-para-el-kokoro.fandom.com/es/wiki/%C2%BFQu%C3%A9_es_el_manga%3F) según su género, estado de emisión, temporada (época del año), en el caso de los animes se muestra un indicador de los tipos, ya sean TV, OVA o Pelicula. Cabe recalcar que existen varias formas de filtrar información con estas dos variables, en especial porque los valores son relativamente grandes. Además, tambien presenta una lista de anime y manga con la opción de filtrar por género especifico o estado de emisión del mismo y ordenarlos según su popularidad.
 
 Creado por: Andrés Medina
 
@@ -8,7 +8,7 @@ Paralelo: 02.
 
 ## API de la página elegida
 
-Esta información es obtenida de la página !["JIKAN"](https://jikan.moe/), la cual ofrece una API que extrae datos recopilados de la página ![MyAnimeList](https://myanimelist.net/) que permite crear una lista de anime y manga, además de dar la oportunidad de calificar los mismos según su preferencia.
+Esta información es obtenida de la página ["JIKAN"](https://jikan.moe/), la cual ofrece una API que extrae datos recopilados de la página [MyAnimeList](https://myanimelist.net/) que permite crear una lista de anime y manga, además de dar la oportunidad de calificar los mismos según su preferencia.
 
 Enlace a documento de API: https://docs.api.jikan.moe/#tag/anime
 
