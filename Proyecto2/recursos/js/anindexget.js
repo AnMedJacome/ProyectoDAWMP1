@@ -1,5 +1,6 @@
 var total_pages = 1;
-var this_page = 1;
+var this_page = 0;
+var count_element = 0;
 const tabla = document.querySelector('table.ani-table-info-1 tbody.ani-body');
 
 function paginacion(data) {
@@ -7,16 +8,17 @@ function paginacion(data) {
     let arreglo = data['data']
     let contador = 1;
     for (anime of arreglo) {
+
         let url = anime['url'];
         let img_url = anime['images']['jpg']['image_url'];
         let nombre = anime['title'];
         let estatus = anime['status'] === "Not yet aired" ? "Próximamente" : (anime['status'] === "Finished Airing" ? "Finalizado" : "En emisión");
         let tipo = anime['type'] === "TV" ? "TV" : (anime['type'] === "Movie" ? "Película" : "OVA");
-        let num_episodios = anime['episodes'] === null ? "Próximamente" : anime['episodes'];
+        let num_episodios = anime['episodes'] === null ? "No hay dato" : anime['episodes'];
 
         let query = `
             <tr>
-                <th scope="row">${contador++*this_page}</th>
+                <th scope="row">${(contador++)+(count_element*this_page)}</th>
                 <td>
                     <div class="d-flex flex-column align-items-center justify-content-center text-align-center">
                         <img
@@ -60,7 +62,7 @@ function mostrarPagina() {
         if (page > 0 && page <= total_pages) {
             let url = `https://api.jikan.moe/v4/anime?page=${page}`
             fetch(url).then(response => response.json()).then(data => {
-                this_page = page
+                this_page = page - 1
                 paginacion(data)
                 texto.setAttribute('placeholder', valor);
                 texto.textContent = '';
@@ -82,7 +84,9 @@ function mostrarPagina() {
 let cargarDatos = () => {
     let url = `https://api.jikan.moe/v4/anime?page=1`
     fetch(url).then(response => response.json()).then(data => {
-        total_pages = Math.ceil(parseInt(data['pagination']['items']['total'], 10) / 25);
+        let paginas = data['pagination']['items']
+        total_pages = Math.ceil(parseInt(paginas['total'], 10) / 25);
+        count_element = parseInt(paginas['count'])
         const after = document.querySelector('li.ani-pitem-d');
         let li = document.createElement('li');
         li.id = 'ani-pitem-r'

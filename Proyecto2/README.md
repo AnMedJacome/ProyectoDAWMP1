@@ -26,6 +26,16 @@ Enlace a documento de API: https://docs.api.jikan.moe/#tag/anime
 * Expresiones Regulares - JavaScript | MDN. (2022). Retrieved 22 June 2022, from https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions
 * Mark Otto, a. (2022). Tables. Retrieved 22 June 2022, from https://getbootstrap.com/docs/4.0/content/tables/#hoverable-rows
 * Bootstrap Navbar - examples & tutorial. (2022). Retrieved 22 June 2022, from https://mdbootstrap.com/docs/standard/navigation/navbar/
+* Gandy, D. (2022). Font Awesome Icons. Retrieved 22 June 2022, from https://fontawesome.com/v4/icons/
 
 ## Plantilla usada
 DarkPan - Free Responsive Bootstrap 5 Admin Dashboard Template. (2022). Retrieved 9 June 2022, from https://themewagon.com/themes/free-bootstrap-5-admin-dashboard-template-darkpan/
+
+
+## Recursos externos
+
+### Imágenes
+
+* https://wallpaperaccess.com/anime-summer-scenery
+* https://wallpaperaccess.com/anime-night-scenery
+* https://wallpaperaccess.com/anime-evening
