@@ -32,13 +32,13 @@ En este repositorio se encuentran proyectos desarrollados con fines académicos 
     <tr>
       <td align="center">2</td>
       <td align="center">
-        <img src="Proyecto2/recursos/img/mythoicon.png">
+        <img src="Proyecto2/recursos/img/anindexlogo.png">
       </td>
       <td align="center">
-        <a href="Proyecto2">MythoCraft Network</a>
+        <a href="Proyecto2">AnIndeX</a>
       </td>
       <td align="center">
-        Sitio web de un servidor del juego Minecraft cuya finalidad tiene mostrar datos procesados por medio de gráficos estadísticos considerando variables como tiempo de juego en el servidor, número de jugadores, entre otras.
+        Sitio web enfocado en mostrar en gráficos estadísticos sobre el número de <a href="https://anime-para-el-kokoro.fandom.com/es/wiki/%C2%BFQue_es_el_anime%3F">anime</a> y <a href="https://anime-para-el-kokoro.fandom.com/es/wiki/%C2%BFQu%C3%A9_es_el_manga%3F">manga</a> según su género, estado de emisión, temporada (época del año), en el caso de las animaciones se muestra un indicador de los tipos, ya sean TV, OAV o Pelicula. Cabe recalcar que existen varias formas de filtrar información con estas dos variables, en especial porque los valores son relativamente grandes. Además, tambien presenta una lista de anime y manga con la opción de filtrar por género especifico o estado de emisión del mismo y ordenarlos según su popularidad.
       </td>
     </tr>
   </tbody>
