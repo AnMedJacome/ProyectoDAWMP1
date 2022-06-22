@@ -96,5 +96,11 @@
 .text-shadow-color:hover, .text-shadow-color:focus {
     color: var(--c3-d2);
     font-weight: bold;
-    text-shadow: 0rem 0rem var(--c2-d2);
+    text-shadow: 0rem .1rem var(--c2-d2);
+}
+
+.text-shadow-color-c:hover, .text-shadow-color-c:focus {
+    color: var(--c1);
+    font-weight: bold;
+    text-shadow: 0rem .1rem var(--c4);
 }

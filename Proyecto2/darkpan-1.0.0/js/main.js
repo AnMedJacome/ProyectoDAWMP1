@@ -60,8 +60,8 @@
 
 
     // Chart Global Color
-    Chart.defaults.color = "#6C7293";
-    Chart.defaults.borderColor = "#000000";
+    Chart.defaults.color = "#7d622f";
+    Chart.defaults.borderColor = "#1C160B";
 
 
     // Worldwide Sales Chart
@@ -74,17 +74,17 @@
                 datasets: [{
                         label: "USA",
                         data: [15, 30, 55, 65, 60, 80, 95],
-                        backgroundColor: "rgba(145, 51, 167, 0.69)"
+                        backgroundColor: "rgba(252, 215, 139, 0.8)"
                     },
                     {
                         label: "UK",
                         data: [8, 35, 40, 60, 70, 55, 75],
-                        backgroundColor: "rgba(0, 168, 147, 0.69)"
+                        backgroundColor: "rgba(227, 178, 86, 0.8)"
                     },
                     {
                         label: "AU",
                         data: [12, 25, 45, 55, 65, 70, 60],
-                        backgroundColor: "rgba(65, 94, 208, 0.69)"
+                        backgroundColor: "rgba(125, 98, 47, 0.8)"
                     }
                 ]
                 },
@@ -104,13 +104,13 @@
             datasets: [{
                     label: "Salse",
                     data: [15, 30, 55, 45, 70, 65, 85],
-                    backgroundColor: "rgba(145, 51, 167, 1)",
+                    backgroundColor: `rgba(28, 22, 11, 0.8)`,
                     fill: true
                 },
                 {
                     label: "Revenue",
                     data: [99, 135, 170, 130, 190, 180, 270],
-                    backgroundColor: "rgba(0, 168, 147, 0.6)",
+                    backgroundColor: "rgba(125, 98, 47, 0.8)",
                     fill: true
                 }
             ]
