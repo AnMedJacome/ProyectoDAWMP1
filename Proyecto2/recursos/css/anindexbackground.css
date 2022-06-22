@@ -1,12 +1,12 @@
-.mytho-background-img {
+.index-background-img {
     display: inline-block;
-    background-image: url('../../img/page-background.png');
+    background-image: url('../img/page-background.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
-.mytho-background-mask {
+.index-background-mask {
     /* fallback for old browsers */
     background: #3a1254;
   
