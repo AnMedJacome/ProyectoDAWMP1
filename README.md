@@ -20,7 +20,7 @@ En este repositorio se encuentran proyectos desarrollados con fines académicos 
     <tr>
       <td align="center">1</td>
       <td align="center">
-        <img src="Proyecto1/recursos/img/otros/neboulux.png" style="height:10vh;width:15vw">
+        <img src="Proyecto1/recursos/img/otros/neboulux.png" style="height:10vw;width:25vh">
       </td>
       <td align="center">
         <a href="Proyecto1">ImagiNeboulux</a>
@@ -32,7 +32,7 @@ En este repositorio se encuentran proyectos desarrollados con fines académicos 
     <tr>
       <td align="center">2</td>
       <td align="center">
-        <img src="Proyecto2/recursos/img/anindexlogo.png" style="height:10vh;width:15vw">
+        <img src="Proyecto2/recursos/img/anindexlogo.png" style="height:10vw;width:25vh">
       </td>
       <td align="center">
         <a href="Proyecto2">AnIndeX</a>

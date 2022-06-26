@@ -35,8 +35,13 @@
     display: inline-block;
     border: 1rem solid transparent;
     border-radius: 1rem;
-    background-color: var(--c6-d1);
+    background-color: var(--c6-d0);
     box-shadow: 0rem 0rem 1rem .1rem black;
+}
+
+.cuadro-dato {
+    width: 40vw;
+    height: 20vw;
 }
 
 @keyframes spinner-index-border {
@@ -45,7 +50,7 @@
     }
 }
 
-.spinner-index-border {
+.spinner-index-border, .spinner-mytho-grow {
     display:inline-block;
     background-color: var(--c5);
     background-image: url(../img/anindexlogo.png);
@@ -56,24 +61,17 @@
     height: 2rem;
     vertical-align: -.125em;
     border-radius: 50%;
-    animation: .75s linear infinite spinner-index-border;
-    box-shadow: -.2rem 0 1rem .2rem var(--c1), .2rem 0 1rem .2rem var(--c4);
 }
 
 .spinner-mytho-grow {
-    display:inline-block;
-    background-color: var(--c5);
-    background-image: url(../img/anindexlogo.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 3rem;
-    width: 2rem;
-    height: 2rem;
-    vertical-align: -.125em;
-    border-radius: 50%;
     opacity: 0;
     animation: .75s linear infinite spinner-mytho-grow;
     box-shadow: -.1rem 0 1rem .2rem var(--c1), .1rem 0 1rem .2rem var(--c4);
+}
+
+.spinner-index-border {
+    animation: .75s linear infinite spinner-index-border;
+    box-shadow: -.2rem 0 1rem .2rem var(--c1), .2rem 0 1rem .2rem var(--c4);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -93,4 +91,13 @@
 
 .footer-background {
     background-color: var(--c5-d1);
+}
+
+.ani-genre-pic {
+    width: 35vw;
+    height: 20vw;
+}
+
+.ani-size-card {
+    width: 40vw;
 }

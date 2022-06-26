@@ -1,75 +1,40 @@
 var total_pages = 1;
 var this_page = 0;
 var count_element = 0;
+var tipo = "anime"
+const thead = document.querySelector('table.ani-table-info-1 thead.ani-head');
 const tabla = document.querySelector('table.ani-table-info-1 tbody.ani-body');
+let texto = document.getElementById("Ani-num-page");
+let selector = document.querySelector('select.format-selector')
 
-function paginacion(data) {
-    tabla.innerHTML = ``;
+async function paginacion(data) {
     let arreglo = data['data']
     let contador = 1;
-    for (anime of arreglo) {
-
-        let url = anime['url'];
-        let img_url = anime['images']['jpg']['image_url'];
-        let nombre = anime['title'];
-        let estatus = anime['status'] === "Not yet aired" ? "Próximamente" : (anime['status'] === "Finished Airing" ? "Finalizado" : "En emisión");
-        let tipo = anime['type'] === "TV" ? "TV" : (anime['type'] === "Movie" ? "Película" : "OVA");
-        let num_episodios = anime['episodes'] === null ? "No hay dato" : anime['episodes'];
-
-        let query = `
-            <tr>
-                <th scope="row">${(contador++)+(count_element*this_page)}</th>
-                <td>
-                    <div class="d-flex flex-column align-items-center justify-content-center text-align-center">
-                        <img
-                            src="${img_url}"
-                            alt=""
-                            style="height: 10rem; width: 7rem;"
-                            />
-                        <div>
-                            <p class="fw-bold mb-1">${nombre}</p>
-                        </div>
-                    </div>
-                </td>
-                <td><p class="fw-normal mb-1">${estatus}</p></td>
-                <td>${num_episodios}</td>
-                <td>${tipo}</td>
-                <td>
-                    <a
-                        class="btn btn-link btn-sm btn-rounded"
-                        data-mdb-toggle="collapse"
-                        href="${url}"
-                        role="button"
-                        aria-expanded="false"
-                        aria-controls="collapseExample"
-                        >
-                        Ver más
-                    </a>
-                </td>
-            </tr>
-        `
-
-        tabla.innerHTML += query;
+    tabla.innerHTML = ""
+    for (let anime of arreglo) {
+        if (tipo === "anime")
+            tabla.appendChild(filaAnime(anime, contador++, count_element, this_page));
+        else
+            tabla.appendChild(filaManga(anime, contador++, count_element, this_page));
     }
 }
 
 function mostrarPagina() {
-    let texto = document.getElementById("Ani-num-page");
     let valor = texto.value
     let regex = new RegExp("[1-9][0-9]*");
     if (regex.test(valor)){
         let page = parseInt(valor);
         if (page > 0 && page <= total_pages) {
-            let url = `https://api.jikan.moe/v4/anime?page=${page}`
+            let url = `https://api.jikan.moe/v4/${tipo}?page=${page}`
             fetch(url).then(response => response.json()).then(data => {
                 this_page = page - 1
                 paginacion(data)
-                texto.setAttribute('placeholder', valor);
-                texto.textContent = '';
+                texto.value = '';
                 let titulo = document.getElementById('Pagina-tabla');
                 titulo.textContent = `Página ${valor} de ${total_pages}`
-                const after = document.querySelector('li#ani-pitem-r');
-                after.innerHTML = `${valor} de <span class="fw-bold">${total_pages}</span>`;
+                let li = document.getElementById('Ani-pitem-r');
+                li.innerHTML = `${valor} de <span class="fw-bold">${total_pages}</span>`;
+                cargarGenreStats(tipo, page)
             })
         }
         else {
@@ -82,17 +47,34 @@ function mostrarPagina() {
 }
 
 let cargarDatos = () => {
-    let url = `https://api.jikan.moe/v4/anime?page=1`
+    let qu_thead = (tipo === "anime") ? `
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Título</th>
+            <th scope="col">Estatus</th>
+            <th scope="col"># Episodios</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Información</th>
+        </tr>
+    ` : `
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Título</th>
+            <th scope="col">Estatus</th>
+            <th scope="col"># Volúmenes</th>
+            <th scope="col"># Capítulos</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Información</th>
+        </tr>
+    `;
+    thead.innerHTML = qu_thead;
+    let url = `https://api.jikan.moe/v4/${tipo}?page=1`
     fetch(url).then(response => response.json()).then(data => {
         let paginas = data['pagination']['items']
         total_pages = Math.ceil(parseInt(paginas['total'], 10) / 25);
         count_element = parseInt(paginas['count'])
-        const after = document.querySelector('li.ani-pitem-d');
-        let li = document.createElement('li');
-        li.id = 'ani-pitem-r'
+        let li = document.getElementById('Ani-pitem-r');
         li.innerHTML = `1 de <span class="fw-bold">${total_pages}</span>`;
-        li.className = 'mx-2 my-1';
-        after.insertAdjacentElement('beforebegin', li);
         let titulo = document.getElementById('Pagina-tabla');
         titulo.textContent = `Página 1 de ${total_pages}`
         paginacion(data)
@@ -101,5 +83,28 @@ let cargarDatos = () => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    agregarGeneros()
     cargarDatos()
+    crearGenreStats(tipo)
 })
+
+selector.addEventListener('change', () => {
+    thead.innerHTML = "";
+    tabla.innerHTML = ``;
+    tipo = selector.options[selector.selectedIndex].value;
+    selectorg.selectedIndex = 0;
+    this_page = 0
+    texto.value = '';
+    let titulo = document.getElementById('Pagina-tabla');
+    titulo.textContent = `Página 1 de ${total_pages}`
+    cargarDatos();
+})
+
+function cambiarPlot(seccion, id, all){
+    if (all) {
+        let url = `https://api.jikan.moe/v4/${tipo}/${id}`
+        fetch(url).then(response => response.json()).then(data => {
+            seccion.textContent = data["data"]["synopsis"]
+        }).catch(console.error);
+    } else seccion.textContent = "TODOS LOS ANIMES DISPONIBLES DE TODOS LOS GENEROS Y SUBGENEROS"
+}

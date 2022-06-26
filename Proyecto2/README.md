@@ -12,6 +12,9 @@ Esta información es obtenida de la página ["JIKAN"](https://jikan.moe/), la cu
 
 Enlace a documento de API: https://docs.api.jikan.moe/#tag/anime
 
+## Plantilla usada
+DarkPan - Free Responsive Bootstrap 5 Admin Dashboard Template. (2022). Retrieved 9 June 2022, from https://themewagon.com/themes/free-bootstrap-5-admin-dashboard-template-darkpan/
+
 ## Referencias
 * (2022). Retrieved 12 June 2022, from https://www.youtube.com/watch?v=_fd5J5k9KZ0
 * Bootstrap 5 Background Image - examples & tutorial. (2022). Retrieved 12 June 2022, from https://mdbootstrap.com/docs/standard/content-styles/background-image/
@@ -27,15 +30,29 @@ Enlace a documento de API: https://docs.api.jikan.moe/#tag/anime
 * Mark Otto, a. (2022). Tables. Retrieved 22 June 2022, from https://getbootstrap.com/docs/4.0/content/tables/#hoverable-rows
 * Bootstrap Navbar - examples & tutorial. (2022). Retrieved 22 June 2022, from https://mdbootstrap.com/docs/standard/navigation/navbar/
 * Gandy, D. (2022). Font Awesome Icons. Retrieved 22 June 2022, from https://fontawesome.com/v4/icons/
-
-## Plantilla usada
-DarkPan - Free Responsive Bootstrap 5 Admin Dashboard Template. (2022). Retrieved 9 June 2022, from https://themewagon.com/themes/free-bootstrap-5-admin-dashboard-template-darkpan/
-
+* Colecciones con clave - JavaScript | MDN. (2020). Retrieved 24 June 2022, from https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Keyed_collections
 
 ## Recursos externos
 
-### Imágenes
+### Imágenes utilizadas
 
 * https://wallpaperaccess.com/anime-summer-scenery
 * https://wallpaperaccess.com/anime-night-scenery
 * https://wallpaperaccess.com/anime-evening
+* https://images7.alphacoders.com/306/306919.jpg
+* https://images7.alphacoders.com/729/thumb-1920-729209.jpg
+* https://images3.alphacoders.com/848/848404.jpg
+* https://wallpapercave.com/wp/wp7283079.png
+* https://wallpaperaccess.com/full/4804007.png
+* https://wallpaperaccess.com/full/1083911.jpg
+* https://images2.alphacoders.com/776/thumb-1920-776081.jpg
+* https://images8.alphacoders.com/695/695848.png
+* https://images6.alphacoders.com/697/thumb-1920-697221.png
+* https://images8.alphacoders.com/914/thumb-1920-914289.jpg
+* https://images5.alphacoders.com/945/thumb-1920-945730.png
+* https://images7.alphacoders.com/871/871488.jpg
+* https://wallpaperaccess.com/full/2012826.jpg
+* https://wallpaperaccess.com/full/6351957.png
+* https://wallpapercave.com/wp/wp4786465.png
+* https://images3.alphacoders.com/228/thumb-1920-228275.jpg
+* https://wallpapercave.com/wp/wp1833405.jpg
