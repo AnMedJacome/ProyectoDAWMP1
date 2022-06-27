@@ -49,22 +49,22 @@ function mostrarPagina() {
 let cargarDatos = () => {
     let qu_thead = (tipo === "anime") ? `
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">Título</th>
-            <th scope="col">Estatus</th>
-            <th scope="col"># Episodios</th>
-            <th scope="col">Tipo</th>
-            <th scope="col">Información</th>
+            <th class="titulo-primario" scope="col">#</th>
+            <th class="titulo-primario" scope="col">Título</th>
+            <th class="titulo-primario" scope="col">Estatus</th>
+            <th class="titulo-primario" scope="col"># Episodios</th>
+            <th class="titulo-primario" scope="col">Tipo</th>
+            <th class="titulo-primario" scope="col">Información</th>
         </tr>
     ` : `
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">Título</th>
-            <th scope="col">Estatus</th>
-            <th scope="col"># Volúmenes</th>
-            <th scope="col"># Capítulos</th>
-            <th scope="col">Tipo</th>
-            <th scope="col">Información</th>
+            <th class="titulo-primario" scope="col">#</th>
+            <th class="titulo-primario" scope="col">Título</th>
+            <th class="titulo-primario" scope="col">Estatus</th>
+            <th class="titulo-primario" scope="col"># Volúmenes</th>
+            <th class="titulo-primario" scope="col"># Capítulos</th>
+            <th class="titulo-primario" scope="col">Tipo</th>
+            <th class="titulo-primario" scope="col">Información</th>
         </tr>
     `;
     thead.innerHTML = qu_thead;

@@ -10,7 +10,7 @@ Paralelo: 02.
 
 Esta información es obtenida de la página ["JIKAN"](https://jikan.moe/), la cual ofrece una API que extrae datos recopilados de la página [MyAnimeList](https://myanimelist.net/) que permite crear una lista de anime y manga, además de dar la oportunidad de calificar los mismos según su preferencia.
 
-Enlace a documento de API: https://docs.api.jikan.moe/#tag/anime
+Enlace a documento de API: https://docs.api.jikan.moe/
 
 ## Plantilla usada
 DarkPan - Free Responsive Bootstrap 5 Admin Dashboard Template. (2022). Retrieved 9 June 2022, from https://themewagon.com/themes/free-bootstrap-5-admin-dashboard-template-darkpan/

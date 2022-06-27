@@ -47,11 +47,14 @@
 
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3 navbar-shadow">
-            <nav class="navbar bg-index navbar-dark">
-                <a href="" class="navbar-brand mx-4 mb-3">
-                    <h3 class="index-text-primario text-shadow-color"><img class="ani-logo-pic" src="../recursos/img/anindexlogo.png">  Menú</h3>
-                </a>
-                <div class="navbar-nav w-100">
+            <nav class="navbar bg-index navbar-dark mt-5">
+                <div class="row mx-4 mt-3 w-100">
+                    <img class="ani-logo-pic justify-content-center" src="recursos/img/anindexlogo.png" alt="AnIndeX logo">
+                </div>
+                <div class="row mx-4 my-2 w-100">
+                    <h3 align="center" class="index-text-primario text-shadow-color justify-content-center">Menú</h3>
+                </div>
+                <div class="navbar-nav w-100 mt-2">
                     <a href="../index.html" class="nav-item nav-link ani-active"><i class="fa fa-home me-2"></i>Inicio</a>
                     <a href="dashboard.html" class="nav-item nav-link ani-active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
@@ -202,7 +205,7 @@
                                             >Información del género</a
                                         >
                                         </li>
-                                        <li class="nav-item pt-4" role="presentation">
+                                        <li class="nav-item" role="presentation">
                                         <a
                                             class="nav-link"
                                             id="ex3-tab-2"
@@ -211,7 +214,7 @@
                                             role="tab"
                                             aria-controls="ex3-tabs-2"
                                             aria-selected="false"
-                                            >Detalles del anime</a
+                                            >Detalles del anime recomendado</a
                                         >
                                         </li>
                                     </ul>
@@ -220,7 +223,7 @@
                                     <!-- Tabs content -->
                                     <div class="tab-content" id="ex2-content">
                                         <div
-                                        class="tab-pane fade show active ani-plot"
+                                        class="tab-pane fade show active genre-info"
                                         id="ex3-tabs-1"
                                         role="tabpanel"
                                         aria-labelledby="ex3-tab-1"
@@ -233,7 +236,22 @@
                                         role="tabpanel"
                                         aria-labelledby="ex3-tab-2"
                                         >
-                                        INFO XD
+                                            <dl class="row mb-0">
+                                                <dt class="col-sm-4">Descripción:</dt>
+                                                <dd class="col-sm-8 ani-plot-d text-truncate">---</dd>
+                
+                                                <dt class="col-sm-4">Año:</dt>
+                                                <dd class="col-sm-8 ani-plot-yr">---</dd>
+                
+                                                <dt class="col-sm-4">Géneros:</dt>
+                                                <dd class="col-sm-8 ani-plot-gn">---</dd>
+                
+                                                <dt class="col-sm-4">Temas:</dt>
+                                                <dd class="col-sm-8 ani-plot-th">---</dd>
+                
+                                                <dt class="col-sm-4">Relación con otras series:</dt>
+                                                <dd class="col-sm-8 ani-plot-rl">---</dd>
+                                            </dl>
                                         </div>
                                     </div>
                                     <!-- Tabs content -->

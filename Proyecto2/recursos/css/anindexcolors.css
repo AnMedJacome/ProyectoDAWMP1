@@ -1,4 +1,6 @@
 :root {
+    --title: var(--c3);
+    --text: #ffffff;
     --c0: #fcd788;
     --c1: #fcc660;
     --c2: #e3b256;
@@ -41,6 +43,10 @@
     color: var(--c3);
 }
 
+.titulo-primario {
+    color: var(--title);
+}
+
 .ani-shadow:hover {
     color: var(--c5);
     background-color: var(--c1);
@@ -48,7 +54,7 @@
 }
 
 .index-btn-primario-b {
-    color: #fff;
+    color: var(--c0);
     background-color: var(--c4);
     border-color: var(--c5);
 }
@@ -58,13 +64,13 @@
 }
 
 .index-btn-primario-m {
-    color: #fff;
+    color: var(--c0);
     background-color: var(--c3);
     border-color: var(--c3-d1);
 }
 
 .index-btn-primario-m:hover, .index-btn-primario-m:focus {
-    color: #fff;
+    color: var(--c0);
     background-color: var(--c0);
     border-color: var(--c0);
     box-shadow: 0rem 0rem 1rem var(--c0);
@@ -80,8 +86,8 @@
 }
 
 .ani-tab-active, .ani-active {
-    background-color: var(--c0) !important;
-    border-color: var(--c5) !important;
+    background-color: var(--c0);
+    border-color: var(--c5);
 }
 
 .ani-active {
@@ -106,4 +112,9 @@
     color: var(--c1);
     font-weight: bold;
     text-shadow: 0rem .1rem var(--c4);
+}
+
+.form-select:focus {
+    border-color: var(--c0);
+    box-shadow: 0 0 0 0.25rem var(--c5-d1);
 }
