@@ -49,7 +49,7 @@ function filaAnime(anime, contador, count_element, this_page) {
         cell =  document.createElement('td');
             let a = `    
                 <a
-                    class=
+                    class=""
                     data-mdb-toggle="collapse"
                     href="${url}"
                     role="button"
@@ -110,7 +110,7 @@ function filaManga(anime, contador, count_element, this_page) {
         cell =  document.createElement('td');
             let a = `    
                 <a
-                    class=
+                    class=""
                     data-mdb-toggle="collapse"
                     href="${url}"
                     role="button"

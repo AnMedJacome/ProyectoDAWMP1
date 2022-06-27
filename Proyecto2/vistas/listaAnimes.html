@@ -55,16 +55,10 @@
                     <a href="../index.html" class="nav-item nav-link ani-active"><i class="fa fa-home me-2"></i>Inicio</a>
                     <a href="dashboard.html" class="nav-item nav-link ani-active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle ani-active active" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Listas</a>
+                        <a href="#" class="nav-link dropdown-toggle ani-active active" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Funciones</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="#" class="dropdown-item ani-active active">Animes</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle ani-active" data-bs-toggle="dropdown"><i class="fa fa-search me-2"></i>Filtros</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="" class="dropdown-item ani-active">Anime</a>
-                            <a href="" class="dropdown-item ani-active">Manga</a>
+                            <a href="#" class="dropdown-item ani-active active">Enlistar</a>
+                            <a href="#" class="dropdown-item ani-active">Enumerar</a>
                         </div>
                     </div>
                     <a href="#" class="nav-item nav-link ani-active"><i class="fa fa-info-circle me-2"></i>Acerca de</a>
@@ -72,7 +66,6 @@
             </nav>
         </div>
         <!-- Sidebar End -->
-
 
         <!-- Content Start -->
         <div class="content index-background-img">
@@ -113,82 +106,77 @@
                                         </div>
                                     </div>
                                     <div class="row justify-content-start ani-prom-genre">
-                                        <div class="col-sm mb-4 justify-content-center img-genre">
-                                            <!-- Carousel wrapper -->
-                                            <div
-                                                id="AniCarouselGenres"
-                                                class="carousel slide carousel-fade shadow-3-strong"
-                                                data-mdb-ride="carousel"
-                                            >
-                                                <!-- Indicators -->
-                                                <ol class="carousel-indicators">
-                                                    <li
-                                                        data-mdb-target="#AniCarouselGenres"
-                                                        data-mdb-slide-to="0"
-                                                        class="active"
-                                                        aria-current="true"
-                                                    ></li>
-                                                </ol>
-                                        
-                                                <!-- Inner -->
-                                                <div class="carousel-inner">
-                                                </div>
-                                                <!-- Inner -->
-                                        
-                                                <!-- Controls -->
-                                                <a
-                                                    class="carousel-control-prev btn-shadow-color text-shadow-color"
-                                                    href="#AniCarouselGenres"
-                                                    role="button"
-                                                    data-mdb-slide="prev"
-                                                >
-                                                    <span
-                                                    class="carousel-control-prev-icon"
-                                                    aria-hidden="true"
-                                                    ></span>
-                                                    <span class="visually-hidden">Previous</span>
-                                                </a>
-                                                <a
-                                                    class="carousel-control-next btn-shadow-color text-shadow-color"
-                                                    href="#AniCarouselGenres"
-                                                    role="button"
-                                                    data-mdb-slide="next"
-                                                >
-                                                    <span
-                                                    class="carousel-control-next-icon"
-                                                    aria-hidden="true"
-                                                    ></span>
-                                                    <span class="visually-hidden">Next</span>
-                                                </a>
+
+                                        <!-- Carousel wrapper -->
+                                        <div
+                                            id="AniCarouselGenres"
+                                            class="carousel slide carousel-fade shadow-3-strong"
+                                            data-mdb-ride="carousel"
+                                        >
+                                            <!-- Indicators -->
+                                            <ol class="carousel-indicators">
+                                                <li
+                                                    data-mdb-target="#AniCarouselGenres"
+                                                    data-mdb-slide-to="0"
+                                                    class="active"
+                                                    aria-current="true"
+                                                ></li>
+                                            </ol>
+                                    
+                                            <!-- Inner -->
+                                            <div class="carousel-inner">
                                             </div>
-                                            <!-- Carousel wrapper -->
+                                            <!-- Inner -->
+                                    
+                                            <!-- Controls -->
+                                            <a
+                                                class="carousel-control-prev btn-shadow-color text-shadow-color"
+                                                href="#AniCarouselGenres"
+                                                role="button"
+                                                data-mdb-slide="prev"
+                                            >
+                                                <span
+                                                class="carousel-control-prev-icon"
+                                                aria-hidden="true"
+                                                ></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </a>
+                                            <a
+                                                class="carousel-control-next btn-shadow-color text-shadow-color"
+                                                href="#AniCarouselGenres"
+                                                role="button"
+                                                data-mdb-slide="next"
+                                            >
+                                                <span
+                                                class="carousel-control-next-icon"
+                                                aria-hidden="true"
+                                                ></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </a>
                                         </div>
+                                        <!-- Carousel wrapper -->
                                     </div>
                                     <div class="row justify-content-sm-center">
-                                        <div class="col mb-4 justify-content-sm-center">
-                                            <nav aria-label="...">
-                                                <ul class="pagination pagination-circle ani-pagination">
-                                                    <li class="page-item ani-pitem-a rounded-circle disabled">
-                                                        <a class="page-link btn-primario btn-rounded index-btn-primario-b ani-shadow disabled href="">Anterior</a>
-                                                    </li>
-                                                    <li id='Ani-pitem-r' class="mx-4 my-1">
-                                                        ...
-                                                    </li>
-                                                    <li class="page-item ani-page-item rounded-circle ani-pitem-d">
-                                                        <a class="page-link btn-primario btn-rounded index-btn-primario-b ani-shadow" href="">Siguiente</a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
+                                        <nav aria-label="...">
+                                            <ul class="pagination pagination-circle ani-pagination d-flex flex-wrap">
+                                                <li class="page-item ani-pitem-a rounded-circle disabled my-3">
+                                                    <a class="page-link btn-primario btn-rounded index-btn-primario-b ani-shadow disabled href="">Anterior</a>
+                                                </li>
+                                                <li id='Ani-pitem-r' class="mx-4 my-3">
+                                                    ...
+                                                </li>
+                                                <li class="page-item ani-page-item rounded-circle ani-pitem-d my-3">
+                                                    <a class="page-link btn-primario btn-rounded index-btn-primario-b ani-shadow" href="">Siguiente</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
                                     </div>
                                     <div class="row justify-content-center">
-                                        <div class="col-4 mb-4 justify-content-center">
+                                        <div class="d-flex flex-wrap flex-row">
                                             <div class="form-outline mb-1">
                                                 <input id="Ani-num-page" class="form-control form-control-lg mb-3 ani-input text-center" type="text" placeholder="# de página" />
                                             </div>
-                                        </div>
-                                        <div class="col-4 mb-4 justify-content-center">
-                                            <div class="col">
+                                            <div>
                                                 <button onclick="mostrarPagina()" class="btn-primario btn-rounded index-btn-primario-b ani-shadow">
                                                     Mostrar
                                                 </button>
@@ -200,18 +188,55 @@
                             <div class="col mb-4 d-flex justify-content-center">
                                 <div class="ani-bg-table ani-size-card">
                                     <h6 class="mb-4 ani-title-info">Todos los géneros</h6>
-                                    <nav>
-                                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
-                                                data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
-                                                aria-selected="true">Información</button>
+                                    <!-- Tabs navs -->
+                                    <ul class="nav nav-tabs nav-justified mb-3" id="ex1" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                        <a
+                                            class="nav-link active"
+                                            id="ex3-tab-1"
+                                            data-mdb-toggle="tab"
+                                            href="#ex3-tabs-1"
+                                            role="tab"
+                                            aria-controls="ex3-tabs-1"
+                                            aria-selected="true"
+                                            >Información del género</a
+                                        >
+                                        </li>
+                                        <li class="nav-item pt-4" role="presentation">
+                                        <a
+                                            class="nav-link"
+                                            id="ex3-tab-2"
+                                            data-mdb-toggle="tab"
+                                            href="#ex3-tabs-2"
+                                            role="tab"
+                                            aria-controls="ex3-tabs-2"
+                                            aria-selected="false"
+                                            >Detalles del anime</a
+                                        >
+                                        </li>
+                                    </ul>
+                                    <!-- Tabs navs -->
+                                    
+                                    <!-- Tabs content -->
+                                    <div class="tab-content" id="ex2-content">
+                                        <div
+                                        class="tab-pane fade show active ani-plot"
+                                        id="ex3-tabs-1"
+                                        role="tabpanel"
+                                        aria-labelledby="ex3-tab-1"
+                                        >
+                                        TODOS LOS ANIMES DISPONIBLES DE TODOS LOS GENEROS Y SUBGENEROS
                                         </div>
-                                    </nav>
-                                    <div class="tab-content pt-3" id="nav-tabContent">
-                                        <div class="tab-pane fade show active ani-plot" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                            TODOS LOS ANIMES DISPONIBLES DE TODOS LOS GENEROS Y SUBGENEROS
+                                        <div
+                                        class="tab-pane fade ani-plot"
+                                        id="ex3-tabs-2"
+                                        role="tabpanel"
+                                        aria-labelledby="ex3-tab-2"
+                                        >
+                                        INFO XD
                                         </div>
                                     </div>
+                                    <!-- Tabs content -->
                                 </div>
                             </div>
                         </div>
@@ -244,7 +269,7 @@
 
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-lg index-btn-primario-m btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <a href="#" class="btn btn-lg index-btn-primario-m btn-lg-square back-to-top"><i class="bi bi-arrow-up icon-color-3"></i></a>
 
     </div>
 
@@ -253,13 +278,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="../darkpan-1.0.0/js/main.js"></script>
     <script src="../recursos/js/other.js"></script>
     <script src="../recursos/js/dashboard.js"></script>
     <script src="../recursos/js/anindexget.js"></script>
     <script src="../recursos/js/celdas.js"></script>
     <script src="../recursos/js/mdb.min.js"></script>
-    <script src="../recursos/js/other.js"></script>
 </body>
 
 </html>
