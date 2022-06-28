@@ -18,6 +18,10 @@ generos.set("Supernatural", {"num": 0, "pic": {"url": "https://images3.alphacode
 generos.set("Suspense", {"num": 0, "pic": {"url": "https://wallpapercave.com/wp/wp1833405.jpg", "nombre": "Another", "anime_id": 11111, "manga_id": 24098}})
 
 
+var this_page = 0;
+var tipo = "anime"
+
+let selectorg = document.querySelector('select#genre-selector')
 let bloque = document.querySelector('div.ani-prom-genre');
 let space = bloque.querySelector('div.carousel-inner');
 let barra = bloque.querySelector('ol.carousel-indicators');
@@ -48,16 +52,15 @@ function agregarGeneros(){
 }
 
 async function contarAnimesGeneros(url) {
-    await fetch(url).then(response => response.json()).then(data => {
-        let arreglo = data['data'];
-        for (anime of arreglo) {
-            let an_genres = anime['genres']
-            for (genero of an_genres) 
-                if (genero['name'] in generos) {
-                    generos[genero['name']]['num'] += 1
-                }
-        }
-    })
+    let data = await getJSONData(url)
+    let arreglo = data['data'];
+    for (anime of arreglo) {
+        let an_genres = anime['genres']
+        for (genero of an_genres) 
+            if (genero['name'] in generos) {
+                generos[genero['name']]['num'] += 1
+            }
+    }
 }
 
 async function crearGenreStats(tipo) {
@@ -65,72 +68,78 @@ async function crearGenreStats(tipo) {
         generos.get(clave)['num'] = 0
     }
 
-    url = `https://api.jikan.moe/v4/${tipo}?page=1`
-    fetch(url).then(response => response.json()).then(data => {
-        let arreglo = data['data'];
-        for (anime of arreglo) {
-            let an_genres = anime['genres']
-            for (genero of an_genres) 
-                if (generos.has(genero['name'])) 
-                    generos.get(genero['name'])['num']++
-        }
+    var url = `http://localhost:8080/recursos/json/${tipo}/${tipo}%20(0).json`
+    contarAnimesGeneros(url)
 
-        let counter = 1
-        space.innerHTML = ""
-        barra.innerHTML = ""
-        query = `
-            <li
-                data-mdb-target="#AniCarouselGenres"
-                data-mdb-slide-to="0"
-                class="active"
-                aria-current="true"
-            ></li>
-        `
-        barra.innerHTML += query
+    let counter = 1
+    space.innerHTML = ""
+    barra.innerHTML = ""
+    query = `
+        <li
+            data-mdb-target="#AniCarouselGenres"
+            data-mdb-slide-to="0"
+            class="active"
+            aria-current="true"
+        ></li>
+    `
+    barra.innerHTML += query
 
-        for (let [clave, valor] of generos) {
-            let query = `<div class="carousel-item ani-bg-table rounded d-flex flex-row align-items-center justify-content-around p-4`
-            query += (clave ==="Action") ? ` active">` : `">`
-            query += `
-                    <i class="fa fa-chart-pie fa-5x icon-color-1"></i>
-                    <div id="Div-stats-${counter}" class="ms-3">
-                        <p class="mb-2">${clave}</p>
-                        <h6 class="mb-0">${valor["num"]}</h6>
-                    </div>
+    for (let [clave, valor] of generos) {
+        let query = `<div class="carousel-item ani-bg-table rounded d-flex flex-row align-items-center justify-content-around p-4`
+        query += (clave ==="Action") ? ` active">` : `">`
+        query += `
+                <i class="fa fa-chart-pie fa-5x icon-color-1"></i>
+                <div id="Div-stats-${counter}" class="ms-3">
+                    <p class="mb-2">${clave}</p>
+                    <h6 class="mb-0">${valor["num"]}</h6>
                 </div>
+            </div>
+        `
+        space.innerHTML += query
+        if (counter < 17) {
+            query = `
+                <li
+                    data-mdb-target="#AniCarouselGenres"
+                    data-mdb-slide-to="${counter++}"
+                    class=""
+                ></li>
             `
-            space.innerHTML += query
-            if (counter < 17) {
-                query = `
-                    <li
-                        data-mdb-target="#AniCarouselGenres"
-                        data-mdb-slide-to="${counter++}"
-                        class=""
-                    ></li>
-                `
-                barra.innerHTML += query
-            }
+            barra.innerHTML += query
         }
-    })
+    }    
 }
 
 async function cargarGenreStats(tipo, page) {
+    var url = `http://localhost:8080/recursos/json/${tipo}/${tipo}%20(${this_page}).json`
     for(let [clave, valor] of generos) {
         generos.get(clave)['num'] = 0
     }
+    this_page = page - 1
+    contarAnimesGeneros(url)
 
-    url = `https://api.jikan.moe/v4/${tipo}?page=${page}`
-    fetch(url).then(response => response.json()).then(data => {
-        let arreglo = data['data'];
-        for (anime of arreglo) {
-            let an_genres = anime['genres']
-            for (genero of an_genres) 
-                if (generos.has(genero['name'])) 
-                    generos.get(genero['name'])['num']++
-        }
+    let counter = 1
 
+    for (let [clave, valor] of generos) {
+        let div_stats = document.getElementById(`Div-stats-${counter++}`)
+        div_stats.innerHTML = `
+            <p class="mb-2">${clave}</p>
+            <h6 class="mb-0">${valor["num"]}</h6>
+        `
+    }
+}
+
+async function cargarAllGenreStats(tipo, page) {
+    var url = `http://localhost:8080/recursos/json/${tipo}/${tipo}%20(${this_page}).json`
+    for(let [clave, valor] of generos) {
+        generos.get(clave)['num'] = 0
+    }
+    let tmp = this_page
+    for (let i = 0 ; i < 100 ; i++) {
+        this_page = i
+        contarAnimesGeneros(url)
+    
         let counter = 1
-
+    
         for (let [clave, valor] of generos) {
             let div_stats = document.getElementById(`Div-stats-${counter++}`)
             div_stats.innerHTML = `
@@ -138,10 +147,9 @@ async function cargarGenreStats(tipo, page) {
                 <h6 class="mb-0">${valor["num"]}</h6>
             `
         }
-    })
+    }
+    this_page = tmp
 }
-
-let selectorg = document.querySelector('select#genre-selector')
 
 selectorg.addEventListener('change', () => {
     

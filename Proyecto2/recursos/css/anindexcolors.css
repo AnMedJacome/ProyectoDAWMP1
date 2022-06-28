@@ -31,6 +31,10 @@
     --c6-d2: rgba(28, 22, 11, 0.345);
 }
 
+#Load-indicator {
+    color: white;
+}
+
 .icon-color-1 {
     color: var(--c1);
 }
@@ -114,7 +118,7 @@
     text-shadow: 0rem .1rem var(--c4);
 }
 
-.form-select:focus {
+.form-select:focus, .form-control:focus {
     border-color: var(--c0);
     box-shadow: 0 0 0 0.25rem var(--c5-d1);
 }

@@ -49,7 +49,7 @@
         <div class="sidebar pe-4 pb-3 navbar-shadow">
             <nav class="navbar bg-index navbar-dark mt-5">
                 <div class="row mx-4 mt-3 w-100">
-                    <img class="ani-logo-pic justify-content-center" src="recursos/img/anindexlogo.png" alt="AnIndeX logo">
+                    <img class="ani-logo-pic justify-content-center" src="../recursos/img/anindexlogo.png" alt="AnIndeX logo">
                 </div>
                 <div class="row mx-4 my-2 w-100">
                     <h3 align="center" class="index-text-primario text-shadow-color justify-content-center">Menú</h3>
@@ -97,6 +97,12 @@
                         <option value="manga">Manga</option>
                     </select>
 
+                    <h3 id="Load-indicator">Cargando</h3>
+                    
+                    <div id="Progress-bar-1" class="progress">
+                        <div class="progress-bar progress-bar-striped bg-warning" role="progressbar"></div>
+                    </div>
+
                     <div id="AnIndexTable" class="container-fluid my-5 ani-bg-table g-4">
                         <div class="row my-4 justify-content-around">
                             <div class="col-sm">
@@ -107,6 +113,9 @@
                                                 <option selected value="Todos">Todos</option>
                                             </select>
                                         </div>
+                                    </div>
+                                    <div class="row justify-content-sm-center">
+                                        <h4>Promedio de anime/manga en la página actual</h4>
                                     </div>
                                     <div class="row justify-content-start ani-prom-genre">
 

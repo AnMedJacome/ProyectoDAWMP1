@@ -31,6 +31,8 @@ DarkPan - Free Responsive Bootstrap 5 Admin Dashboard Template. (2022). Retrieve
 * Bootstrap Navbar - examples & tutorial. (2022). Retrieved 22 June 2022, from https://mdbootstrap.com/docs/standard/navigation/navbar/
 * Gandy, D. (2022). Font Awesome Icons. Retrieved 22 June 2022, from https://fontawesome.com/v4/icons/
 * Colecciones con clave - JavaScript | MDN. (2020). Retrieved 24 June 2022, from https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Keyed_collections
+* Element.ariaValueNow - Web APIs | MDN. (2022). Retrieved 28 June 2022, from https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaValueNow
+* Bootstrap Progress Bars. (2022). Retrieved 28 June 2022, from https://www.w3schools.com/bootstrap/bootstrap_progressbars.asp
 
 ## Recursos externos
 
