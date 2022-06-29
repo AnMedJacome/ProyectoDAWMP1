@@ -7,7 +7,7 @@ const BAR = document.querySelector("div#Progress-bar-1");
 var contador = 1;
 
 async function numAniManGenres(tipo) {
-    let respuesta = await fetch(`http://localhost:8080/recursos/json/genres/${tipo}.json`);
+    let respuesta = await fetch(`http://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/genres/${tipo}.json`);
     let data = await respuesta.json();
     let arreglo = data["data"]
     let numeros = []
@@ -30,7 +30,7 @@ async function numAniManGenres(tipo) {
     return numeros
 }
 async function numAniManDemo(tipo) {
-    let respuesta = await fetch(`http://localhost:8080/recursos/json/genres/${tipo}.json`);
+    let respuesta = await fetch(`http://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/genres/${tipo}.json`);
     let data = await respuesta.json();
     let arreglo = data["data"]
     let numeros = []
@@ -98,13 +98,19 @@ async function getNumberDemo()  {
                         label: "Anime",
                         data: arreglo[0],
                         backgroundColor: "rgba(252, 215, 139, 0.8)",
-                        fill: true
+                        fill: true,
+                        pointStyle: 'rectRot',
+                        pointRadius: 5,
+                        pointBorderColor: '#3d3017'
                     },
                     {
                         label: "Manga",
                         data: arreglo[1],
                         backgroundColor: "rgba(227, 178, 86, 0.8)",
-                        fill: true
+                        fill: true,
+                        pointStyle: 'rectRot',
+                        pointRadius: 5,
+                        pointBorderColor: '#1C160B'
                     }
                 ]
                 },
@@ -117,21 +123,27 @@ async function getNumberDemo()  {
                         }
                     },
                     scales: {
-                        yAxes: [{
+                        y: {
                             ticks: {
-                                fontColor: "#bd9448",
-                                fontSize: 16,
-                                stepSize: 200,
+                                color: "#bd9448",
+                                font: {
+                                  size: 10,
+                                  lineHeight: 1.2
+                                },
+                                stepSize: 400,
                                 beginAtZero: true
                             }
-                        }],
-                        xAxes: [{
+                        },
+                        x: {
                             ticks: {
-                                fontColor: "#e3b256",
-                                fontSize: 14,
+                                color: "#e3b256",
+                                font: {
+                                  size: 10,
+                                  lineHeight: 1.2
+                                },
                                 beginAtZero: true
                             }
-                        }]
+                        }
                     }
                 }
         });
@@ -159,12 +171,12 @@ async function getNumberDemo()  {
                 datasets: [{
                         label: "Anime",
                         data: arreglo[0],
-                        backgroundColor: "rgba(252, 215, 139, 0.8)"
+                        backgroundColor: "rgba(252, 215, 139, 0.8)",
                     },
                     {
                         label: "Manga",
                         data: arreglo[1],
-                        backgroundColor: "rgba(227, 178, 86, 0.8)"
+                        backgroundColor: "rgba(227, 178, 86, 0.8)",
                     },
                 ]
                 },
@@ -172,26 +184,34 @@ async function getNumberDemo()  {
                     responsive: true,
                     legend: {
                         labels: {
-                            fontColor: "white",
-                            fontSize: 18
+                            color: "white",
+                            font: {
+                              size: 10,
+                            },
                         }
                     },
                     scales: {
-                        yAxes: [{
+                        y: {
                             ticks: {
-                                fontColor: "#bd9448",
-                                fontSize: 16,
-                                stepSize: 10,
+                                color: "#bd9448",
+                                font: {
+                                  size: 10,
+                                  lineHeight: 1.2
+                                },
+                                stepSize: 400,
                                 beginAtZero: true
                             }
-                        }],
-                        xAxes: [{
+                        },
+                        x: {
                             ticks: {
-                                fontColor: "#e3b256",
-                                fontSize: 14,
+                                color: "#e3b256",
+                                font: {
+                                  size: 10,
+                                  lineHeight: 1.2
+                                },
                                 beginAtZero: true
                             }
-                        }]
+                        }
                     }
                 }
         });

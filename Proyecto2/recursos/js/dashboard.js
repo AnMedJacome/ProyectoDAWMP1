@@ -68,7 +68,7 @@ async function crearGenreStats(tipo) {
         generos.get(clave)['num'] = 0
     }
 
-    var url = `http://localhost:8080/recursos/json/${tipo}/${tipo}%20(0).json`
+    var url = `http://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(0).json`
     contarAnimesGeneros(url)
 
     let counter = 1
@@ -110,7 +110,7 @@ async function crearGenreStats(tipo) {
 }
 
 async function cargarGenreStats(tipo, page) {
-    var url = `http://localhost:8080/recursos/json/${tipo}/${tipo}%20(${this_page}).json`
+    var url = `http://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${this_page}).json`
     for(let [clave, valor] of generos) {
         generos.get(clave)['num'] = 0
     }
@@ -129,7 +129,7 @@ async function cargarGenreStats(tipo, page) {
 }
 
 async function cargarAllGenreStats(tipo, page) {
-    var url = `http://localhost:8080/recursos/json/${tipo}/${tipo}%20(${this_page}).json`
+    var url = `http://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${this_page}).json`
     for(let [clave, valor] of generos) {
         generos.get(clave)['num'] = 0
     }

@@ -33,6 +33,7 @@ DarkPan - Free Responsive Bootstrap 5 Admin Dashboard Template. (2022). Retrieve
 * Colecciones con clave - JavaScript | MDN. (2020). Retrieved 24 June 2022, from https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Keyed_collections
 * Element.ariaValueNow - Web APIs | MDN. (2022). Retrieved 28 June 2022, from https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaValueNow
 * Bootstrap Progress Bars. (2022). Retrieved 28 June 2022, from https://www.w3schools.com/bootstrap/bootstrap_progressbars.asp
+* Chart.js | Chart.js. (2022). Retrieved 29 June 2022, from https://www.chartjs.org/docs/3.3.2/
 
 ## Recursos externos
 
