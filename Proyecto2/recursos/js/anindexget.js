@@ -24,15 +24,15 @@ async function paginacion(data) {
         else load.textContent += "."
 
         bar.querySelector("div.progress-bar").style.width = progress.toString() + "vw"
-        await sleep(100)
+        await sleep(80)
 
         if (tipo === "anime")
             TBODY.appendChild(filaAnime(anime, contador++, COUNT_ELEMENT, this_page));
         else
             TBODY.appendChild(filaManga(anime, contador++, COUNT_ELEMENT, this_page));
     }
-    bar.style.display = "none"
-    load.style.display = "none"
+    
+    load.textContent = "Cargado (〜￣▽￣)〜"
 }
 
 async function mostrarPagina() {

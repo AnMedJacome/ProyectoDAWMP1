@@ -40,8 +40,16 @@
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-index-border icon-reloading-color" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
+            <div class="d-flex flex-column w-50 justify-content-md-center">
+                <div class="ani-bg-loading">
+                    <div class="spinner-index-border icon-reloading-color" style="width: 8rem; height: 8rem;" role="status">
+                    </div>
+                    <img id="Ico-load" src="../recursos/img/anindexlogo.png" alt="ico">
+                </div>
+                <h3 id="Load-indicator">Cargando</h3>
+                <div id="Progress-bar-1" class="progress">
+                    <div class="progress-bar progress-bar-striped bg-warning" role="progressbar"></div>
+                </div>
             </div>
         </div>
         <!-- Spinner End -->
@@ -80,7 +88,7 @@
 
                 <!-- Navbar Start -->
                 <nav class="navbar navbar-expand navbar-background navbar-dark sticky-top px-4 py-0">
-                    <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <a href="#" class="sidebar-toggler sidebar-toggler-1 flex-shrink-0">
                         <i class="fa fa-bars icon-color-3"></i>
                     </a>
                     <div class="navbar-nav align-items-center ms-auto justify-content-center">
@@ -98,7 +106,7 @@
                             <div class="text-center rounded p-4">
                                 <div class="d-flex align-items-center justify-content-between mb-4">
                                     <h6 class="mb-0">Por género</h6>
-                                    <a class="enlace text-shadow-color-c" href="">Ampliar</a>
+                                    <a class="enlace text-shadow-color-c" href="genrestats.html">Ampliar</a>
                                 </div>
                                 <canvas id="Num-gnre-total"></canvas>
                             </div>
@@ -107,7 +115,7 @@
                             <div class="text-center rounded p-4">
                                 <div class="d-flex align-items-center justify-content-between mb-4">
                                     <h6 class="mb-0">Por demografía</h6>
-                                    <a class="enlace text-shadow-color-c" href="">Ampliar</a>
+                                    <a class="enlace text-shadow-color-c" href="demostats.html">Ampliar</a>
                                 </div>
                                 <canvas id="Num-demo-total"></canvas>
                             </div>
@@ -216,7 +224,6 @@
     <script src="../darkpan-1.0.0/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="../darkpan-1.0.0/js/main.js"></script>
     <script src="../recursos/js/mdb.min.js"></script>
     <script src="../recursos/js/statsgrahp.js"></script>
     <script src="../recursos/js/other.js"></script>

@@ -17,14 +17,16 @@ function sleep(ms) {
             setTimeout(function () {
                 if ($('#spinner').length > 0) {
                     $('#spinner').removeClass('show');
+                    document.getElementById("Load-indicator").style.display = "none"
+                    document.querySelector("div#Progress-bar-1").style.display = "none"
                 }
-            }, 3000);
+            }, 3200);
         }
     };
     spinner();
 
     // Sidebar Toggler
-    $('.sidebar-toggler').click(function () {
+    $('.sidebar-toggler-1').click(function () {
         $('.sidebar, .content').toggleClass("open");
         return false;
     });

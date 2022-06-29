@@ -43,6 +43,16 @@
     color: var(--c6);
 }
 
+ #icon-bg-nav {
+    width: 2rem;
+    height: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark);
+    border-radius: 2rem;
+}
+
 .index-text-primario {
     color: var(--c3);
 }

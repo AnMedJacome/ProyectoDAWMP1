@@ -45,16 +45,15 @@ function filaAnime(anime, contador, count_element, this_page) {
 
         cell = celda('td', 'p', "", tipo)
     row.appendChild(cell)
-
+        console.log(url)
         cell =  document.createElement('td');
             let a = `    
                 <a
                     class=""
-                    data-mdb-toggle="collapse"
                     href="${url}"
                     role="button"
                     aria-expanded="false"
-                    aria-controls="collapseExample"
+                    target="_blank"
                     >
                     Ver más
                 </a>

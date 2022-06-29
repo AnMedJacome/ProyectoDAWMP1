@@ -39,20 +39,26 @@
 <body>
     <div class="container-fluid position-relative index-background-img">
         <!-- Spinner Start -->
-        <div id="spinner" class="fast show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="ani-bg-loading">
-                <div class="spinner-index-border icon-reloading-color" style="width: 8rem; height: 8rem;" role="status">
+        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="d-flex flex-column w-50 justify-content-md-center">
+                <div class="ani-bg-loading">
+                    <div class="spinner-index-border icon-reloading-color" style="width: 8rem; height: 8rem;" role="status">
+                    </div>
+                    <img id="Ico-load" src="../recursos/img/anindexlogo.png" alt="ico">
                 </div>
-                <img id="Ico-load" src="../recursos/img/anindexlogo.png" alt="ico">
+                <h3 id="Load-indicator">Cargando</h3>
+                <div id="Progress-bar-1" class="progress">
+                    <div class="progress-bar progress-bar-striped bg-warning" role="progressbar"></div>
+                </div>
             </div>
         </div>
         <!-- Spinner End -->
-        
-        <div class="content index-background-mask main-container">
+        <!-- Mask Start -->
+        <div class="index-background-mask main-container">
 
             <!-- Navbar Start -->
-            <nav class="navbar navbar-expand navbar-background navbar-dark sticky-top px-4 py-0">
-                <a href="dashboard.html" class="sidebar-toggler flex-shrink-0">
+            <nav class="navbar navbar-expand navbar-background sticky-top px-4 py-0">
+                <a href="dashboard.html" id="icon-bg-nav" class="flex-shrink-0">
                     <i class="fa fa-chevron-left icon-color-3"></i>
                 </a>
                 <div class="navbar-nav align-items-center ms-auto justify-content-center">
@@ -62,19 +68,21 @@
                 </div>
             </nav>
             <!-- Navbar End -->
-
-
-            <!-- Blank Start -->
+                
             <div class="container-fluid pt-4 px-4">
-                <div class="row vh-100 bg-secondary rounded align-items-center justify-content-center mx-0">
-                    <div class="col-md-6 text-center">
-                        <h3>This is blank page</h3>
+                <div class="row justify-content-between">
+                    <div class="col-sm-12 ani-bg-table ">
+                        <div class="text-center rounded p-4">
+                            <h6 class="mb-0">Por género</h6>
+                            <canvas id="Num-gnre-total"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Blank End -->
-        
+            
         </div>
+        <!-- Mask End -->
+        
     </div>
 
 
@@ -89,6 +97,8 @@
     <script src="../darkpan-1.0.0/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
+    <script src="../recursos/js/mdb.min.js"></script>
+    <script src="../recursos/js/statsgrahp.js"></script>
     <script src="../recursos/js/other.js"></script>
 </body>
 
