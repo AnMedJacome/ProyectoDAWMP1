@@ -1,37 +1,44 @@
-## Welcome to GitHub Pages
+# Proyectos 2022-1T - Desarrollo de Aplicaciones Web y móviles
 
-You can use the [editor on GitHub](https://github.com/AnMedJacome/ProyectoDAWMP1/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+## Inicio
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+En este repositorio se encuentran proyectos desarrollados con fines académicos pero también con la idea de ser mejorados para ser puestas en línea y cumplir con sus respectivos objetivos.
 
-### Markdown
+## Indice de proyectos
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/AnMedJacome/ProyectoDAWMP1/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+<table>
+  <thead>
+    <tr>
+      <th>Número</th>
+      <th>Logo</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">1</td>
+      <td align="center">
+        <img src="../Proyecto1/recursos/img/otros/neboulux.png" style="height:15vh;width:35vw">
+      </td>
+      <td align="center">
+        <a href="Proyecto1">ImagiNeboulux</a>
+      </td>
+      <td align="center">
+        Sitio web de presentación de mi perfil laboral donde presento mi información pública y una lista de proyectos que he realizado hasta la fecha.
+      </td>
+    </tr>
+    <tr>
+      <td align="center">2</td>
+      <td align="center">
+        <img src="../Proyecto2/recursos/img/anindexlogo.png" style="height:15vh;width:35vw">
+      </td>
+      <td align="center">
+        <a href="Proyecto2">AnIndeX</a>
+      </td>
+      <td align="center">
+        Sitio web enfocado en mostrar en gráficos estadísticos sobre el número de <a href="https://anime-para-el-kokoro.fandom.com/es/wiki/%C2%BFQue_es_el_anime%3F">anime</a> y <a href="https://anime-para-el-kokoro.fandom.com/es/wiki/%C2%BFQu%C3%A9_es_el_manga%3F">manga</a> según su género, estado de emisión, temporada (época del año), en el caso de las animaciones se muestra un indicador de los tipos, ya sean TV, OAV o Pelicula. Cabe recalcar que existen varias formas de filtrar información con estas dos variables, en especial porque los valores son relativamente grandes. Además, tambien presenta una lista de anime y manga con la opción de filtrar por género especifico o estado de emisión del mismo y ordenarlos según su popularidad.
+      </td>
+    </tr>
+  </tbody>
+</table>
