@@ -53,25 +53,37 @@
 .spinner-index-border, .spinner-mytho-grow {
     display:inline-block;
     background-color: var(--c5);
-    background-image: url(../img/anindexlogo.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 3rem;
-    width: 2rem;
-    height: 2rem;
+    background-size: 7rem;
+    width: 7rem;
+    height: 7rem;
     vertical-align: -.125em;
     border-radius: 50%;
+    position: absolute;
+}
+
+.ani-bg-loading {
+    width: 9rem;
+    height: 9rem;
+    position: relative;
+}
+
+#Ico-load {
+    position: absolute;
+    width: 6rem;
+    height: 6rem;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
 }
 
 .spinner-mytho-grow {
     opacity: 0;
     animation: .75s linear infinite spinner-mytho-grow;
-    box-shadow: -.1rem 0 1rem .2rem var(--c1), .1rem 0 1rem .2rem var(--c4);
+    box-shadow: -.1rem 0 1rem .2rem var(--c1), .1rem 0 1rem .2rem var(--c6);
 }
 
 .spinner-index-border {
     animation: .75s linear infinite spinner-index-border;
-    box-shadow: -.2rem 0 1rem .2rem var(--c1), .2rem 0 1rem .2rem var(--c4);
+    box-shadow: -.2rem 0 1rem .2rem var(--c1), .2rem 0 1rem .2rem var(--c6);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -39,8 +39,16 @@
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-index-border icon-reloading-color" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
+            <div class="d-flex flex-column w-50 justify-content-md-center">
+                <div class="ani-bg-loading">
+                    <div class="spinner-index-border icon-reloading-color" style="width: 8rem; height: 8rem;" role="status">
+                    </div>
+                    <img id="Ico-load" src="../recursos/img/anindexlogo.png" alt="ico">
+                </div>
+                <h3 id="Load-indicator">Cargando</h3>
+                <div id="Progress-bar-1" class="progress">
+                    <div class="progress-bar progress-bar-striped bg-warning" role="progressbar"></div>
+                </div>
             </div>
         </div>
         <!-- Spinner End -->
@@ -96,12 +104,6 @@
                         <option  selected value="anime">Anime</option>
                         <option value="manga">Manga</option>
                     </select>
-
-                    <h3 id="Load-indicator">Cargando</h3>
-                    
-                    <div id="Progress-bar-1" class="progress">
-                        <div class="progress-bar progress-bar-striped bg-warning" role="progressbar"></div>
-                    </div>
 
                     <div id="AnIndexTable" class="container-fluid my-5 ani-bg-table g-4">
                         <div class="row my-4 justify-content-around">
@@ -197,10 +199,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col mb-4 d-flex justify-content-center">
+                            <div class="col-sm mb-4 d-flex justify-content-center">
                                 <div class="ani-bg-table ani-size-card">
                                     <h6 class="mb-4 ani-title-info">Todos los géneros</h6>
-                                    <!-- Tabs navs -->
                                     <ul class="nav nav-tabs nav-justified mb-3" id="ex1" role="tablist">
                                         <li class="nav-item" role="presentation">
                                         <a
@@ -227,9 +228,7 @@
                                         >
                                         </li>
                                     </ul>
-                                    <!-- Tabs navs -->
                                     
-                                    <!-- Tabs content -->
                                     <div class="tab-content" id="ex2-content">
                                         <div
                                         class="tab-pane fade show active genre-info"
@@ -263,7 +262,6 @@
                                             </dl>
                                         </div>
                                     </div>
-                                    <!-- Tabs content -->
                                 </div>
                             </div>
                         </div>
@@ -271,18 +269,14 @@
                             <div class="col mb-4 d-flex">
                                 <h5 id="Pagina-tabla">...</h5>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">                
-                                <div class="table-responsive">
-                                    <table class="table table-hove align-middle mb-0 ani-table-info-1">
-                                        <thead class="ani-head text-center">
-                                        </thead>
-                                        <tbody class="ani-body text-center">
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                        </div>                
+                        <div class="table-responsive">
+                            <table class="table table-hove align-middle mb-0 ani-table-info-1">
+                                <thead class="ani-head text-center">
+                                </thead>
+                                <tbody class="ani-body text-center">
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

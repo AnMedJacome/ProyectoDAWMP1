@@ -1,39 +1,76 @@
-(function ($) {
+const GENEROS = ["Action", "Adventure", "Avant Garde", "Boys Love", "Comedy", "Drama", "Fantasy", "Girls Love", "Gourmet", 
+"Horror", "Mystery", "Romance", "Sci-Fi", "Slice of Life", "Sports", "Supernatural", "Suspense"]
+const DEMOGRAFIA  = ["Josei", "Kids", "Seinen", "Shoujo", "Shounen"]
+
+async function numAniManGenres(tipo) {
+    let respuesta = await fetch(`http://localhost:8080/recursos/json/genres/${tipo}.json`);
+    let data = await respuesta.json();
+    let arreglo = data["data"]
+    let numeros = []
+    for (let item of arreglo) {
+        if (GENEROS.includes(item["name"]))
+            numeros.push(parseInt(item["count"]))
+    }
+    return numeros
+}
+async function numAniManDemo(tipo) {
+    let respuesta = await fetch(`http://localhost:8080/recursos/json/genres/${tipo}.json`);
+    let data = await respuesta.json();
+    let arreglo = data["data"]
+    let numeros = []
+    for (let item of arreglo) {
+        if (DEMOGRAFIA.includes(item["name"]))
+            numeros.push(parseInt(item["count"]))
+    }
+    return numeros
+}
+
+async function getNumberGenres()  {
+    let ambos = []
+    ambos.push(await numAniManGenres("anime"))
+    ambos.push(await numAniManGenres("manga"))
+    return ambos
+}
+
+async function getNumberDemo()  {
+    let ambos = []
+    ambos.push(await numAniManDemo("anime"))
+    ambos.push(await numAniManDemo("manga"))
+    return ambos
+}
+
+(async function ($) {
     "use strict";
 
     // Progress Bar
+    /*
     $('.pg-bar').waypoint(function () {
         $('.progress .progress-bar').each(function () {
             $(this).css("width", $(this).attr("aria-valuenow") + '%');
         });
     }, {offset: '80%'});
-    
-    // Chart Global Color
-    Chart.defaults.color = "#7d622f";
-    Chart.defaults.borderColor = "#1C160B";
+    */
 
 
     // Worldwide Sales Chart
-    if ($("#worldwide-sales").get(0) !== null) {
-        var ctx1 = $("#worldwide-sales").get(0).getContext("2d");
-        var myChart1 = new Chart(ctx1, {
-            type: "bar",
+    if ($("#Num-gnre-total").get(0) !== null) {
+        let arreglo = await getNumberGenres()
+        var ctx2 = $("#Num-gnre-total").get(0).getContext("2d");
+        var myChart2 = new Chart(ctx2, {
+            type: "line",
             data: {
-                labels: ["2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+                labels: GENEROS,
                 datasets: [{
-                        label: "USA",
-                        data: [15, 30, 55, 65, 60, 80, 95],
-                        backgroundColor: "rgba(252, 215, 139, 0.8)"
+                        label: "Anime",
+                        data: arreglo[0],
+                        backgroundColor: "rgba(252, 215, 139, 0.8)",
+                        fill: true
                     },
                     {
-                        label: "UK",
-                        data: [8, 35, 40, 60, 70, 55, 75],
-                        backgroundColor: "rgba(227, 178, 86, 0.8)"
-                    },
-                    {
-                        label: "AU",
-                        data: [12, 25, 45, 55, 65, 70, 60],
-                        backgroundColor: "rgba(125, 98, 47, 0.8)"
+                        label: "Manga",
+                        data: arreglo[1],
+                        backgroundColor: "rgba(227, 178, 86, 0.8)",
+                        fill: true
                     }
                 ]
                 },
@@ -45,29 +82,30 @@
 
 
     // Salse & Revenue Chart
-    var ctx2 = $("#salse-revenue").get(0).getContext("2d");
-    var myChart2 = new Chart(ctx2, {
-        type: "line",
-        data: {
-            labels: ["2016", "2017", "2018", "2019", "2020", "2021", "2022"],
-            datasets: [{
-                    label: "Salse",
-                    data: [15, 30, 55, 45, 70, 65, 85],
-                    backgroundColor: `rgba(28, 22, 11, 0.8)`,
-                    fill: true
+    if ($("#Num-demo-total").get(0) !== null) {
+        let arreglo = await getNumberDemo()
+        var ctx1 = $("#Num-demo-total").get(0).getContext("2d");
+        var myChart1 = new Chart(ctx1, {
+            type: "bar",
+            data: {
+                labels: DEMOGRAFIA,
+                datasets: [{
+                        label: "Anime",
+                        data: arreglo[0],
+                        backgroundColor: "rgba(252, 215, 139, 0.8)"
+                    },
+                    {
+                        label: "Manga",
+                        data: arreglo[1],
+                        backgroundColor: "rgba(227, 178, 86, 0.8)"
+                    },
+                ]
                 },
-                {
-                    label: "Revenue",
-                    data: [99, 135, 170, 130, 190, 180, 270],
-                    backgroundColor: "rgba(125, 98, 47, 0.8)",
-                    fill: true
-                }
-            ]
-            },
-        options: {
-            responsive: true
-        }
-    });
+            options: {
+                responsive: true
+            }
+        });
+    }
     
 
 /*
