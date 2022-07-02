@@ -232,11 +232,11 @@ async function getNumberDemo(andata, mandata)  {
                     labels: ["Italy", "France", "Spain", "USA", "Argentina"],
                     datasets: [{
                         backgroundColor: [
-                            "rgba(235, 22, 22, .7)",
-                            "rgba(235, 22, 22, .6)",
-                            "rgba(235, 22, 22, .5)",
-                            "rgba(235, 22, 22, .4)",
-                            "rgba(235, 22, 22, .3)"
+                            "rgba(252, 215, 139, 0.69)",
+                            "rgba(252, 198, 96, 0.69)",
+                            "rgba(189, 148, 72, 0.69)",
+                            "rgba(125, 98, 47, 0.69)",
+                            "rgba(61, 48, 23, 0.69)"
                         ],
                         data: [(55*i)-(i*i*3), (49*i)-(i*i*3), (44*i)-(i*i*3), (24*i)-(i*i*3), (15*i)-(i*i*3)]
                     }]
@@ -262,11 +262,11 @@ async function getNumberDemo(andata, mandata)  {
                     labels: ["Italy", "France", "Spain", "USA", "Argentina"],
                     datasets: [{
                         backgroundColor: [
-                            "rgba(235, 22, 22, .7)",
-                            "rgba(235, 22, 22, .6)",
-                            "rgba(235, 22, 22, .5)",
-                            "rgba(235, 22, 22, .4)",
-                            "rgba(235, 22, 22, .3)"
+                            "rgba(252, 215, 139, 0.69)",
+                            "rgba(252, 198, 96, 0.69)",
+                            "rgba(189, 148, 72, 0.69)",
+                            "rgba(125, 98, 47, 0.69)",
+                            "rgba(61, 48, 23, 0.69)"
                         ],
                         data: [(55*i)-(i*i*3), (49*i)-(i*i*3), (44*i)-(i*i*3), (24*i)-(i*i*3), (15*i)-(i*i*3)]
                     }]

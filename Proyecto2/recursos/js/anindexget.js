@@ -115,6 +115,7 @@ selector.addEventListener('change', () => {
     let titulo = document.getElementById('Pagina-tabla');
     titulo.textContent = `Página 1 de ${TOTAL_PAGES}`
     cargarDatos();
+    crearGenreStats(tipo)
 })
 
 async function cambiarPlot(seccion, id, all){

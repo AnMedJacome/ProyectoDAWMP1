@@ -85,7 +85,6 @@ async function crearGenreStats(tipo) {
     await contarAnimesGeneros(url)
 
     for (let [clave, valor] of generos) {
-        console.log(generos)
         let query = `<div class="carousel-item ani-bg-table rounded d-flex flex-row align-items-center justify-content-around p-4`
         query += (clave ==="Action") ? ` active">` : `">`
         query += `
