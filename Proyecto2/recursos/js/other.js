@@ -33,6 +33,14 @@ function sleep(ms) {
     
 })(jQuery);
 
+function prueba1() {
+    console.log("prueba1");
+}
+
+function prueba2() {
+    console.log("prueba2");
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
     let query = `

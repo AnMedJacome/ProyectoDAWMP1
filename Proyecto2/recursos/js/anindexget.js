@@ -44,7 +44,7 @@ async function mostrarPagina() {
 
             this_page = page - 1
             
-            var url = `http://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${this_page}).json`
+            var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${this_page}).json`
             let data = await getJSONData(url)
             paginacion(data)
             texto.value = '';
@@ -90,7 +90,7 @@ let cargarDatos = async () => {
     `;
     THEAD.innerHTML = qu_thead;
     this_page = 0
-    var url = `http://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${this_page}).json`
+    var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${this_page}).json`
     let data = await getJSONData(url)
     let li = document.getElementById('Ani-pitem-r');
     li.innerHTML = `1 de <span class="fw-bold">${TOTAL_PAGES}</span>`;

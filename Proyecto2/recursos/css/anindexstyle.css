@@ -24,11 +24,10 @@
 }
 
 .ani-bg-table {
-    display: inline-block;
-    border: 1rem solid transparent;
-    border-radius: 1rem;
-    background-color: var(--c6-d1);
-    box-shadow: .5rem .5rem .5rem .1rem black;
+    border: 1rem solid transparent !important;
+    border-radius: 1rem !important;
+    background-color: var(--c6-d1) !important;
+    box-shadow: .5rem .5rem .5rem .1rem black !important;
 }
 
 .ani-paragraph {
@@ -112,4 +111,10 @@
 
 .ani-size-card {
     width: 40vw;
+}
+
+.pie-size {
+    height: 30rem !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }

@@ -7,7 +7,7 @@ const BAR = document.querySelector("div#Progress-bar-1");
 var contador = 1;
 
 async function numAniManGenres(tipo) {
-    let respuesta = await fetch(`http://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/genres/${tipo}.json`);
+    let respuesta = await fetch(`https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/genres/${tipo}.json`);
     let data = await respuesta.json();
     let arreglo = data["data"]
     let numeros = []
@@ -30,7 +30,7 @@ async function numAniManGenres(tipo) {
     return numeros
 }
 async function numAniManDemo(tipo) {
-    let respuesta = await fetch(`http://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/genres/${tipo}.json`);
+    let respuesta = await fetch(`https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/genres/${tipo}.json`);
     let data = await respuesta.json();
     let arreglo = data["data"]
     let numeros = []
@@ -216,6 +216,70 @@ async function getNumberDemo()  {
                 }
         });
     }
+
+    
+    // Pie Chart
+    for(let i = 1 ; i < 11 ; i++) {
+        var ctx5 = $(`#pie-chart-${i}`).get(0).getContext("2d");
+        var myChart5 = new Chart(ctx5, {
+            type: "pie",
+            data: {
+                labels: ["Italy", "France", "Spain", "USA", "Argentina"],
+                datasets: [{
+                    backgroundColor: [
+                        "rgba(235, 22, 22, .7)",
+                        "rgba(235, 22, 22, .6)",
+                        "rgba(235, 22, 22, .5)",
+                        "rgba(235, 22, 22, .4)",
+                        "rgba(235, 22, 22, .3)"
+                    ],
+                    data: [(55*i)-(i*i*3), (49*i)-(i*i*3), (44*i)-(i*i*3), (24*i)-(i*i*3), (15*i)-(i*i*3)]
+                }]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    labels: {
+                        color: "white",
+                        font: {
+                          size: 10,
+                        },
+                    }
+                }
+            }
+        });
+    }
+
+
+    // Doughnut Chart
+    var ctx6 = $("#doughnut-chart").get(0).getContext("2d");
+    var myChart6 = new Chart(ctx6, {
+        type: "doughnut",
+        data: {
+            labels: ["Italy", "France", "Spain", "USA", "Argentina"],
+            datasets: [{
+                backgroundColor: [
+                    "rgba(235, 22, 22, .7)",
+                    "rgba(235, 22, 22, .6)",
+                    "rgba(235, 22, 22, .5)",
+                    "rgba(235, 22, 22, .4)",
+                    "rgba(235, 22, 22, .3)"
+                ],
+                data: [55, 49, 44, 24, 15]
+            }]
+        },
+        options: {
+            responsive: true,
+            legend: {
+                labels: {
+                    color: "white",
+                    font: {
+                      size: 10,
+                    },
+                }
+            }
+        }
+    });
     
     LOAD.textContent = "Cargado (〜￣▽￣)〜"
 /*
@@ -261,50 +325,6 @@ async function getNumberDemo()  {
     });
 
 
-    // Pie Chart
-    var ctx5 = $("#pie-chart").get(0).getContext("2d");
-    var myChart5 = new Chart(ctx5, {
-        type: "pie",
-        data: {
-            labels: ["Italy", "France", "Spain", "USA", "Argentina"],
-            datasets: [{
-                backgroundColor: [
-                    "rgba(235, 22, 22, .7)",
-                    "rgba(235, 22, 22, .6)",
-                    "rgba(235, 22, 22, .5)",
-                    "rgba(235, 22, 22, .4)",
-                    "rgba(235, 22, 22, .3)"
-                ],
-                data: [55, 49, 44, 24, 15]
-            }]
-        },
-        options: {
-            responsive: true
-        }
-    });
-
-
-    // Doughnut Chart
-    var ctx6 = $("#doughnut-chart").get(0).getContext("2d");
-    var myChart6 = new Chart(ctx6, {
-        type: "doughnut",
-        data: {
-            labels: ["Italy", "France", "Spain", "USA", "Argentina"],
-            datasets: [{
-                backgroundColor: [
-                    "rgba(235, 22, 22, .7)",
-                    "rgba(235, 22, 22, .6)",
-                    "rgba(235, 22, 22, .5)",
-                    "rgba(235, 22, 22, .4)",
-                    "rgba(235, 22, 22, .3)"
-                ],
-                data: [55, 49, 44, 24, 15]
-            }]
-        },
-        options: {
-            responsive: true
-        }
-    });
 */
     
 })(jQuery);
