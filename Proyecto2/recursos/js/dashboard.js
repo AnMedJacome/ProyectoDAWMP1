@@ -57,19 +57,16 @@ async function contarAnimesGeneros(url) {
     for (anime of arreglo) {
         let an_genres = anime['genres']
         for (genero of an_genres) 
-            if (genero['name'] in generos) {
-                generos[genero['name']]['num'] += 1
+            if (generos.has(genero['name'])) {
+                generos.get(genero['name'])['num'] += 1
             }
     }
 }
 
 async function crearGenreStats(tipo) {
-    for(let [clave, valor] of generos) {
-        generos.get(clave)['num'] = 0
+    for(let valor of generos) {
+        valor['num'] = 0
     }
-
-    var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(0).json`
-    contarAnimesGeneros(url)
 
     let counter = 1
     space.innerHTML = ""
@@ -84,7 +81,11 @@ async function crearGenreStats(tipo) {
     `
     barra.innerHTML += query
 
+    var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(0).json`
+    await contarAnimesGeneros(url)
+
     for (let [clave, valor] of generos) {
+        console.log(generos)
         let query = `<div class="carousel-item ani-bg-table rounded d-flex flex-row align-items-center justify-content-around p-4`
         query += (clave ==="Action") ? ` active">` : `">`
         query += `

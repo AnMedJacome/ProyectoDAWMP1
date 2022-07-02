@@ -45,7 +45,6 @@ function filaAnime(anime, contador, count_element, this_page) {
 
         cell = celda('td', 'p', "", tipo)
     row.appendChild(cell)
-        console.log(url)
         cell =  document.createElement('td');
             let a = `    
                 <a
