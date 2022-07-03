@@ -15,6 +15,8 @@ Enlace a documento de API: https://docs.api.jikan.moe/
 ## Plantilla usada
 DarkPan - Free Responsive Bootstrap 5 Admin Dashboard Template. (2022). Retrieved 9 June 2022, from https://themewagon.com/themes/free-bootstrap-5-admin-dashboard-template-darkpan/
 
+MDB tools. (2022). Retrieved 12 June 2022, from https://mdbootstrap.com/docs/standard/tools/
+
 ## Vista previa
 
 Vista web | Vista móvil
@@ -39,10 +41,17 @@ Vista web | Vista móvil
 * Colecciones con clave - JavaScript | MDN. (2020). Retrieved 24 June 2022, from https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Keyed_collections
 * Element.ariaValueNow - Web APIs | MDN. (2022). Retrieved 28 June 2022, from https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaValueNow
 * Bootstrap Progress Bars. (2022). Retrieved 28 June 2022, from https://www.w3schools.com/bootstrap/bootstrap_progressbars.asp
-* Chart.js | Chart.js. (2022). Retrieved 29 June 2022, from https://www.chartjs.org/docs/3.3.2/
 * Farid, M. (2022). Comprobar si el elemento existe en el DOM en JavaScript. Retrieved 3 July 2022, from https://www.delftstack.com/es/howto/javascript/javascript-check-element-exists-in-dom/
+* Códigos HTML - Tabla de caracteres y símbolos. (2022). Retrieved 3 July 2022, from https://ascii.cl/es/codigos-html.htm
 
 ## Recursos externos
+
+### Librerias CSS
+
+* Chart.js | Chart.js. (2022). Retrieved 29 June 2022, from https://www.chartjs.org/docs/3.3.2/
+* Imagehover.css - A Pure CSS Image Hover Library. (2022). Retrieved 3 July 2022, from http://imagehover.io/
+* GitHub - kazzkiq/balloon.css: Simple tooltips made of pure CSS. (2022). Retrieved 3 July 2022, from https://github.com/kazzkiq/balloon.css
+* GitHub - szynszyliszys/repaintless: Library for fast CSS Animations. (2022). Retrieved 3 July 2022, from https://github.com/szynszyliszys/repaintless
 
 ### Imágenes utilizadas
 

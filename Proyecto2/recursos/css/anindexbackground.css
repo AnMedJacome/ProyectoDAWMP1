@@ -16,3 +16,11 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to top, var(--c6-d1),  var(--c5-d1))
 }
+
+/* Styles required only for the example above */
+.scrollspy-block {
+    position: relative;
+    height: 30rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
