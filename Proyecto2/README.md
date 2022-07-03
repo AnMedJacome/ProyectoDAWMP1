@@ -43,6 +43,7 @@ Vista web | Vista móvil
 * Bootstrap Progress Bars. (2022). Retrieved 28 June 2022, from https://www.w3schools.com/bootstrap/bootstrap_progressbars.asp
 * Farid, M. (2022). Comprobar si el elemento existe en el DOM en JavaScript. Retrieved 3 July 2022, from https://www.delftstack.com/es/howto/javascript/javascript-check-element-exists-in-dom/
 * Códigos HTML - Tabla de caracteres y símbolos. (2022). Retrieved 3 July 2022, from https://ascii.cl/es/codigos-html.htm
+* Bootstrap Scrollspy - examples & tutorial. (2022). Retrieved 3 July 2022, from https://mdbootstrap.com/docs/standard/navigation/scrollspy/#docsTabsAPI
 
 ## Recursos externos
 
