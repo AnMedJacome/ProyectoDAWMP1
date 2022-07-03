@@ -34,6 +34,7 @@ DarkPan - Free Responsive Bootstrap 5 Admin Dashboard Template. (2022). Retrieve
 * Element.ariaValueNow - Web APIs | MDN. (2022). Retrieved 28 June 2022, from https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaValueNow
 * Bootstrap Progress Bars. (2022). Retrieved 28 June 2022, from https://www.w3schools.com/bootstrap/bootstrap_progressbars.asp
 * Chart.js | Chart.js. (2022). Retrieved 29 June 2022, from https://www.chartjs.org/docs/3.3.2/
+* Farid, M. (2022). Comprobar si el elemento existe en el DOM en JavaScript. Retrieved 3 July 2022, from https://www.delftstack.com/es/howto/javascript/javascript-check-element-exists-in-dom/
 
 ## Recursos externos
 

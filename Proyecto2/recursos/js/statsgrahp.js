@@ -1,6 +1,20 @@
 const GENEROS = ["Action", "Adventure", "Avant Garde", "Boys Love", "Comedy", "Drama", "Fantasy", "Girls Love", "Gourmet", 
 "Horror", "Mystery", "Romance", "Sci-Fi", "Slice of Life", "Sports", "Supernatural", "Suspense"]
 const DEMOGRAFIA  = ["Josei", "Kids", "Seinen", "Shoujo", "Shounen"]
+const THEMES = [
+    ["Space","Time Travel","Parody","Mecha","Anthropomorphic"], ["Music", "Adult Cast", "Idols (Male)", "Idols (Female)", "Racing"],
+    ["Crossdressing", "Reverse Harem", "Harem", "Romantic Subtext", "Love Polygon"], ["School", "Visual Arts", "Video Game", "Gag Humor", "Performing Arts"],
+    ["Martial Arts", "Team Sports", "Strategy Game", "Combat Sports", "Samurai"], ["Educational", "Historical", "Otaku Culture", "Medical", "Workplace"],
+    ["Mahou Shoujo", "Magical Sex Shift", "Mythology", "Isekai", "Reincarnation"], ["Detective", "Delinquents", "Psychological", "Organized Crime", "Military"],
+    ["Showbiz", "Pets", "CGDCT", "Iyashikei", "Childcare"], ["Gore", "Survival", "High Stakes Game", "Super Power", "Vampire"]
+]
+const THEMES_T = [
+    "Space","Time Travel","Parody","Mecha","Anthropomorphic", "Music", "Adult Cast", "Idols (Male)", "Idols (Female)", "Racing",
+    "Crossdressing", "Reverse Harem", "Harem", "Romantic Subtext", "Love Polygon", "School", "Visual Arts", "Video Game", "Gag Humor", "Performing Arts",
+    "Martial Arts", "Team Sports", "Strategy Game", "Combat Sports", "Samurai", "Educational", "Historical", "Otaku Culture", "Medical", "Workplace",
+    "Mahou Shoujo", "Magical Sex Shift", "Mythology", "Isekai", "Reincarnation", "Detective", "Delinquents", "Psychological", "Organized Crime", "Military",
+    "Showbiz", "Pets", "CGDCT", "Iyashikei", "Childcare", "Gore", "Survival", "High Stakes Game", "Super Power", "Vampire"
+]
 const LOAD = document.getElementById("Load-indicator");
 const BAR = document.querySelector("div#Progress-bar-1");
 
@@ -10,78 +24,65 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function getGenreValues(tipo){
-    let respuesta = await fetch(`https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/genres/${tipo}.json`);
+async function fetchValues(tipo){
+    let respuesta = await fetch(`https://api.jikan.moe/v4/genres/${tipo}`);
     let data = await respuesta.json();
     return data["data"]
 }
 
-async function numAniManGenres(arreglo) {
+let loadBar = async (load_text) => {
+    if ((contador % 5) == 1) LOAD.textContent = load_text + "."
+    else LOAD.textContent += "."
+    let progress = (contador++)
+
+    BAR.querySelector("div.progress-bar").style.width = progress.toString() + "vw"
+    await sleep(10)
+}
+
+async function getNumAniMan(arreglo) {
     let numeros = []
 
-    let load_text = LOAD.textContent
-    for (let item of arreglo) {
+    let gs = new Map()
+    let dem = new Map()
+    let thm = new Map()
 
-        if (GENEROS.includes(item["name"])) {
-        
-            if ((contador % 5) == 1) LOAD.textContent = load_text + "."
-            else LOAD.textContent += "."
-            let progress = (contador++) * 5
-        
-            BAR.querySelector("div.progress-bar").style.width = progress.toString() + "vw"
-            await sleep(30)
-            
-            numeros.push(parseInt(item["count"]))
+    let load_text = "Cargando"
+    for (let item of arreglo) {
+        let it = item["name"]
+
+        if (GENEROS.includes(it)) {
+            loadBar(load_text)
+            gs.set(it, parseInt(item["count"]))
+        }
+
+        else if (DEMOGRAFIA.includes(it)) {
+            loadBar(load_text)
+            dem.set(it, parseInt(item["count"]))
+        }
+
+        else if (THEMES_T.includes(it)) {
+            loadBar(load_text)
+            thm.set(it, parseInt(item["count"]))
         }
     }
-    return numeros
-}
-async function numAniManDemo(arreglo) {
-    let numeros = []
 
-    let load_text = LOAD.textContent
-    for (let item of arreglo) {
+    numeros.push(gs)
+    numeros.push(dem)
+    numeros.push(thm)
 
-        if (GENEROS.includes(item["name"])) {
-        
-            if ((contador % 5) == 1) LOAD.textContent = load_text + "."
-            else LOAD.textContent += "."
-            let progress = (contador++) * 5
-        
-            BAR.querySelector("div.progress-bar").style.width = progress.toString() + "vw"
-            await sleep(10)
-
-            numeros.push(parseInt(item["count"]))
-        }
-    }
     return numeros
 }
 
-async function getNumberGenres(andata, mandata)  {
-    let ambos = []
-    ambos.push(await numAniManGenres(andata))
-    ambos.push(await numAniManGenres(mandata))
-    return ambos
-}
-
-async function getNumberDemo(andata, mandata)  {
-    let ambos = []
-    ambos.push(await numAniManDemo(andata))
-    ambos.push(await numAniManDemo(mandata))
-    return ambos
+async function getArrayAniMan(andata, mandata)  {
+    let both = []
+    both.push(await getNumAniMan(andata))
+    both.push(await getNumAniMan(mandata))
+    return both
 }
 
 (async function ($) {
     "use strict";
 
-    // Progress Bar
-    /*
-    $('.pg-bar').waypoint(function () {
-        $('.progress .progress-bar').each(function () {
-            $(this).css("width", $(this).attr("aria-valuenow") + '%');
-        });
-    }, {offset: '80%'});
-    */
     let load_text = LOAD.textContent
         
     if ((contador % 5) == 1) LOAD.textContent = load_text + "."
@@ -90,18 +91,25 @@ async function getNumberDemo(andata, mandata)  {
 
     BAR.querySelector("div.progress-bar").style.width = progress.toString() + "vw"
     var spinner = async function () {
-        let an_arreglo = await getGenreValues("anime")
-        let man_arreglo = await getGenreValues("manga")
+        let an_arreglo = await fetchValues("anime")
+        let man_arreglo = await fetchValues("manga")
+        let arreglo = await getArrayAniMan(an_arreglo, man_arreglo)
+        console.log(arreglo)
         if (document.getElementById("Num-gnre-total") != null) {
-            let arreglo = await getNumberGenres(an_arreglo, man_arreglo)
             var ctx2 = $("#Num-gnre-total").get(0).getContext("2d");
             var myChart2 = new Chart(ctx2, {
                 type: "line",
                 data: {
                     labels: GENEROS,
-                    datasets: [{
+                    datasets: [
+                        {
                             label: "Anime",
-                            data: arreglo[0],
+                            data: [
+                                (arreglo[0][0]).get("Action"), (arreglo[0][0]).get("Adventure"), (arreglo[0][0]).get("Avant Garde"), (arreglo[0][0]).get("Boys Love"), (arreglo[0][0]).get("Comedy"),
+                                (arreglo[0][0]).get("Drama"), (arreglo[0][0]).get("Fantasy"), (arreglo[0][0]).get("Girls Love"), (arreglo[0][0]).get("Gourmet"), (arreglo[0][0]).get("Horror"),
+                                (arreglo[0][0]).get("Mystery"), (arreglo[0][0]).get("Romance"), (arreglo[0][0]).get("Sci-Fi"), (arreglo[0][0]).get("Slice of Life"), (arreglo[0][0]).get("Sports"),
+                                (arreglo[0][0]).get("Supernatural"), (arreglo[0][0]).get("Suspense")
+                            ],
                             backgroundColor: "rgba(252, 215, 139, 0.8)",
                             fill: true,
                             pointStyle: 'rectRot',
@@ -110,7 +118,12 @@ async function getNumberDemo(andata, mandata)  {
                         },
                         {
                             label: "Manga",
-                            data: arreglo[1],
+                            data: [
+                                (arreglo[1][0]).get("Action"), (arreglo[1][0]).get("Adventure"), (arreglo[1][0]).get("Avant Garde"), (arreglo[1][0]).get("Boys Love"), (arreglo[1][0]).get("Comedy"),
+                                (arreglo[1][0]).get("Drama"), (arreglo[1][0]).get("Fantasy"), (arreglo[1][0]).get("Girls Love"), (arreglo[1][0]).get("Gourmet"), (arreglo[1][0]).get("Horror"),
+                                (arreglo[1][0]).get("Mystery"), (arreglo[1][0]).get("Romance"), (arreglo[1][0]).get("Sci-Fi"), (arreglo[1][0]).get("Slice of Life"), (arreglo[1][0]).get("Sports"),
+                                (arreglo[1][0]).get("Supernatural"), (arreglo[1][0]).get("Suspense")
+                            ],
                             backgroundColor: "rgba(227, 178, 86, 0.8)",
                             fill: true,
                             pointStyle: 'rectRot',
@@ -118,8 +131,8 @@ async function getNumberDemo(andata, mandata)  {
                             pointBorderColor: '#1C160B'
                         }
                     ]
-                    },
-                    options: {
+                },
+                options: {
                         responsive: true,
                         legend: {
                             labels: {
@@ -150,37 +163,33 @@ async function getNumberDemo(andata, mandata)  {
                                 }
                             }
                         }
-                    }
+                }
             });
-        }
-    
-        if (document.getElementById("Num-demo-total") != null && document.getElementById("Num-gnre-total") != null) {
-            if ((contador % 5) == 1) LOAD.textContent = load_text + "."
-            else LOAD.textContent += "."
-            progress = contador++
-        
-            await sleep(20)
-        
-            BAR.querySelector("div.progress-bar").style.width = progress.toString() + "vw"
         }
     
     
         // Salse & Revenue Chart
         if (document.getElementById("Num-demo-total") != null) {
-            let arreglo = await getNumberDemo(an_arreglo, man_arreglo)
             var ctx1 = $("#Num-demo-total").get(0).getContext("2d");
             var myChart1 = new Chart(ctx1, {
                 type: "bar",
                 data: {
                     labels: DEMOGRAFIA,
-                    datasets: [{
+                    datasets: [
+                        {
                             label: "Anime",
-                            data: arreglo[0],
+                            data: [
+                                (arreglo[0][1]).get("Josei"), (arreglo[0][1]).get("Kids"), (arreglo[0][1]).get("Seinen"),
+                                (arreglo[0][1]).get("Shoujo"), (arreglo[0][1]).get("Shounen")
+                            ],
                             backgroundColor: "rgba(252, 215, 139, 0.8)",
                         },
                         {
                             label: "Manga",
-                            data: arreglo[1],
+                            data:  [
+                                (arreglo[1][1]).get("Josei"), (arreglo[1][1]).get("Kids"), (arreglo[1][1]).get("Seinen"),
+                                (arreglo[1][1]).get("Shoujo"), (arreglo[1][1]).get("Shounen")
+                            ],
                             backgroundColor: "rgba(227, 178, 86, 0.8)",
                         },
                     ]
@@ -221,15 +230,14 @@ async function getNumberDemo(andata, mandata)  {
                     }
             });
         }
-    
         
         // Pie Chart
-        for(let i = 1 ; i < 12 ; i++) {
-            var ctx5 = $(`#pie-man-chart-${i}`).get(0).getContext("2d");
+        for(let i = 1 ; i < 11 ; i++) {
+            var ctx5 = $(`#pie-ani-chart-${i}`).get(0).getContext("2d");
             var myChart5 = new Chart(ctx5, {
                 type: "pie",
                 data: {
-                    labels: ["Italy", "France", "Spain", "USA", "Argentina"],
+                    labels: THEMES[i - 1],
                     datasets: [{
                         backgroundColor: [
                             "rgba(252, 215, 139, 0.69)",
@@ -238,7 +246,11 @@ async function getNumberDemo(andata, mandata)  {
                             "rgba(125, 98, 47, 0.69)",
                             "rgba(61, 48, 23, 0.69)"
                         ],
-                        data: [(55*i)-(i*i*3), (49*i)-(i*i*3), (44*i)-(i*i*3), (24*i)-(i*i*3), (15*i)-(i*i*3)]
+                        data: [
+                            arreglo[0][2].get(THEMES[i - 1][0]), arreglo[0][2].get(THEMES[i - 1][1]),
+                            arreglo[0][2].get(THEMES[i - 1][2]), arreglo[0][2].get(THEMES[i - 1][3]),
+                            arreglo[0][2].get(THEMES[i - 1][4])
+                        ]
                     }]
                 },
                 options: {
@@ -254,12 +266,13 @@ async function getNumberDemo(andata, mandata)  {
                 }
             });
         }
+        console.log("LISTA MANGA")
         for(let i = 1 ; i < 11 ; i++) {
-            var ctx5 = $(`#pie-ani-chart-${i}`).get(0).getContext("2d");
+            var ctx5 = $(`#pie-man-chart-${i}`).get(0).getContext("2d");
             var myChart5 = new Chart(ctx5, {
                 type: "pie",
                 data: {
-                    labels: ["Italy", "France", "Spain", "USA", "Argentina"],
+                    labels: THEMES[i - 1],
                     datasets: [{
                         backgroundColor: [
                             "rgba(252, 215, 139, 0.69)",
@@ -268,7 +281,11 @@ async function getNumberDemo(andata, mandata)  {
                             "rgba(125, 98, 47, 0.69)",
                             "rgba(61, 48, 23, 0.69)"
                         ],
-                        data: [(55*i)-(i*i*3), (49*i)-(i*i*3), (44*i)-(i*i*3), (24*i)-(i*i*3), (15*i)-(i*i*3)]
+                        data: [
+                            arreglo[1][2].get(THEMES[i - 1][0]), arreglo[1][2].get(THEMES[i - 1][1]),
+                            arreglo[1][2].get(THEMES[i - 1][2]), arreglo[1][2].get(THEMES[i - 1][3]),
+                            arreglo[1][2].get(THEMES[i - 1][4])
+                        ]
                     }]
                 },
                 options: {
