@@ -52,7 +52,7 @@ async function mostrarPagina() {
             titulo.textContent = `Página ${valor} de ${TOTAL_PAGES}`
             let li = document.getElementById('Ani-pitem-r');
             li.innerHTML = `${valor} de <span class="fw-bold">${TOTAL_PAGES}</span>`;
-            cargarGenreStats(tipo, page)
+            cargarGenreStats(tipo)
             let seccion = document.querySelector('div.ani-plot')
             cambiarPlot(seccion, null, false)
             selectorg.selectedIndex = 0;
@@ -172,4 +172,54 @@ async function getJSONData(url) {
     let data = await respuesta.json();
 
     return data;
+}
+
+async function goToNext() {
+    this_page = this_page + 1;
+    var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${this_page}).json`
+    let data = await getJSONData(url)
+    paginacion(data)
+    texto.value = '';
+    let titulo = document.getElementById('Pagina-tabla');
+    titulo.textContent = `Página ${this_page + 1} de ${TOTAL_PAGES}`
+    let li = document.getElementById('Ani-pitem-r');
+    li.innerHTML = `${this_page + 1} de <span class="fw-bold">${TOTAL_PAGES}</span>`;
+    cargarGenreStats(tipo)
+    let seccion = document.querySelector('div.ani-plot')
+    cambiarPlot(seccion, null, false)
+    selectorg.selectedIndex = 0;
+
+    if (this_page === TOTAL_PAGES) {
+        let siguiente = document.querySelector("li#Btn-item-d")
+        siguiente.className = "page-item rounded-circle my-3 disabled"
+    }
+    else if (this_page === 1) {
+        let anterior = document.querySelector("li#Btn-item-a")
+        anterior.className = "page-item rounded-circle my-3"
+    }
+}
+
+async function goToPrevious() {
+    this_page = this_page - 1;
+    var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${this_page}).json`
+    let data = await getJSONData(url)
+    paginacion(data)
+    texto.value = '';
+    let titulo = document.getElementById('Pagina-tabla');
+    titulo.textContent = `Página ${this_page + 1} de ${TOTAL_PAGES}`
+    let li = document.getElementById('Ani-pitem-r');
+    li.innerHTML = `${this_page + 1} de <span class="fw-bold">${TOTAL_PAGES}</span>`;
+    cargarGenreStats(tipo)
+    let seccion = document.querySelector('div.ani-plot')
+    cambiarPlot(seccion, null, false)
+    selectorg.selectedIndex = 0;
+
+    if (this_page === 0) {
+        let anterior = document.querySelector("li#Btn-item-a")
+        anterior.className = "page-item rounded-circle my-3 disabled"
+    }
+    else if (this_page === TOTAL_PAGES - 1) {
+        let siguiente = document.querySelector("li#Btn-item-d")
+        siguiente.className = "page-item rounded-circle my-3 ani-shadow"
+    }    
 }

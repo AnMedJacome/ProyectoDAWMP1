@@ -27,7 +27,7 @@ let space = bloque.querySelector('div.carousel-inner');
 let barra = bloque.querySelector('ol.carousel-indicators');
 let hi_queries = []
 
-function allGenresInfo(){
+let allGenresInfo = () => {
     let img = document.createElement('img')
     img.src = "https://wallpaperaccess.com/full/5088961.jpg"
     img.className = "ani-genre-pic mb-3 mx-2"
@@ -109,13 +109,12 @@ async function crearGenreStats(tipo) {
     }    
 }
 
-async function cargarGenreStats(tipo, page) {
+async function cargarGenreStats(tipo) {
     var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${this_page}).json`
     for(let [clave, valor] of generos) {
         generos.get(clave)['num'] = 0
     }
-    this_page = page - 1
-    contarAnimesGeneros(url)
+    await contarAnimesGeneros(url)
 
     let counter = 1
 
@@ -126,29 +125,6 @@ async function cargarGenreStats(tipo, page) {
             <h6 class="mb-0">${valor["num"]}</h6>
         `
     }
-}
-
-async function cargarAllGenreStats(tipo, page) {
-    var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${this_page}).json`
-    for(let [clave, valor] of generos) {
-        generos.get(clave)['num'] = 0
-    }
-    let tmp = this_page
-    for (let i = 0 ; i < 100 ; i++) {
-        this_page = i
-        contarAnimesGeneros(url)
-    
-        let counter = 1
-    
-        for (let [clave, valor] of generos) {
-            let div_stats = document.getElementById(`Div-stats-${counter++}`)
-            div_stats.innerHTML = `
-                <p class="mb-2">${clave}</p>
-                <h6 class="mb-0">${valor["num"]}</h6>
-            `
-        }
-    }
-    this_page = tmp
 }
 
 selectorg.addEventListener('change', () => {
