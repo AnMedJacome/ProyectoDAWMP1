@@ -130,5 +130,10 @@
 
 .form-select:focus, .form-control:focus {
     border-color: var(--c0);
+    box-shadow: 0 0 0 0.25rem var(--c6-d1);
+}
+
+.form-select-per:focus {
+    border-color: var(--c3) !important;
     box-shadow: 0 0 0 0.25rem var(--c5-d1);
 }

@@ -502,12 +502,64 @@
                 
 
                 <div class="container-fluid pt-4 px-4">
-                    <div class="row g-4 justify-content-between">
-                        <div class="col-sm-12 col-xl-6 ani-bg-table">
-                            <div class="bg-secondary rounded h-100 p-4">
-                                <h6 class="mb-4">Tu resultado</h6>
-                                <canvas id="doughnut-chart"></canvas>
+                    <div class="ani-bg-table">
+                        <div class="container-fluid">
+                            <h3 class="text-left">Escoger el número de temas para comparar</h3>
+                            <div class="row justify-content-start">
+                                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                    <option selected value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
                             </div>
+                        </div>
+                        <div class="container-fluid ani-bg-table">
+                            <div class="row justify-content-start my-3">
+                                <h5 class="text-left">Opci&oacute;n 1</h5>
+                                <select id="genre-sel-1" class="form-select form-select-lg form-select-per my-1" aria-label=".form-select-lg example">
+                                    <option selected value="Todos">Action</option>
+                                </select>
+                            </div>
+                            <div class="row justify-content-start my-3">
+                                <h5 class="text-left">Opci&oacute;n 2</h5>
+                                <select id="genre-sel-2" class="form-select form-select-lg form-select-per my-1" aria-label=".form-select-lg example" disabled>
+                                    <option selected value="Todos">Action</option>
+                                </select>
+                            </div>
+                            <div class="row justify-content-start my-3">
+                                <h5 class="text-left">Opci&oacute;n 3</h5>
+                                <select id="genre-sel-3" class="form-select form-select-lg form-select-per my-1" aria-label=".form-select-lg example" disabled>
+                                    <option selected value="Todos">Action</option>
+                                </select>
+                            </div>
+                            <div class="row justify-content-start my-3">
+                                <h5 class="text-left">Opci&oacute;n 4</h5>
+                                <select id="genre-sel-4" class="form-select form-select-lg form-select-per my-1" aria-label=".form-select-lg example" disabled>
+                                    <option selected value="Todos">Action</option>
+                                </select>
+                            </div>
+                            <div class="row justify-content-star my-3">
+                                <h5 class="text-left">Opci&oacute;n 5</h5>
+                                <select id="genre-sel-5" class="form-select form-select-lg form-select-per my-1" aria-label=".form-select-lg example" disabled>
+                                    <option selected value="Todos">Action</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="container-fluid justify-content-star my-5">
+                            <button onclick="" class="page-link btn-primario btn-rounded index-btn-primario-b ani-shadow">
+                                Comparar
+                            </button>
+                        </div>
+                        <div class="row g-4 justify-content-between">
+                            <div class="col-md-2"></div>
+                            <div class="col-sm-12 col-md-6">
+                                <div class="ani-bg-table rounded h-100 p-4">
+                                    <h6 class="mb-4">Tu resultado</h6>
+                                    <canvas id="doughnut-chart"></canvas>
+                                </div>
+                            </div>
+                            <div class="col-md-2"></div>
                         </div>
                     </div>
                 </div>

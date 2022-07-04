@@ -311,11 +311,11 @@ async function getArrayAniMan(andata, mandata)  {
                 labels: ["Italy", "France", "Spain", "USA", "Argentina"],
                 datasets: [{
                     backgroundColor: [
-                        "rgba(235, 22, 22, .7)",
-                        "rgba(235, 22, 22, .6)",
-                        "rgba(235, 22, 22, .5)",
-                        "rgba(235, 22, 22, .4)",
-                        "rgba(235, 22, 22, .3)"
+                        "rgba(252, 215, 139, 0.69)",
+                        "rgba(252, 198, 96, 0.69)",
+                        "rgba(189, 148, 72, 0.69)",
+                        "rgba(125, 98, 47, 0.69)",
+                        "rgba(61, 48, 23, 0.69)"
                     ],
                     data: [55, 49, 44, 24, 15]
                 }]
@@ -344,49 +344,5 @@ async function getArrayAniMan(andata, mandata)  {
         $('.sidebar, .content').toggleClass("open");
         return false;
     });
-/*
-    // Single Line Chart
-    var ctx3 = $("#line-chart").get(0).getContext("2d");
-    var myChart3 = new Chart(ctx3, {
-        type: "line",
-        data: {
-            labels: [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],
-            datasets: [{
-                label: "Salse",
-                fill: false,
-                backgroundColor: "rgba(235, 22, 22, .7)",
-                data: [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15]
-            }]
-        },
-        options: {
-            responsive: true
-        }
-    });
-
-
-    // Single Bar Chart
-    var ctx4 = $("#bar-chart").get(0).getContext("2d");
-    var myChart4 = new Chart(ctx4, {
-        type: "bar",
-        data: {
-            labels: ["Italy", "France", "Spain", "USA", "Argentina"],
-            datasets: [{
-                backgroundColor: [
-                    "rgba(235, 22, 22, .7)",
-                    "rgba(235, 22, 22, .6)",
-                    "rgba(235, 22, 22, .5)",
-                    "rgba(235, 22, 22, .4)",
-                    "rgba(235, 22, 22, .3)"
-                ],
-                data: [55, 49, 44, 24, 15]
-            }]
-        },
-        options: {
-            responsive: true
-        }
-    });
-
-
-*/
     
 })(jQuery);
