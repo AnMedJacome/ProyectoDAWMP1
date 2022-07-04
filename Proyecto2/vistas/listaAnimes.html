@@ -25,14 +25,20 @@
 
     
     <link href="../darkpan-1.0.0/css/bootstrap.min.css" rel="stylesheet">
-
-
     <link href="../darkpan-1.0.0/css/style.css" rel="stylesheet">
+    <link href="../lib/imagehover.css-master/css/imagehover.min.css" rel="stylesheet">
+    <link href="../lib/balloon.css-master/balloon.min.css" rel="stylesheet">
 
     
     <link href="../recursos/css/anindexbackground.css"  rel="stylesheet">
     <link href="../recursos/css/anindexstyle.css"  rel="stylesheet">
     <link href="../recursos/css/anindexcolors.css"  rel="stylesheet">
+
+    <style>
+        div.balloon-img {
+            --balloon-color: var(--c6-d0) !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -206,68 +212,63 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-6 mb-4 d-flex justify-content-center">
-                            <div class="ani-bg-table ani-size-card">
-                                <h6 class="mb-4 ani-title-info">Todos los géneros</h6>
-                                <ul class="nav nav-tabs nav-justified mb-3" id="ex1" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                    <a
-                                        class="nav-link active"
-                                        id="ex3-tab-1"
-                                        data-mdb-toggle="tab"
-                                        href="#ex3-tabs-1"
-                                        role="tab"
-                                        aria-controls="ex3-tabs-1"
-                                        aria-selected="true"
-                                        >Información del género</a
-                                    >
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                    <a
-                                        class="nav-link"
-                                        id="ex3-tab-2"
-                                        data-mdb-toggle="tab"
-                                        href="#ex3-tabs-2"
-                                        role="tab"
-                                        aria-controls="ex3-tabs-2"
-                                        aria-selected="false"
-                                        >Detalles del anime recomendado</a
-                                    >
-                                    </li>
-                                </ul>
-                                
-                                <div class="tab-content" id="ex2-content">
-                                    <div
-                                    class="tab-pane fade show active genre-info"
-                                    id="ex3-tabs-1"
-                                    role="tabpanel"
-                                    aria-labelledby="ex3-tab-1"
-                                    >
-                                    TODOS LOS ANIMES DISPONIBLES DE TODOS LOS GENEROS Y SUBGENEROS
-                                    </div>
-                                    <div
-                                    class="tab-pane fade ani-plot"
-                                    id="ex3-tabs-2"
-                                    role="tabpanel"
-                                    aria-labelledby="ex3-tab-2"
-                                    >
-                                        <dl class="row mb-0">
-                                            <dt class="col-sm-4">Descripción:</dt>
-                                            <dd class="col-sm-8 ani-plot-d text-truncate">---</dd>
-            
-                                            <dt class="col-sm-4">Año:</dt>
-                                            <dd class="col-sm-8 ani-plot-yr">---</dd>
-            
-                                            <dt class="col-sm-4">Géneros:</dt>
-                                            <dd class="col-sm-8 ani-plot-gn">---</dd>
-            
-                                            <dt class="col-sm-4">Temas:</dt>
-                                            <dd class="col-sm-8 ani-plot-th">---</dd>
-            
-                                            <dt class="col-sm-4">Relación con otras series:</dt>
-                                            <dd class="col-sm-8 ani-plot-rl">---</dd>
-                                        </dl>
-                                    </div>
+                        <div class="col-12 col-sm-12 col-md-6 mb-4 justify-content-center ani-bg-table">
+                            <h6 class="mb-4 ani-title-info">Todos los géneros</h6>
+                            <ul class="nav nav-tabs nav-justified mb-3" id="ex1" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                <a
+                                    class="nav-link active"
+                                    id="ex3-tab-1"
+                                    data-mdb-toggle="tab"
+                                    href="#ex3-tabs-1"
+                                    role="tab"
+                                    aria-controls="ex3-tabs-1"
+                                    aria-selected="true"
+                                    >Información del género</a
+                                >
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                <a
+                                    class="nav-link"
+                                    id="ex3-tab-2"
+                                    data-mdb-toggle="tab"
+                                    href="#ex3-tabs-2"
+                                    role="tab"
+                                    aria-controls="ex3-tabs-2"
+                                    aria-selected="false"
+                                    >Detalles del anime recomendado</a
+                                >
+                                </li>
+                            </ul>
+                            
+                            <div class="tab-content" id="ex2-content">
+                                <div
+                                class="tab-pane fade show active genre-info"
+                                id="ex3-tabs-1"
+                                role="tabpanel"
+                                aria-labelledby="ex3-tab-1"
+                                >
+                                TODOS LOS ANIMES DISPONIBLES DE TODOS LOS GENEROS Y SUBGENEROS
+                                </div>
+                                <div
+                                class="tab-pane fade ani-plot"
+                                id="ex3-tabs-2"
+                                role="tabpanel"
+                                aria-labelledby="ex3-tab-2"
+                                >
+                                    <dl class="row mb-0">        
+                                        <dt class="col-sm-4">Año:</dt>
+                                        <dd class="col-sm-8 ani-plot-yr">---</dd>
+        
+                                        <dt class="col-sm-4">Géneros:</dt>
+                                        <dd class="col-sm-8 ani-plot-gn">---</dd>
+        
+                                        <dt class="col-sm-4">Temas:</dt>
+                                        <dd class="col-sm-8 ani-plot-th">---</dd>
+        
+                                        <dt class="col-sm-4">Relación con otras series:</dt>
+                                        <dd class="col-sm-8 ani-plot-rl">---</dd>
+                                    </dl>
                                 </div>
                             </div>
                         </div>
@@ -279,7 +280,7 @@
                     </div>
                     <div class="scrollspy-block">
                         <div class="table-responsive">
-                            <table class="table table-hove align-middle mb-0 ani-table-info-1">
+                            <table class="table table-hove align-middle mt-5 ani-table-info-1">
                                 <thead class="ani-head text-center">
                                 </thead>
                                 <tbody class="ani-body text-center">

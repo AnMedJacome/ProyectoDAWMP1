@@ -122,19 +122,20 @@ async function cambiarPlot(seccion, id, all){
     if (all) {
         let purl = `https://api.jikan.moe/v4/${tipo}/${id}/full`
         let data = await getJSONData(purl)
-        seccion.querySelector("dd.ani-plot-d").textContent = data["data"]["synopsis"]
+        let alr = document.querySelector("p#Sinopsis-rec")
+        alr.textContent = data["data"]["synopsis"]
         seccion.querySelector("dd.ani-plot-yr").textContent = data["data"]["year"]
 
         let subseccion = seccion.querySelector("dd.ani-plot-gn");
         subseccion.textContent = ""
         data["data"]["genres"].forEach((element) => {
-            subseccion.textContent += " <" + element["name"] + "> "
+            subseccion.textContent += ` <${element["name"]}>`
         });
 
         subseccion = seccion.querySelector("dd.ani-plot-th");
         subseccion.textContent = ""
         data["data"]["themes"].forEach((element) => {
-            subseccion.textContent += " <" + element["name"] + "> "
+            subseccion.textContent += ` <${element["name"]}>`
         });
 
         subseccion = seccion.querySelector("dd.ani-plot-rl")

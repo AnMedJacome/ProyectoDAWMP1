@@ -28,13 +28,24 @@ let barra = bloque.querySelector('ol.carousel-indicators');
 let hi_queries = []
 
 let allGenresInfo = () => {
-    let img = document.createElement('img')
-    img.src = "https://wallpaperaccess.com/full/5088961.jpg"
-    img.className = "ani-genre-pic mb-3 mx-2"
-    img.display = "block"
-    img.alt = "Todos"
-    img.backgroundColor = "#3d3017"
-    return img
+    
+    let fig = document.createElement("figure");
+    fig.className = "imghvr-slide-up mb-3 mx-2"
+        let img = document.createElement('img')
+        img.src = "https://wallpaperaccess.com/full/5088961.jpg"
+        img.className = "ani-genre-pic"
+        img.display = "block"
+        img.alt = "Todos"
+        img.backgroundColor = "#3d3017"
+        let fcaption = document.createElement("figcaption")
+            fcaption.className = "scrolldes-block"
+            fcaption.innerHTML = `
+            <h5>Sipnosis</h5>
+            <p id="Sinopsis-rec">---</p>
+            `
+    fig.appendChild(img);
+    fig.appendChild(fcaption);
+    return fig
 }
 
 function agregarGeneros(){
@@ -140,7 +151,7 @@ selectorg.addEventListener('change', () => {
     }
 
     var gener = (val !== "Todos") ? generos.get(val)["pic"] : ""
-    let img = document.querySelector("img.ani-genre-pic")
+    let img = document.querySelector("figure.imghvr-slide-up img.ani-genre-pic")
     img.src = (val !== "Todos") ? gener["url"] : "https://wallpaperaccess.com/full/5088961.jpg"
     img.alt = (val !== "Todos") ? gener["nombre"] : "Todos"
     img.backgroundColor = "#3d3017"

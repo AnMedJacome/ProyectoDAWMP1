@@ -23,16 +23,25 @@ function filaAnime(anime, contador, count_element, this_page) {
         h_cell.scope = "row"
         h_cell.textContent = contador+(count_element*this_page)
     row.appendChild(h_cell)
-
-
+    
         let cell = document.createElement('td');
             let div = document.createElement('div');
             div.className = "d-flex flex-column align-items-center justify-content-center text-align-center"
-                let img = document.createElement("img");
-                img.src = img_url;
-                img.alt = "";
-                img.style = "height: 10rem; width: 7rem;"
-            div.appendChild(img)
+                let img = `
+                <div
+                data-balloon-length="xlarge" 
+                aria-label="SIPNOSIS - ${anime["synopsis"]}"
+                data-balloon-pos="right"
+                class="balloon-img tooltip-slide"
+                >
+                    <img
+                    src="${img_url}"
+                    alt="Pic - ${nombre}"
+                    style="height: 10rem; width: 7rem;"
+                    >
+                </div>
+                `;
+            div.innerHTML = img
             div.appendChild(celda("div", "p", "fw-bold mb-1", nombre))
         cell.appendChild(div)
     row.appendChild(cell)

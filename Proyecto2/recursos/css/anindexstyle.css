@@ -105,12 +105,16 @@
 }
 
 .ani-genre-pic {
-    width: 35vw;
-    height: 20vw;
+    height: 18rem;
+    width: 35rem;
 }
 
-.ani-size-card {
-    width: 40vw;
+figure {
+    border-radius: 1rem;
+}
+
+figure:hover, select:hover {
+    box-shadow: 0rem 0rem 0.5rem .1rem var(--c0-d1);
 }
 
 .pie-size {

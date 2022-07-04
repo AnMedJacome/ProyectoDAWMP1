@@ -31,6 +31,15 @@
     overflow-x: hidden;
 }
 
+.scrolldes-block {
+    background-color: var(--c6) !important;
+    color: var(--c0) !important;
+    font-weight: bold !important;
+    width: auto;
+    height: auto;
+    overflow: auto;
+}
+
 .scrolquotes-block {
     position: relative;
     height: 20rem;
