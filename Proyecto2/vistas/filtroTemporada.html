@@ -21,11 +21,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     
-    <link href="../darkpan-1.0.0/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="../lib/darkpan-1.0.0/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     
-    <link href="../darkpan-1.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../darkpan-1.0.0/css/style.css" rel="stylesheet">
+    <link href="../lib/darkpan-1.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../lib/darkpan-1.0.0/css/style.css" rel="stylesheet">
     <link href="../lib/imagehover.css-master/css/imagehover.min.css" rel="stylesheet">
     <link href="../lib/balloon.css-master/balloon.min.css" rel="stylesheet">
 
@@ -70,12 +70,14 @@
                 </div>
                 <div class="navbar-nav w-100 mt-2">
                     <a href="../index.html" class="nav-item nav-link ani-active"><i class="fa fa-home me-2"></i>Inicio</a>
+                    <a href="dashboard.html" class="nav-item nav-link ani-active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle ani-active" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Funciones</a>
+                        <a href="#" class="nav-link dropdown-toggle ani-active" data-bs-toggle="dropdown"><i class="fa fa-filter me-2"></i>Filtrar</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="#" class="dropdown-item ani-active"><i class="fa fa-list-alt me-2"></i>Enlistar</a>
-                            <a href="dashboard.html" class="dropdown-item ani-active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                            <a href="filtroGenero.html" class="dropdown-item ani-active"><i class="fa fa-list-alt me-2"></i>G&eacute;neros</a>
+                            <a href="filtroProductor.html" class="dropdown-item ani-active"><i class="fa fa-laptop me-2"></i>Productores</a>
+                            <a href="#" class="dropdown-item ani-active"><i class="fa fa-leaf me-2"></i>Temporadas</a>
                         </div>
                     </div>
                     <a href="acerca.html" class="nav-item nav-link ani-active"><i class="fa fa-info-circle me-2"></i>Acerca de</a>
@@ -106,6 +108,7 @@
                 <div class="container py-4 px-4 ani-bg-table">
                     <div class="bg-secondary ani-bg-table rounded h-100 py-4">
                         <h1 class="text-center">Lista de Animes y Mangas</h1>
+                        <h3 class="text-center">Filtro de Temporadas</h3>
                     </div>
                 </div>
                 
@@ -220,9 +223,9 @@
                                     class="nav-link active"
                                     id="ex3-tab-1"
                                     data-mdb-toggle="tab"
-                                    href="#ex3-tabs-1"
+                                    href="#genre-info"
                                     role="tab"
-                                    aria-controls="ex3-tabs-1"
+                                    aria-controls="genre-info"
                                     aria-selected="true"
                                     >Información del género</a
                                 >
@@ -243,8 +246,8 @@
                             
                             <div class="tab-content" id="ex2-content">
                                 <div
-                                class="tab-pane fade show active genre-info"
-                                id="ex3-tabs-1"
+                                class="tab-pane fade show active"
+                                id="genre-info"
                                 role="tabpanel"
                                 aria-labelledby="ex3-tab-1"
                                 >
@@ -308,8 +311,8 @@
     
     <script src="../recursos/js/other.js"></script>
     <script src="../recursos/js/footer.js"></script>
-    <script src="../recursos/js/dashboard.js"></script>
-    <script src="../recursos/js/anindexget.js"></script>
+    <script src="../recursos/js/anigenre.js"></script>
+    <script src="../recursos/js/listanime.js"></script>
     <script src="../recursos/js/celdas.js"></script>
     <script src="../recursos/js/mdb.min.js"></script>
 </body>

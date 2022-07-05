@@ -1,169 +1,348 @@
-let generos = new Map();
-generos.set("Action", {"num": 0, "pic": {"url": "https://images7.alphacoders.com/306/306919.jpg", "nombre": "Bleach", "anime_id": 269, "manga_id": 12}})
-generos.set("Adventure", {"num": 0, "pic": {"url": "https://images7.alphacoders.com/729/thumb-1920-729209.jpg", "nombre": "Full Metal Alchemist", "anime_id": 121, "manga_id": 25}})
-generos.set("Avant Garde", {"num": 0, "pic": {"url": "https://images8.alphacoders.com/695/695227.jpg", "nombre": "Neon Genesis Evangelion", "anime_id": 339, "manga_id": 698}})
-generos.set("Boys Love", {"num": 0, "pic": {"url": "https://wallpapercave.com/wp/wp7283079.png", "nombre": "Given", "anime_id": 39533, "manga_id": 79085}})
-generos.set("Comedy", {"num": 0, "pic": {"url": "https://wallpaperaccess.com/full/4804007.png", "nombre": "Danshi koukousei no nichijou", "anime_id": 11843, "manga_id": 26144}})
-generos.set("Drama", {"num": 0, "pic": {"url": "https://wallpaperaccess.com/full/1083911.jpg", "nombre": "Natsume Yuujinchou", "anime_id": 4081, "manga_id": 1859}})
-generos.set("Fantasy", {"num": 0, "pic": {"url": "https://images2.alphacoders.com/776/thumb-1920-776081.jpg", "nombre": "Little Witch Academia", "anime_id": 33489, "manga_id": 93692}})
-generos.set("Girls Love", {"num": 0, "pic": {"url": "https://images8.alphacoders.com/695/695848.png", "nombre": "Yuru Yuri", "anime_id": 10495, "manga_id": 11593}})
-generos.set("Gourmet", {"num": 0, "pic": {"url": "https://images6.alphacoders.com/697/thumb-1920-697221.png", "nombre": "Shokugeki no Souma", "anime_id": 28171, "manga_id": 45757}})
-generos.set("Horror", {"num": 0, "pic": {"url": "https://images8.alphacoders.com/914/thumb-1920-914289.jpg", "nombre": "Mahou Shoujo Site", "anime_id": 36266, "manga_id": 57295}})
-generos.set("Mystery", {"num": 0, "pic": {"url": "https://images5.alphacoders.com/945/thumb-1920-945730.png", "nombre": "Yakusoku no Neverland", "anime_id": 37779, "manga_id": 100128}})
-generos.set("Romance", {"num": 0, "pic": {"url": "https://images7.alphacoders.com/871/871488.jpg", "nombre": "Hyouka", "anime_id": 12189, "manga_id": 41629}})
-generos.set("Sci-Fi", {"num": 0, "pic": {"url": "https://wallpaperaccess.com/full/2012826.jpg", "nombre": "Eureka Seven", "anime_id": 237, "manga_id": 1037}})
-generos.set("Slice of Life", {"num": 0, "pic": {"url": "https://wallpaperaccess.com/full/6351957.png", "nombre": "Hitoribocchi no ○○ Seikatsu", "anime_id": 37614, "manga_id": 89467}})
-generos.set("Sports", {"num": 0, "pic": {"url": "https://wallpapercave.com/wp/wp4786465.png", "nombre": "Ryuuou no Oshigoto!", "anime_id": 35905, "manga_id": 94818}})
-generos.set("Supernatural", {"num": 0, "pic": {"url": "https://images3.alphacoders.com/228/thumb-1920-228275.jpg", "nombre": "Shaman King", "anime_id": 42205, "manga_id": 50}})
-generos.set("Suspense", {"num": 0, "pic": {"url": "https://wallpapercave.com/wp/wp1833405.jpg", "nombre": "Another", "anime_id": 11111, "manga_id": 24098}})
+const GENEROS = ["Action", "Adventure", "Avant Garde", "Boys Love", "Comedy", "Drama", "Fantasy", "Girls Love", "Gourmet", 
+"Horror", "Mystery", "Romance", "Sci-Fi", "Slice of Life", "Sports", "Supernatural", "Suspense"]
+const DEMOGRAFIA  = ["Josei", "Kids", "Seinen", "Shoujo", "Shounen"]
+const THEMES = [
+    ["Space","Time Travel","Parody","Mecha","Anthropomorphic"], ["Music", "Adult Cast", "Idols (Male)", "Idols (Female)", "Racing"],
+    ["Crossdressing", "Reverse Harem", "Harem", "Romantic Subtext", "Love Polygon"], ["School", "Visual Arts", "Video Game", "Gag Humor", "Performing Arts"],
+    ["Martial Arts", "Team Sports", "Strategy Game", "Combat Sports", "Samurai"], ["Educational", "Historical", "Otaku Culture", "Medical", "Workplace"],
+    ["Mahou Shoujo", "Magical Sex Shift", "Mythology", "Isekai", "Reincarnation"], ["Detective", "Delinquents", "Psychological", "Organized Crime", "Military"],
+    ["Showbiz", "Pets", "CGDCT", "Iyashikei", "Childcare"], ["Gore", "Survival", "High Stakes Game", "Super Power", "Vampire"]
+]
+const THEMES_T = [
+    "Space","Time Travel","Parody","Mecha","Anthropomorphic", "Music", "Adult Cast", "Idols (Male)", "Idols (Female)", "Racing",
+    "Crossdressing", "Reverse Harem", "Harem", "Romantic Subtext", "Love Polygon", "School", "Visual Arts", "Video Game", "Gag Humor", "Performing Arts",
+    "Martial Arts", "Team Sports", "Strategy Game", "Combat Sports", "Samurai", "Educational", "Historical", "Otaku Culture", "Medical", "Workplace",
+    "Mahou Shoujo", "Magical Sex Shift", "Mythology", "Isekai", "Reincarnation", "Detective", "Delinquents", "Psychological", "Organized Crime", "Military",
+    "Showbiz", "Pets", "CGDCT", "Iyashikei", "Childcare", "Gore", "Survival", "High Stakes Game", "Super Power", "Vampire"
+]
+const LOAD = document.getElementById("Load-indicator");
+const BAR = document.querySelector("div#Progress-bar-1");
 
+var contador = 1;
 
-var this_page = 0;
-var tipo = "anime"
-
-let selectorg = document.querySelector('select#genre-selector')
-let bloque = document.querySelector('div.ani-prom-genre');
-let space = bloque.querySelector('div.carousel-inner');
-let barra = bloque.querySelector('ol.carousel-indicators');
-let hi_queries = []
-
-let allGenresInfo = () => {
-    
-    let fig = document.createElement("figure");
-    fig.className = "imghvr-slide-up mb-3 mx-2"
-        let img = document.createElement('img')
-        img.src = "https://wallpaperaccess.com/full/5088961.jpg"
-        img.className = "ani-genre-pic"
-        img.display = "block"
-        img.alt = "Todos"
-        img.backgroundColor = "#3d3017"
-        let fcaption = document.createElement("figcaption")
-            fcaption.className = "scrolldes-block"
-            fcaption.innerHTML = `
-            <h5>Sipnosis</h5>
-            <p id="Sinopsis-rec">---</p>
-            `
-    fig.appendChild(img);
-    fig.appendChild(fcaption);
-    return fig
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function agregarGeneros(){
-    let img = allGenresInfo()
-    let seccion = document.querySelector('h6.ani-title-info')
-    seccion.insertAdjacentElement("afterend", img)
-    let g_iterator = generos.keys()
-    let genero = g_iterator.next()
-    let q = document.getElementById('genre-selector')
-    while (!genero.done) {
-        let option = `<option value="${genero.value}">${genero.value}</option>`
-        q.innerHTML += option
-        genero = g_iterator.next()
-    }
+async function fetchValues(tipo){
+    let respuesta = await fetch(`https://api.jikan.moe/v4/genres/${tipo}`);
+    let data = await respuesta.json();
+    return data["data"]
 }
 
-async function contarAnimesGeneros(url) {
-    let data = await getJSONData(url)
-    let arreglo = data['data'];
-    for (anime of arreglo) {
-        let an_genres = anime['genres']
-        for (genero of an_genres) 
-            if (generos.has(genero['name'])) {
-                generos.get(genero['name'])['num'] += 1
-            }
-    }
+let loadBar = async (load_text) => {
+    if ((contador % 5) == 1) LOAD.textContent = load_text + "."
+    else LOAD.textContent += "."
+    let progress = (contador++)
+
+    BAR.querySelector("div.progress-bar").style.width = progress.toString() + "vw"
+    await sleep(10)
 }
 
-async function crearGenreStats(tipo) {
-    for(let valor of generos) {
-        valor['num'] = 0
-    }
+async function getNumAniMan(arreglo) {
+    let numeros = []
 
-    let counter = 1
-    space.innerHTML = ""
-    barra.innerHTML = ""
-    query = `
-        <li
-            data-mdb-target="#AniCarouselGenres"
-            data-mdb-slide-to="0"
-            class="active"
-            aria-current="true"
-        ></li>
-    `
-    barra.innerHTML += query
+    let gs = new Map()
+    let dem = new Map()
+    let thm = new Map()
 
-    var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(0).json`
-    await contarAnimesGeneros(url)
+    let load_text = "Cargando"
+    for (let item of arreglo) {
+        let it = item["name"]
 
-    for (let [clave, valor] of generos) {
-        let query = `<div class="carousel-item ani-bg-table rounded d-flex flex-row align-items-center justify-content-around p-4`
-        query += (clave ==="Action") ? ` active">` : `">`
-        query += `
-                <i class="fa fa-chart-pie fa-5x icon-color-1"></i>
-                <div id="Div-stats-${counter}" class="ms-3">
-                    <p class="mb-2">${clave}</p>
-                    <h6 class="mb-0">${valor["num"]}</h6>
-                </div>
-            </div>
-        `
-        space.innerHTML += query
-        if (counter < 17) {
-            query = `
-                <li
-                    data-mdb-target="#AniCarouselGenres"
-                    data-mdb-slide-to="${counter++}"
-                    class=""
-                ></li>
-            `
-            barra.innerHTML += query
+        if (GENEROS.includes(it)) {
+            loadBar(load_text)
+            gs.set(it, parseInt(item["count"]))
         }
-    }    
+
+        else if (DEMOGRAFIA.includes(it)) {
+            loadBar(load_text)
+            dem.set(it, parseInt(item["count"]))
+        }
+
+        else if (THEMES_T.includes(it)) {
+            loadBar(load_text)
+            thm.set(it, parseInt(item["count"]))
+        }
+    }
+
+    numeros.push(gs)
+    numeros.push(dem)
+    numeros.push(thm)
+
+    return numeros
 }
 
-async function cargarGenreStats(tipo) {
-    var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${this_page}).json`
-    for(let [clave, valor] of generos) {
-        generos.get(clave)['num'] = 0
-    }
-    await contarAnimesGeneros(url)
-
-    let counter = 1
-
-    for (let [clave, valor] of generos) {
-        let div_stats = document.getElementById(`Div-stats-${counter++}`)
-        div_stats.innerHTML = `
-            <p class="mb-2">${clave}</p>
-            <h6 class="mb-0">${valor["num"]}</h6>
-        `
-    }
+async function getArrayAniMan(andata, mandata)  {
+    let both = []
+    both.push(await getNumAniMan(andata))
+    both.push(await getNumAniMan(mandata))
+    return both
 }
 
-selectorg.addEventListener('change', () => {
+(async function ($) {
+    "use strict";
+
+    let load_text = LOAD.textContent
+        
+    if ((contador % 5) == 1) LOAD.textContent = load_text + "."
+    else LOAD.textContent += "."
+    let progress = contador++
+
+    BAR.querySelector("div.progress-bar").style.width = progress.toString() + "vw"
+    var spinner = async function () {
+        let an_arreglo = await fetchValues("anime")
+        let man_arreglo = await fetchValues("manga")
+        let arreglo = await getArrayAniMan(an_arreglo, man_arreglo)
+        console.log(arreglo)
+        if (document.getElementById("Num-gnre-total") != null) {
+            var ctx2 = $("#Num-gnre-total").get(0).getContext("2d");
+            var myChart2 = new Chart(ctx2, {
+                type: "line",
+                data: {
+                    labels: GENEROS,
+                    datasets: [
+                        {
+                            label: "Anime",
+                            data: [
+                                (arreglo[0][0]).get("Action"), (arreglo[0][0]).get("Adventure"), (arreglo[0][0]).get("Avant Garde"), (arreglo[0][0]).get("Boys Love"), (arreglo[0][0]).get("Comedy"),
+                                (arreglo[0][0]).get("Drama"), (arreglo[0][0]).get("Fantasy"), (arreglo[0][0]).get("Girls Love"), (arreglo[0][0]).get("Gourmet"), (arreglo[0][0]).get("Horror"),
+                                (arreglo[0][0]).get("Mystery"), (arreglo[0][0]).get("Romance"), (arreglo[0][0]).get("Sci-Fi"), (arreglo[0][0]).get("Slice of Life"), (arreglo[0][0]).get("Sports"),
+                                (arreglo[0][0]).get("Supernatural"), (arreglo[0][0]).get("Suspense")
+                            ],
+                            backgroundColor: "rgba(252, 215, 139, 0.8)",
+                            fill: true,
+                            pointStyle: 'rectRot',
+                            pointRadius: 5,
+                            pointBorderColor: '#3d3017'
+                        },
+                        {
+                            label: "Manga",
+                            data: [
+                                (arreglo[1][0]).get("Action"), (arreglo[1][0]).get("Adventure"), (arreglo[1][0]).get("Avant Garde"), (arreglo[1][0]).get("Boys Love"), (arreglo[1][0]).get("Comedy"),
+                                (arreglo[1][0]).get("Drama"), (arreglo[1][0]).get("Fantasy"), (arreglo[1][0]).get("Girls Love"), (arreglo[1][0]).get("Gourmet"), (arreglo[1][0]).get("Horror"),
+                                (arreglo[1][0]).get("Mystery"), (arreglo[1][0]).get("Romance"), (arreglo[1][0]).get("Sci-Fi"), (arreglo[1][0]).get("Slice of Life"), (arreglo[1][0]).get("Sports"),
+                                (arreglo[1][0]).get("Supernatural"), (arreglo[1][0]).get("Suspense")
+                            ],
+                            backgroundColor: "rgba(227, 178, 86, 0.8)",
+                            fill: true,
+                            pointStyle: 'rectRot',
+                            pointRadius: 5,
+                            pointBorderColor: '#1C160B'
+                        }
+                    ]
+                },
+                options: {
+                        responsive: true,
+                        legend: {
+                            labels: {
+                                fontColor: "white",
+                                fontSize: 18
+                            }
+                        },
+                        scales: {
+                            y: {
+                                ticks: {
+                                    color: "#bd9448",
+                                    font: {
+                                      size: 10,
+                                      lineHeight: 1.2
+                                    },
+                                    stepSize: 400,
+                                    beginAtZero: true
+                                }
+                            },
+                            x: {
+                                ticks: {
+                                    color: "#e3b256",
+                                    font: {
+                                      size: 10,
+                                      lineHeight: 1.2
+                                    },
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                }
+            });
+        }
     
-    let val = selectorg.options[selectorg.selectedIndex].value;
-    let arreglo = document.querySelector('table.ani-table-info-1 tbody.ani-body');
-    let list_anime = arreglo.getElementsByClassName('ani-table-row');
-    let seccion = document.querySelector('h6.ani-title-info')
+    
+        // Salse & Revenue Chart
+        if (document.getElementById("Num-demo-total") != null) {
+            var ctx1 = $("#Num-demo-total").get(0).getContext("2d");
+            var myChart1 = new Chart(ctx1, {
+                type: "bar",
+                data: {
+                    labels: DEMOGRAFIA,
+                    datasets: [
+                        {
+                            label: "Anime",
+                            data: [
+                                (arreglo[0][1]).get("Josei"), (arreglo[0][1]).get("Kids"), (arreglo[0][1]).get("Seinen"),
+                                (arreglo[0][1]).get("Shoujo"), (arreglo[0][1]).get("Shounen")
+                            ],
+                            backgroundColor: "rgba(252, 215, 139, 0.8)",
+                        },
+                        {
+                            label: "Manga",
+                            data:  [
+                                (arreglo[1][1]).get("Josei"), (arreglo[1][1]).get("Kids"), (arreglo[1][1]).get("Seinen"),
+                                (arreglo[1][1]).get("Shoujo"), (arreglo[1][1]).get("Shounen")
+                            ],
+                            backgroundColor: "rgba(227, 178, 86, 0.8)",
+                        },
+                    ]
+                    },
+                    options: {
+                        responsive: true,
+                        legend: {
+                            labels: {
+                                color: "white",
+                                font: {
+                                  size: 10,
+                                },
+                            }
+                        },
+                        scales: {
+                            y: {
+                                ticks: {
+                                    color: "#bd9448",
+                                    font: {
+                                      size: 10,
+                                      lineHeight: 1.2
+                                    },
+                                    stepSize: 400,
+                                    beginAtZero: true
+                                }
+                            },
+                            x: {
+                                ticks: {
+                                    color: "#e3b256",
+                                    font: {
+                                      size: 10,
+                                      lineHeight: 1.2
+                                    },
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    }
+            });
+        }
+        
+        // Pie Chart
+        for(let i = 1 ; i < 11 ; i++) {
+            var ctx5 = $(`#pie-ani-chart-${i}`).get(0).getContext("2d");
+            var myChart5 = new Chart(ctx5, {
+                type: "pie",
+                data: {
+                    labels: THEMES[i - 1],
+                    datasets: [{
+                        backgroundColor: [
+                            "rgba(252, 215, 139, 0.69)",
+                            "rgba(252, 198, 96, 0.69)",
+                            "rgba(189, 148, 72, 0.69)",
+                            "rgba(125, 98, 47, 0.69)",
+                            "rgba(61, 48, 23, 0.69)"
+                        ],
+                        data: [
+                            arreglo[0][2].get(THEMES[i - 1][0]), arreglo[0][2].get(THEMES[i - 1][1]),
+                            arreglo[0][2].get(THEMES[i - 1][2]), arreglo[0][2].get(THEMES[i - 1][3]),
+                            arreglo[0][2].get(THEMES[i - 1][4])
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    legend: {
+                        labels: {
+                            color: "white",
+                            font: {
+                              size: 10,
+                            },
+                        }
+                    }
+                }
+            });
+        }
+        console.log("LISTA MANGA")
+        for(let i = 1 ; i < 11 ; i++) {
+            var ctx5 = $(`#pie-man-chart-${i}`).get(0).getContext("2d");
+            var myChart5 = new Chart(ctx5, {
+                type: "pie",
+                data: {
+                    labels: THEMES[i - 1],
+                    datasets: [{
+                        backgroundColor: [
+                            "rgba(252, 215, 139, 0.69)",
+                            "rgba(252, 198, 96, 0.69)",
+                            "rgba(189, 148, 72, 0.69)",
+                            "rgba(125, 98, 47, 0.69)",
+                            "rgba(61, 48, 23, 0.69)"
+                        ],
+                        data: [
+                            arreglo[1][2].get(THEMES[i - 1][0]), arreglo[1][2].get(THEMES[i - 1][1]),
+                            arreglo[1][2].get(THEMES[i - 1][2]), arreglo[1][2].get(THEMES[i - 1][3]),
+                            arreglo[1][2].get(THEMES[i - 1][4])
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    legend: {
+                        labels: {
+                            color: "white",
+                            font: {
+                              size: 10,
+                            },
+                        }
+                    }
+                }
+            });
+        }
+    
+    
+        // Doughnut Chart
+        var ctx6 = $("#doughnut-chart").get(0).getContext("2d");
+        var myChart6 = new Chart(ctx6, {
+            type: "doughnut",
+            data: {
+                labels: ["Italy", "France", "Spain", "USA", "Argentina"],
+                datasets: [{
+                    backgroundColor: [
+                        "rgba(252, 215, 139, 0.69)",
+                        "rgba(252, 198, 96, 0.69)",
+                        "rgba(189, 148, 72, 0.69)",
+                        "rgba(125, 98, 47, 0.69)",
+                        "rgba(61, 48, 23, 0.69)"
+                    ],
+                    data: [55, 49, 44, 24, 15]
+                }]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    labels: {
+                        color: "white",
+                        font: {
+                          size: 10,
+                        },
+                    }
+                }
+            }
+        });
+        
+        LOAD.textContent = "Cargado (〜￣▽￣)〜"
+        await sleep(1000);
+        $('#spinner').removeClass('show');
+    };
+    spinner();
 
-    for (let arr of list_anime) {
-        let gnr_arr = arr.value;
-        arr.style.display = searchGenre(gnr_arr, val);
-    }
-
-    var gener = (val !== "Todos") ? generos.get(val)["pic"] : ""
-    let img = document.querySelector("figure.imghvr-slide-up img.ani-genre-pic")
-    img.src = (val !== "Todos") ? gener["url"] : "https://wallpaperaccess.com/full/5088961.jpg"
-    img.alt = (val !== "Todos") ? gener["nombre"] : "Todos"
-    img.backgroundColor = "#3d3017"
-    seccion.textContent = (val !== "Todos") ? "Recomendacion del género: " + gener["nombre"] : "Todos los géneros"
-    seccion = document.querySelector('div.ani-plot')
-    let type = (selector[selector.selectedIndex].value === "anime") ? "anime_id" : "manga_id"
-    cambiarPlot(seccion, gener[type], (val !== "Todos"))
-})
-
-function searchGenre(gnr_arr, val) {
-    for ( let e of gnr_arr) {
-        if (val === "Todos" || e["name"] === val) return ""
-    }
-    return "none"
-}
+    // Sidebar Toggler
+    $('.sidebar-toggler-1').click(function () {
+        $('.sidebar, .content').toggleClass("open");
+        return false;
+    });
+    
+})(jQuery);

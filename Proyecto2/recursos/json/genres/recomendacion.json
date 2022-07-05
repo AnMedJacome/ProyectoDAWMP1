@@ -1,0 +1,194 @@
+{
+    "Action": 
+    {
+        "description": "Las secuencias de acción emocionantes tienen prioridad y los conflictos importantes entre los personajes generalmente se resuelven con el poder físico de uno. Si bien la trama general puede involucrar a un grupo contra otro, la narrativa en las historias de acción siempre se enfoca en las fortalezas y debilidades de los personajes individuales y el esfuerzo que ponen en sus batallas personales con los miembros del grupo contrario.",
+        "pic": 
+        {
+            "url": "https://images7.alphacoders.com/306/306919.jpg", 
+            "nombre": "Bleach", 
+            "anime_id": 269, 
+            "manga_id": 12
+        }
+        
+    },
+    "Adventure": 
+    {
+        "description": "Ya sea que persiga un objetivo específico o simplemente luche por sobrevivir, el personaje principal se ve envuelto en situaciones o tierras desconocidas y se enfrenta continuamente a peligros inesperados. La narración de las historias de aventuras siempre gira en torno a cómo reaccionan los personajes ante sucesos repentinos o pruebas durante el viaje, lo que indica un crecimiento personal o un revés en función de las acciones o elecciones que se toman.", 
+        "pic": 
+        {
+            "url": "https://images7.alphacoders.com/729/thumb-1920-729209.jpg", 
+            "nombre": "Full Metal Alchemist", 
+            "anime_id": 121, 
+            "manga_id": 25
+        }
+    },
+    "Avant Garde": 
+    {
+        "description": "Ficción experimental que rehuyó la narración convencional en el momento de su creación. Estas historias a menudo invocan sentimientos inquietantes porque rechazan las formas tradicionales en las que preferimos ver (o escapar) del mundo. La narrativa de las obras de vanguardia suele tener más importancia que el contenido.",
+        "num": 0,
+        "pic": 
+        {
+            "url": "https://images8.alphacoders.com/695/695227.jpg", 
+            "nombre": "Neon Genesis Evangelion", 
+            "anime_id": 339, 
+            "manga_id": 698
+        }
+            
+    },
+    "Boys Love": 
+    {
+        "description": "Las relaciones románticas/sexuales del mismo sexo entre hombres son el foco de estas historias. El término Boys Love y su abreviatura BL se usan comúnmente para referirse a medios escritos por mujeres para audiencias femeninas en Japón, mientras que el término Bara se usa a menudo para medios escritos por hombres para audiencias masculinas. En Occidente, los términos Shounen Ai (romántico/no sexual) y Yaoi (sexual) se usan más comúnmente para BL.", 
+        "pic": 
+        {
+            "url": "https://wallpapercave.com/wp/wp7283079.png", 
+            "nombre": "Given", 
+            "anime_id": 39533, 
+            "manga_id": 79085
+        }
+    },
+    "Comedy": 
+    {
+        "description": "La prioridad es animar a la audiencia con emociones positivas, provocando risas, diversión o entretenimiento en general. Casi siempre, las historias de comedia son episódicas o tienen finales felices.",
+        "pic": 
+        {
+            "url": "https://wallpaperaccess.com/full/4804007.png", 
+            "nombre": "Danshi koukousei no nichijou",
+            "anime_id": 11843, 
+            "manga_id": 26144
+        }
+    },
+    "Drama":
+    {
+        "description": "Historias basadas en la trama centradas en personajes realistas que experimentan la lucha humana. Debido a que las historias dramáticas plantean la pregunta de qué significa ser humano, el conflicto y las emociones serán identificables, incluso si los escenarios o los personajes mismos no lo son. Aquí verás a la humanidad en su peor momento, en su mejor momento y todo lo demás.", 
+        "pic": 
+        {
+            "url": "https://wallpaperaccess.com/full/1083911.jpg", 
+            "nombre": "Natsume Yuujinchou", 
+            "anime_id": 4081, 
+            "manga_id": 1859
+        }
+    },
+    "Fantasy":
+    {
+        "description": "Los poderes mágicos, las criaturas antinaturales u otros elementos irreales que no pueden ser explicados por la ciencia prevalecen y son normales en el entorno en el que existen. Las historias de fantasía pueden tener lugar en la Tierra (fantasía urbana) o en otro mundo. Los rasgos de los personajes (por ejemplo, mago contra demonio/espíritu) y el escenario no determinan si una historia es Fantasía. Si la mayoría del elenco tiene poderes mágicos o sobrenaturales (por ejemplo, un chico normal de secundaria rodeado de cinco diosas), entonces la historia es Fantasía.",
+        "pic": 
+        {
+            "url": "https://images2.alphacoders.com/776/thumb-1920-776081.jpg", 
+            "nombre": "Little Witch Academia", 
+            "anime_id": 33489, 
+            "manga_id": 93692
+        }
+    },
+    "Girls Love":
+    {
+        "description": "Las relaciones románticas/sexuales del mismo sexo entre mujeres son el foco de estas historias. El término Yuri se usa comúnmente para referirse a este medio en Japón, mientras que Girls Love y su abreviatura GL se usan en menor medida. Los términos Shoujo Ai (romántico/no sexual) y Yuri (sexual) se han utilizado a menudo en Occidente; sin embargo, shoujo ai tiene un significado muy diferente en Japón.", 
+        "pic": 
+        {
+            "url": "https://images8.alphacoders.com/695/695848.png", 
+            "nombre": "Yuru Yuri", 
+            "anime_id": 10495, 
+            "manga_id": 11593
+        }
+    },
+    "Gourmet": 
+    {
+        "description": "La preparación y el consumo de alimentos o bebidas se centran en las historias gourmet y la narrativa está diseñada para presentar numerosos platos o bebidas diferentes. Los personajes suelen ser chefs o conocedores de la comida, y se presta especial atención a todos los pasos del proceso de cocción, desde descripciones detalladas de recetas hasta reacciones exageradas de los personajes al probar el producto terminado.", 
+        "pic": 
+        {
+            "url": "https://images6.alphacoders.com/697/thumb-1920-697221.png", 
+            "nombre": "Shokugeki no Souma", 
+            "anime_id": 28171, 
+            "manga_id": 45757
+        }
+    },
+    "Horror":
+    {
+        "description": "Crear, y mantener, una sensación de pavor en la audiencia tiene prioridad, provocando conmoción, miedo o disgusto a través de la atmósfera y los escenarios aterradores. El estado de ánimo debe ser de igual o mayor importancia que el escenario y la caracterización en las historias de terror. Casi siempre, el elenco principal estará bajo constante amenaza de peligro. Muchas historias pueden incorporar elementos de horror como un dispositivo de la trama para desconcertar a la audiencia, pero la narrativa general debe centrarse en evocar y mantener la aprensión por ser Horror.", 
+        "pic": 
+        {
+            "url": "https://images8.alphacoders.com/914/thumb-1920-914289.jpg", 
+            "nombre": "Mahou Shoujo Site", 
+            "anime_id": 36266, 
+            "manga_id": 57295
+        }
+    },
+    "Mystery": 
+    {
+        "description": "Ya sea para resolver un crimen o encontrar una explicación para una circunstancia desconcertante, el elenco principal, de buena gana o de mala gana, se convierte en investigadores que deben trabajar para responder quién, qué, por qué y/o cómo del dilema actual. La narrativa de las historias de misterio siempre se basa en recopilar pruebas, identificar sospechosos y teorizar posibles escenarios para lo inexplicable, antes de finalmente capturar al perpetrador o resolver la situación actual.",
+        "pic": 
+        {
+            "url": "https://images5.alphacoders.com/945/thumb-1920-945730.png", 
+            "nombre": "Yakusoku no Neverland", 
+            "anime_id": 37779, 
+            "manga_id": 100128
+        }
+    },
+    "Romance":
+    {
+        "description": "Enamorarse y luchar por progresar hacia una relación romántica, o mantenerla, tienen prioridad, mientras que otras tramas secundarias pasan a un segundo plano o están diseñadas para desarrollar la historia de amor principal. La narrativa se enfoca en los pensamientos y emociones de los personajes, ilustrando las conexiones entre ellos y explicando sus reacciones ante eventos o conflictos. Casi siempre, la historia termina felizmente y la pareja es recompensada por sus esfuerzos con un amor duradero.", 
+        "pic": 
+        {
+            "url": "https://images7.alphacoders.com/871/871488.jpg", 
+            "nombre": "Hyouka", 
+            "anime_id": 12189, 
+            "manga_id": 41629
+        }
+    },
+    "Sci-Fi":
+    {
+        "description": "Avances tecnológicos imaginados o escenarios naturales que actualmente son irreales en el presente pero que podrían ser inventados, causados o explicados por la ciencia en el futuro. La narrativa de las historias de ciencia ficción (Sci-Fi o SF) se centra en las repercusiones sociales o individuales causadas por la tecnología imaginada o el fenómeno natural, y con frecuencia son de naturaleza distópica.", 
+        "pic": 
+        {
+            "url": "https://wallpaperaccess.com/full/2012826.jpg", 
+            "nombre": "Eureka Seven", 
+            "anime_id": 237, 
+            "manga_id": 1037
+        }
+    },
+    "Slice of Life":
+    {
+        "description": "Las historias de Slice of Life se centran en un período aparentemente aleatorio y mundano de la vida de los personajes principales. La ausencia de una trama central para llevar la historia hacia un destino marcado significa que las historias de Recuentos de la Vida frecuentemente carecen de conflicto y resolución generales. Si bien la vida no está exenta de conflictos y Slice of Life tampoco, aquí el conflicto aparece y se disipa aparentemente a voluntad, sin una narrativa específica que lo imponga.", 
+        "pic": 
+        {
+            "url": "https://wallpaperaccess.com/full/6351957.png", 
+            "nombre": "Hitoribocchi no ○○ Seikatsu", 
+            "anime_id": 37614, 
+            "manga_id": 89467
+        }
+    },
+    "Sports":
+    {
+        "description": "El entrenamiento y la participación en un deporte tienen prioridad, con el objetivo de mejorar las habilidades atléticas de uno, ya sea para ganar una competencia o alcanzar alguna posición social. Si bien el deporte presentado puede ser individual o de equipo, el elenco principal siempre superará los conflictos a través de la discusión y las ideas obtenidas de otros atletas o entrenadores. Esto crea una sensación general de apoyo y logro colectivo que siempre está presente en las historias deportivas.", 
+        "num": 0,
+        "pic": 
+        {
+            "url": "https://wallpapercave.com/wp/wp4786465.png", 
+            "nombre": "Ryuuou no Oshigoto!", 
+            "anime_id": 35905, 
+            "manga_id": 94818
+        }
+    },
+    "Supernatural": 
+    {
+        "description": "Las historias sobrenaturales, que tienen lugar principalmente en la Tierra, incorporan elementos o atributos que son antinaturales e inexplicables por la ciencia. A menudo se presentan criaturas comunes en el folclore (fantasmas, vampiros) o humanos con poderes metafísicos (telequinesis, lectura de la mente). Los rasgos de los personajes (p. ej., demonio/espíritu) y el entorno por sí solos no determinan si una historia es sobrenatural. Si solo unos pocos personajes tienen poderes y la mayoría del elenco no lo creería al descubrir esto (por ejemplo, un hombre es un exorcista y el resto son adultos normales), entonces la historia es sobrenatural.", 
+        "pic": 
+        {
+            "url": "https://images3.alphacoders.com/228/thumb-1920-228275.jpg", 
+            "nombre": "Shaman King",
+            "anime_id": 42205, 
+            "manga_id": 50
+        }
+    },
+    "Suspense": 
+    {
+        "description": "Infundir un sentido de anticipación y emoción tiene prioridad, y se logra con una narrativa que está plagada de giros, vueltas y pistas falsas. La incertidumbre está presente en cada paso del camino, a menudo prolongado para lograr el máximo efecto. Se utiliza una variedad de herramientas para mantener a la audiencia al borde de sus asientos, como ocultar información importante, desorientar intencionalmente o incluso subvertir las expectativas.", 
+        "pic": 
+        {
+            "url": "https://wallpapercave.com/wp/wp1833405.jpg", 
+            "nombre": "Another", 
+            "anime_id": 11111, 
+            "manga_id": 24098
+        }
+        
+    }
+}
