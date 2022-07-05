@@ -44,6 +44,7 @@ Vista web | Vista móvil
 * Farid, M. (2022). Comprobar si el elemento existe en el DOM en JavaScript. Retrieved 3 July 2022, from https://www.delftstack.com/es/howto/javascript/javascript-check-element-exists-in-dom/
 * Códigos HTML - Tabla de caracteres y símbolos. (2022). Retrieved 3 July 2022, from https://ascii.cl/es/codigos-html.htm
 * Bootstrap Scrollspy - examples & tutorial. (2022). Retrieved 3 July 2022, from https://mdbootstrap.com/docs/standard/navigation/scrollspy/#docsTabsAPI
+* JavaScript?, &., Joel, D., Fuentes, M., & Castellv&#237;, A. (2016). ¿Cómo agregar una clase a un div usando JavaScript?. Retrieved 5 July 2022, from https://es.stackoverflow.com/questions/28007/c%C3%B3mo-agregar-una-clase-a-un-div-usando-javascript
 
 ## Recursos externos
 

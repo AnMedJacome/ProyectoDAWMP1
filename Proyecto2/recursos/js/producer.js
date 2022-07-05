@@ -1,18 +1,21 @@
 const TOTAL_PAGES = 20;
 const COUNT_ELEMENT = 25;
-const TBODY = document.querySelector('table.ani-table-info-1 tbody.ani-body');
+const TBODY = document.querySelector('table.ani-table-info-2 tbody.ani-prod-body');
+const TBODYR = document.querySelector('table.ani-table-info-1 tbody.ani-body');
+const LOAD = document.getElementById("Load-indicator");
+const BAR = document.querySelector("div#Progress-bar-1");
 
 var this_page = 0;
 
 let texto = document.getElementById("Ani-num-page");
 
-let celdaC = (padre, hijo, id, contenido) => {
-    let cell =  document.createElement(padre);
-        let ins = document.createElement(hijo);
-        ins.Id = id
-        ins.textContent = contenido
-    cell.appendChild(ins)
-    return cell
+let active = () => {
+    let spin = document.querySelector('div#spinner')
+    spin.classList.add('show')
+    LOAD.style.display = ""
+    LOAD.textContent = "Cargando"
+    BAR.querySelector("div.progress-bar").style.width = "0vw"
+    BAR.style.display = ""
 }
 
 function filaCompany(company, contador, count_element, this_page) {
@@ -21,7 +24,7 @@ function filaCompany(company, contador, count_element, this_page) {
     let num_animes = company['count'];
     
     let row = document.createElement('tr');
-    row.className = "ani-table-row"
+    row.className = "ani-prod-table-row"
 
         let h_cell = document.createElement('th');
         h_cell.scope = "row"
@@ -43,47 +46,86 @@ function filaCompany(company, contador, count_element, this_page) {
         cell.innerHTML = a
     row.appendChild(cell)
 
-        cell = celdaC('td', 'p', "", num_animes)
+        cell =  document.createElement('td');
+            let ins = document.createElement('p');
+            ins.textContent = num_animes
+        cell.appendChild(ins)
     row.appendChild(cell)
 
-        cell = celdaC('td', 'p', `Company-selected-${contador}`, "Mostrar")
+        cell =  document.createElement('td');
+            ins = document.createElement('p');
+            ins.Id = `Company-selected-${contador}`
+            ins.className = "enlace"
+            ins.textContent = "Mostrar"
+            ins.addEventListener("click", async () => {
+                document.querySelector("h6.ani-title-info").textContent = `Animes producidos por ${nombre}`
+                let spin = document.querySelector('div#spinner')
+                spin.classList.add('show')
+                LOAD.style.display = ""
+                LOAD.textContent = "Cargando"
+                BAR.querySelector("div.progress-bar").style.width = "0vw"
+                BAR.style.display = ""
+                let contador = 1;
+                TBODYR.innerHTML = ""
+                let load_text = LOAD.textContent
+
+                for(let i = 0 ; i < 100 ; i++) {
+                    let data = await getJSONData(`https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/anime/anime%20(${i}).json`)
+                    let arr_anime = data["data"]
+                    for (let anime of arr_anime) {
+                        let an_productores = anime["producers"]
+                        for (let producer of an_productores) 
+                            if (producer["name"] === nombre) TBODYR.appendChild(filaAnime(anime, contador++, COUNT_ELEMENT, 0));
+                        let an_studios = anime["studios"]
+                        for (let studio of an_studios) 
+                            if (studio["name"] === nombre) TBODYR.appendChild(filaAnime(anime, contador++, COUNT_ELEMENT, 0));
+                    }
+                    let progress = contador;
+                
+                    if ((contador % 5) == 1) LOAD.textContent = load_text + "."
+                    else LOAD.textContent += "."
+            
+                    BAR.querySelector("div.progress-bar").style.width = progress.toString() + "vw"
+                }
+                BAR.querySelector("div.progress-bar").style.width = "100vw"
+                LOAD.textContent = "Cargado (〜￣▽￣)〜"
+                await sleep(1000)
+                spin.classList.remove('show');
+                LOAD.style.display = "none"
+                BAR.style.display = "none"
+            })
+        cell.appendChild(ins)
     row.appendChild(cell)
     return(row)
-}
-
-function mostrarAnime(data) {
-    let arreglo = data['data']
-    let contador = 1;
-    TBODY.innerHTML = ""
-    arreglo.foreach(anime => {
-        TBODY.appendChild(filaAnime(anime, contador++, COUNT_ELEMENT, 0));
-    })
 }
 
 async function paginacion(data) {
     let arreglo = data['data']
     let contador = 1;
     TBODY.innerHTML = ""
-    let load = document.getElementById("Load-indicator");
-    let bar = document.querySelector("div#Progress-bar-1");
 
-    let load_text = load.textContent
+    let load_text = LOAD.textContent
     for (let company of arreglo) {
-        let progress = contador * 10;
+        let progress = (contador * 100) / arreglo.length;
     
-        if ((contador % 5) == 1) load.textContent = load_text + "."
-        else load.textContent += "."
+        if ((contador % 5) == 1) LOAD.textContent = load_text + "."
+        else LOAD.textContent += "."
 
-        bar.querySelector("div.progress-bar").style.width = progress.toString() + "vw"
-        await sleep(80)
+        BAR.querySelector("div.progress-bar").style.width = progress.toString() + "vw"
 
         TBODY.appendChild(filaCompany(company, contador++, COUNT_ELEMENT, this_page - 1));
     }
     
-    load.textContent = "Cargado (〜￣▽￣)〜"
+    BAR.querySelector("div.progress-bar").style.width = "100vw"
+    LOAD.textContent = "Cargado (〜￣▽￣)〜"
+    await sleep(1000)
+    document.querySelector('div#spinner').classList.remove('show');
+    LOAD.style.display = "none"
+    BAR.style.display = "none"
 }
 
 async function mostrarPagina() {
+    active()
     let valor = texto.value
     let regex = new RegExp("[1-9][0-9]*");
     if (regex.test(valor)){
@@ -131,6 +173,7 @@ async function getJSONData(url) {
 }
 
 async function goToNext() {
+    active()
     this_page = this_page + 1;
     var url = `https://api.jikan.moe/v4/producers?page=${this_page}`
     let data = await getJSONData(url)
@@ -152,6 +195,7 @@ async function goToNext() {
 }
 
 async function goToPrevious() {
+    active()
     this_page = this_page - 1;
     var url = `https://api.jikan.moe/v4/producers?page=${this_page}`
     let data = await getJSONData(url)

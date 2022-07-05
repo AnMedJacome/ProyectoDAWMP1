@@ -13,14 +13,6 @@ function sleep(ms) {
                     $('#spinner').removeClass('show');
                 }
             }, 20);
-        } else {
-            setTimeout(function () {
-                if ($('#spinner').length > 0) {
-                    $('#spinner').removeClass('show');
-                    document.getElementById("Load-indicator").style.display = "none"
-                    document.querySelector("div#Progress-bar-1").style.display = "none"
-                }
-            }, 3200);
         }
     };
     spinner();

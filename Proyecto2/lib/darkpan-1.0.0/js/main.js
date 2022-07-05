@@ -1,11 +1,11 @@
 (function ($) {
     "use strict";
 
-    // Calender
-    $('#calender').datetimepicker({
-        inline: true,
-        format: 'L'
-    });
+    setTimeout(function () {
+        if ($('#spinner').length > 0) {
+            $('#spinner').removeClass('show');
+        }
+    }, 20);
 
     
 })(jQuery);

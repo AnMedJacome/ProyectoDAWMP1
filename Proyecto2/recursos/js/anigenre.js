@@ -122,7 +122,6 @@ async function crearGenreStats(tipo) {
 }
 
 async function cargarGenreStats(tipo) {
-    let generos = await getJSONData("http://localhost:8080/Proyectos/ProyectoDAWMP1/Proyecto2/recursos/json/genres/recomendacion.json")
     var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${this_page}).json`
     for(let [clave, valor] of generos) {
         generos.get(clave)['num'] = 0
@@ -152,7 +151,7 @@ selectorg.addEventListener('change', async () => {
         arr.style.display = searchGenre(gnr_arr, val);
     }
 
-    let gnerox = await getJSONData("http://localhost:8080/Proyectos/ProyectoDAWMP1/Proyecto2/recursos/json/genres/recomendacion.json")
+    let gnerox = await getJSONData("https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/genres/recomendacion.json")
 
     var gener = (val !== "Todos") ? gnerox[val]["pic"] : ""
     let img = document.querySelector("figure.imghvr-slide-up img.ani-genre-pic")

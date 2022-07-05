@@ -18,7 +18,7 @@ async function paginacion(data) {
 
     let load_text = LOAD.textContent
     for (let anime of arreglo) {
-        let progress = contador * 10;
+        let progress = (contador * 100)/arreglo.length;
     
         if ((contador % 5) == 1) LOAD.textContent = load_text + "."
         else LOAD.textContent += "."
@@ -31,8 +31,12 @@ async function paginacion(data) {
         else
             TBODY.appendChild(filaManga(anime, contador++, COUNT_ELEMENT, this_page));
     }
-    
+    BAR.querySelector("div.progress-bar").style.width = "100vw"
     LOAD.textContent = "Cargado (〜￣▽￣)〜"
+    await sleep(1000)
+    document.querySelector('div#spinner').classList.remove('show');
+    document.getElementById("Load-indicator").style.display = "none"
+    document.querySelector("div#Progress-bar-1").style.display = "none"
 }
 
 let active = () => {
@@ -42,11 +46,6 @@ let active = () => {
     LOAD.textContent = "Cargando"
     BAR.querySelector("div.progress-bar").style.width = "0vw"
     BAR.style.display = ""
-    setTimeout(function () {
-        spin.classList.remove('show');
-        LOAD.style.display = "none"
-        BAR.style.display = "none"
-    }, 3200);
 }
 
 async function mostrarPagina() {

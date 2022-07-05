@@ -30,15 +30,6 @@ async function fetchValues(tipo){
     return data["data"]
 }
 
-let loadBar = async (load_text) => {
-    if ((contador % 5) == 1) LOAD.textContent = load_text + "."
-    else LOAD.textContent += "."
-    let progress = (contador++)
-
-    BAR.querySelector("div.progress-bar").style.width = progress.toString() + "vw"
-    await sleep(10)
-}
-
 async function getNumAniMan(arreglo) {
     let numeros = []
 
@@ -48,22 +39,24 @@ async function getNumAniMan(arreglo) {
 
     let load_text = "Cargando"
     for (let item of arreglo) {
+        let progress = (contador * 100)/arreglo.length
         let it = item["name"]
 
         if (GENEROS.includes(it)) {
-            loadBar(load_text)
             gs.set(it, parseInt(item["count"]))
         }
 
         else if (DEMOGRAFIA.includes(it)) {
-            loadBar(load_text)
             dem.set(it, parseInt(item["count"]))
         }
 
         else if (THEMES_T.includes(it)) {
-            loadBar(load_text)
             thm.set(it, parseInt(item["count"]))
         }
+        
+        if ((contador % 5) == 1) LOAD.textContent = load_text + "."
+        else LOAD.textContent += "."
+        BAR.querySelector("div.progress-bar").style.width = progress.toString() + "vw"
     }
 
     numeros.push(gs)
@@ -332,7 +325,7 @@ async function getArrayAniMan(andata, mandata)  {
                 }
             }
         });
-        
+        BAR.querySelector("div.progress-bar").style.width = "100vw"
         LOAD.textContent = "Cargado (〜￣▽￣)〜"
         await sleep(1000);
         $('#spinner').removeClass('show');
