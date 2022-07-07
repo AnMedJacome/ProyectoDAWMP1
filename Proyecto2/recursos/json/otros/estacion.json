@@ -1,0 +1,96 @@
+{
+    "winter": 
+    {
+        "fecha" : "Diciembre - Febrero",
+        "img": "https://images7.alphacoders.com/778/thumb-1920-778267.jpg",
+        "actividades": 
+        [
+            "Sumergirse en las cálidas aguas de un Onsen",
+            "Practica un deporte de nieve",
+            "Visita uno de los innumerables festivales de nieve",
+            "Deleitarse con la decoración y las luces de Navidad",
+            "Ver los macacos de Jigokudani bañándose en las aguas termales",
+            "Acercarse a algún templo para ver una ceremonia de Setsubun",
+            "Contemplar la iluminación de los tejados de las casas de Shirakawa-go",
+            "Vivir la navidad japonesa"
+        ],
+        "datos": 
+        {
+            "texto": "Las bajas temperaturas se compensan con multitud de festivales, tradiciones o actividades que sólo puedes encontrar si viajas a Japón en invierno. El clima de Japón en invierno se define por ser muy frío, pero también muy seco, característica que ayuda a combatirlo. Es importante decir que los meses de enero y febrero son los que registran menos lluvias de todo el año.",
+            "autor": "Jesús - Japonpedia",
+            "url": "https://japonpedia.com/japon-en-invierno/"
+        }
+    },
+    "spring": 
+    {
+        "fecha" : "Marzo - Mayo",
+        "img": "https://images7.alphacoders.com/778/thumb-1920-778267.jpg",
+        "actividades": 
+        [
+            "Hinamatsuri",
+            "Festival de Omizutori",
+            "Disfrutar de los cerezos en flor o sakura y hacer hanami",
+            "Miyako Odori",
+            "Festival de las Flores",
+            "Festival de Takayama",
+            "Yayoi Matsuri",
+            "Festival de Hakata Dontaku",
+            "Hamamatsu Matsuri",
+            "Pesca con cormoranes o Ukai",
+            "Aoi Matsuri",
+            "Kanda Matsuri",
+            "Festival del Santuario Toshogu",
+            "Sanja Matsuri"
+        ],
+        "datos":
+        {
+            "texto": "Hablar de la primavera en Japón, inevitablemente nos traslada al estallido de la flor del cerezo o la llamada época de Sakura. Miles de japoneses se acoplan bajo los cerezos para hacer Hanami (picnic bajo los cerezos en flor), donde comparte comida y compañía bajo millones de sakuras. Un maravilloso espectáculo de la naturaleza aunque muy efímero, ya que no suele durar más de diez o doce días.",
+            "autor": "Kyoko - Japonpedia",
+            "url": "https://japonpedia.com/japon-en-primavera/"
+        }
+    },
+    "summer": 
+    {
+        "fecha" : "Junio - Agosto",
+        "img": "https://images7.alphacoders.com/778/thumb-1920-778267.jpg",
+        "actividades": 
+        [
+            "Ver alguno de los miles de festividades tradicionales",
+            "Bailar en un Bon-odori",
+            "Subir al monte Fuji",
+            "Ver un espectáculo de Hanabi",
+            "Tanabata",
+            "Probar las comidas callejeras de Japón en Verano",
+            "Pasear vestido con Yukata"
+        ],
+        "datos":
+        {
+            "texto": "El inicio y el final del verano están marcados por la temporada de tifones. Suelen producirse en los meses de junio y septiembre. Los meses de julio y agosto, Japón se convierte en una sauna por la elevada humedad que se registra. Puede resultar agotador. Durante los meses de verano, Japón está plagado de festivales, eventos y actividades que harán que tu visita al país se enriquezca con experiencias únicas e increíbles. Muchas son tan interesantes, que bien merecen la pena viajar a Japón solo para conocerlas.",
+            "autor": "Jesús - Japonpedia",
+            "url": "https://japonpedia.com/japon-en-verano/"
+        }
+    },
+    "fall": 
+    {
+        "fecha" : "Septiembre - Noviembre",
+        "img": "https://images7.alphacoders.com/778/thumb-1920-778267.jpg",
+        "actividades": 
+        [
+            "Danzas de otoño de geishas y maikos",
+            "Visitar el bosque de bambú de Arashiyama",
+            "Shichi go san",
+            "Contemplar las hojas de otoño",
+            "Tokyo Game Show",
+            "Festival de otoño de Nikko",
+            "Festival de Jidai Matsuri",
+            "Festival Nada no Kenka Matsuri",
+            "Hachiman Matsuri, el festival de otoño de Takayama"
+        ],
+        "datos":
+        {
+            "texto": "Al igual que al hablar de la primavera japonesa nos acordamos de la flor de Sakura, cuando hablamos del otoño en Japón nos acordaremos de la época de momiji. Esta palabra se usa para definir el cambio de color que experimentan las hojas de los árboles tornándose al color rojo intenso, amarillo o tonos marrones. Hay infinidad de productos de temporada para probar, y en cuanto a festivales, solo decir que a Japón se la nombra durante estos meses como kannazuki, que significa mes de los dioses.",
+            "autor": "Jesús - Japonpedia",
+            "url": "https://japonpedia.com/japon-en-otono/"
+        }
+    }
+}

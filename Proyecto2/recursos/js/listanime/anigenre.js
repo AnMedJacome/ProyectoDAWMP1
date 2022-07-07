@@ -151,7 +151,7 @@ selectorg.addEventListener('change', async () => {
         arr.style.display = searchGenre(gnr_arr, val);
     }
 
-    let gnerox = await getJSONData("https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/genres/recomendacion.json")
+    let gnerox = await getJSONData("https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/otros/recomendacion.json")
 
     var gener = (val !== "Todos") ? gnerox[val]["pic"] : ""
     let img = document.querySelector("figure.imghvr-slide-up img.ani-genre-pic")

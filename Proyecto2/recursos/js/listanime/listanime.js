@@ -73,11 +73,33 @@ async function mostrarPagina() {
 
         }
         else {
-            alert(`Ingresa un número mayor a 0 y menor o igual a ${TOTAL_PAGES}.`);
+            let div = document.createElement('div');
+            div.className = "alert alert-warning alert-dismissible fade show element-animated short fade-in"
+            div.role = "alert";
+            div.innerHTML = `
+                <i class="fa fa-exclamation-circle me-2"></i>Ingresa un número mayor a 0 y menor o igual a ${TOTAL_PAGES}.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            `
+            texto.insertAdjacentElement("beforebegin", div)
+            setTimeout(() => {
+                p_node = div.parentNode
+                p_node.removeChild(div)
+            }, 5000)
         }
     }
     else {
-        alert(`Por favor ingresa un solo número mayor a 0 y menor o igual a ${TOTAL_PAGES}.`);
+        let div = document.createElement('div');
+        div.className = "alert alert-warning alert-dismissible fade show element-animated short fade-in"
+        div.role = "alert";
+        div.innerHTML = `
+            <i class="fa fa-exclamation-circle me-2"></i>Por favor ingresa un solo número mayor a 0 y menor o igual a ${TOTAL_PAGES}.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        `
+        texto.insertAdjacentElement("beforebegin", div)
+        setTimeout(() => {
+            p_node = div.parentNode
+            p_node.removeChild(div)
+        }, 5000)
     }
 }
 
