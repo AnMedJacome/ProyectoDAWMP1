@@ -23,29 +23,6 @@ Vista web | Vista móvil
 --- | ---
 ![Navegador: Chrome](recursos/img/vista-web.png) | ![Navegador: Opera GX](recursos/img/vista-movil.jpg)
 
-## Referencias
-* (2022). Retrieved 12 June 2022, from https://www.youtube.com/watch?v=_fd5J5k9KZ0
-* Bootstrap 5 Background Image - examples & tutorial. (2022). Retrieved 12 June 2022, from https://mdbootstrap.com/docs/standard/content-styles/background-image/
-* Bootstrap 5 Animations - examples & tutorial. (2022). Retrieved 12 June 2022, from https://mdbootstrap.com/docs/standard/content-styles/animations/
-* MDB tools. (2022). Retrieved 12 June 2022, from https://mdbootstrap.com/docs/standard/tools/
-* Bootstrap Masks - examples & tutorial. (2022). Retrieved 12 June 2022, from https://mdbootstrap.com/docs/standard/content-styles/masks/
-* Leer archivos en JavaScript. (2010). Retrieved 16 June 2022, from https://web.dev/i18n/es/read-files/
-* getElementById, h., Gondliya, V., & gupta, s. (2015). how to get value of li tag which is in ul tag using getElementById. Retrieved 21 June 2022, from https://stackoverflow.com/questions/30392283/how-to-get-value-of-li-tag-which-is-in-ul-tag-using-getelementbyid
-* Insertar elementos en el DOM - Javascript en español. (2022). Retrieved 21 June 2022, from https://lenguajejs.com/javascript/dom/insertar-elementos-dom/
-* onclick Event. (2022). Retrieved 22 June 2022, from https://www.w3schools.com/jsref/event_onclick.asp
-* JavaScript, H. (2021). How to Get an Input's Value with JavaScript - Tabnine Academy. Retrieved 22 June 2022, from https://www.tabnine.com/academy/javascript/get-value-of-input/
-* Expresiones Regulares - JavaScript | MDN. (2022). Retrieved 22 June 2022, from https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions
-* Mark Otto, a. (2022). Tables. Retrieved 22 June 2022, from https://getbootstrap.com/docs/4.0/content/tables/#hoverable-rows
-* Bootstrap Navbar - examples & tutorial. (2022). Retrieved 22 June 2022, from https://mdbootstrap.com/docs/standard/navigation/navbar/
-* Gandy, D. (2022). Font Awesome Icons. Retrieved 22 June 2022, from https://fontawesome.com/v4/icons/
-* Colecciones con clave - JavaScript | MDN. (2020). Retrieved 24 June 2022, from https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Keyed_collections
-* Element.ariaValueNow - Web APIs | MDN. (2022). Retrieved 28 June 2022, from https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaValueNow
-* Bootstrap Progress Bars. (2022). Retrieved 28 June 2022, from https://www.w3schools.com/bootstrap/bootstrap_progressbars.asp
-* Farid, M. (2022). Comprobar si el elemento existe en el DOM en JavaScript. Retrieved 3 July 2022, from https://www.delftstack.com/es/howto/javascript/javascript-check-element-exists-in-dom/
-* Códigos HTML - Tabla de caracteres y símbolos. (2022). Retrieved 3 July 2022, from https://ascii.cl/es/codigos-html.htm
-* Bootstrap Scrollspy - examples & tutorial. (2022). Retrieved 3 July 2022, from https://mdbootstrap.com/docs/standard/navigation/scrollspy/#docsTabsAPI
-* JavaScript?, &., Joel, D., Fuentes, M., & Castellv&#237;, A. (2016). ¿Cómo agregar una clase a un div usando JavaScript?. Retrieved 5 July 2022, from https://es.stackoverflow.com/questions/28007/c%C3%B3mo-agregar-una-clase-a-un-div-usando-javascript
-
 ## Recursos externos
 
 ### Librerias CSS
@@ -77,3 +54,30 @@ Vista web | Vista móvil
 * https://wallpapercave.com/wp/wp4786465.png
 * https://images3.alphacoders.com/228/thumb-1920-228275.jpg
 * https://wallpapercave.com/wp/wp1833405.jpg
+* https://www.xtrafondos.com/wallpapers/chica-anime-en-invierno-9164.jpg
+* https://wallpaperaccess.com/full/6396728.jpg
+* https://images7.alphacoders.com/778/thumb-1920-778267.jpg
+* https://wallpaperaccess.com/full/2416967.jpg
+
+## Referencias
+* (2022). Retrieved 12 June 2022, from https://www.youtube.com/watch?v=_fd5J5k9KZ0
+* Bootstrap 5 Background Image - examples & tutorial. (2022). Retrieved 12 June 2022, from https://mdbootstrap.com/docs/standard/content-styles/background-image/
+* Bootstrap 5 Animations - examples & tutorial. (2022). Retrieved 12 June 2022, from https://mdbootstrap.com/docs/standard/content-styles/animations/
+* MDB tools. (2022). Retrieved 12 June 2022, from https://mdbootstrap.com/docs/standard/tools/
+* Bootstrap Masks - examples & tutorial. (2022). Retrieved 12 June 2022, from https://mdbootstrap.com/docs/standard/content-styles/masks/
+* Leer archivos en JavaScript. (2010). Retrieved 16 June 2022, from https://web.dev/i18n/es/read-files/
+* getElementById, h., Gondliya, V., & gupta, s. (2015). how to get value of li tag which is in ul tag using getElementById. Retrieved 21 June 2022, from https://stackoverflow.com/questions/30392283/how-to-get-value-of-li-tag-which-is-in-ul-tag-using-getelementbyid
+* Insertar elementos en el DOM - Javascript en español. (2022). Retrieved 21 June 2022, from https://lenguajejs.com/javascript/dom/insertar-elementos-dom/
+* onclick Event. (2022). Retrieved 22 June 2022, from https://www.w3schools.com/jsref/event_onclick.asp
+* JavaScript, H. (2021). How to Get an Input's Value with JavaScript - Tabnine Academy. Retrieved 22 June 2022, from https://www.tabnine.com/academy/javascript/get-value-of-input/
+* Expresiones Regulares - JavaScript | MDN. (2022). Retrieved 22 June 2022, from https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions
+* Mark Otto, a. (2022). Tables. Retrieved 22 June 2022, from https://getbootstrap.com/docs/4.0/content/tables/#hoverable-rows
+* Bootstrap Navbar - examples & tutorial. (2022). Retrieved 22 June 2022, from https://mdbootstrap.com/docs/standard/navigation/navbar/
+* Gandy, D. (2022). Font Awesome Icons. Retrieved 22 June 2022, from https://fontawesome.com/v4/icons/
+* Colecciones con clave - JavaScript | MDN. (2020). Retrieved 24 June 2022, from https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Keyed_collections
+* Element.ariaValueNow - Web APIs | MDN. (2022). Retrieved 28 June 2022, from https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaValueNow
+* Bootstrap Progress Bars. (2022). Retrieved 28 June 2022, from https://www.w3schools.com/bootstrap/bootstrap_progressbars.asp
+* Farid, M. (2022). Comprobar si el elemento existe en el DOM en JavaScript. Retrieved 3 July 2022, from https://www.delftstack.com/es/howto/javascript/javascript-check-element-exists-in-dom/
+* Códigos HTML - Tabla de caracteres y símbolos. (2022). Retrieved 3 July 2022, from https://ascii.cl/es/codigos-html.htm
+* Bootstrap Scrollspy - examples & tutorial. (2022). Retrieved 3 July 2022, from https://mdbootstrap.com/docs/standard/navigation/scrollspy/#docsTabsAPI
+* JavaScript?, &., Joel, D., Fuentes, M., & Castellv&#237;, A. (2016). ¿Cómo agregar una clase a un div usando JavaScript?. Retrieved 5 July 2022, from https://es.stackoverflow.com/questions/28007/c%C3%B3mo-agregar-una-clase-a-un-div-usando-javascript

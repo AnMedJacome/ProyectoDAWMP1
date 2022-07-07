@@ -5,7 +5,7 @@ const TBODY = document.querySelector('table.ani-table-info-1 tbody.ani-body');
 const LOAD = document.getElementById("Load-indicator");
 const BAR = document.querySelector("div#Progress-bar-1");
 
-var this_page = 0;
+var thisPage = 0;
 var tipo = "anime"
 
 let texto = document.getElementById("Ani-num-page");
@@ -27,9 +27,9 @@ async function paginacion(data) {
         await sleep(80)
 
         if (tipo === "anime")
-            TBODY.appendChild(filaAnime(anime, contador++, COUNT_ELEMENT, this_page));
+            TBODY.appendChild(filaAnime(anime, contador++, COUNT_ELEMENT, thisPage));
         else
-            TBODY.appendChild(filaManga(anime, contador++, COUNT_ELEMENT, this_page));
+            TBODY.appendChild(filaManga(anime, contador++, COUNT_ELEMENT, thisPage));
     }
     BAR.querySelector("div.progress-bar").style.width = "100vw"
     LOAD.textContent = "Cargado (〜￣▽￣)〜"
@@ -46,61 +46,6 @@ let active = () => {
     LOAD.textContent = "Cargando"
     BAR.querySelector("div.progress-bar").style.width = "0vw"
     BAR.style.display = ""
-}
-
-async function mostrarPagina() {
-    let valor = texto.value
-    let regex = new RegExp("[1-9][0-9]*");
-    if (regex.test(valor)){
-        let page = parseInt(valor);
-        if (page > 0 && page <= TOTAL_PAGES) {
-
-            this_page = page - 1
-            
-            var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${this_page}).json`
-            let data = await getJSONData(url)
-            active()
-            paginacion(data)
-            texto.value = '';
-            let titulo = document.getElementById('Pagina-tabla');
-            titulo.textContent = `Página ${valor} de ${TOTAL_PAGES}`
-            let li = document.getElementById('Ani-pitem-r');
-            li.innerHTML = `${valor} de <span class="fw-bold">${TOTAL_PAGES}</span>`;
-            cargarGenreStats(tipo)
-            let seccion = document.querySelector('div.ani-plot')
-            cambiarPlot(seccion, null, false)
-            selectorg.selectedIndex = 0;
-
-        }
-        else {
-            let div = document.createElement('div');
-            div.className = "alert alert-warning alert-dismissible fade show element-animated short fade-in"
-            div.role = "alert";
-            div.innerHTML = `
-                <i class="fa fa-exclamation-circle me-2"></i>Ingresa un número mayor a 0 y menor o igual a ${TOTAL_PAGES}.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            `
-            texto.insertAdjacentElement("beforebegin", div)
-            setTimeout(() => {
-                p_node = div.parentNode
-                p_node.removeChild(div)
-            }, 5000)
-        }
-    }
-    else {
-        let div = document.createElement('div');
-        div.className = "alert alert-warning alert-dismissible fade show element-animated short fade-in"
-        div.role = "alert";
-        div.innerHTML = `
-            <i class="fa fa-exclamation-circle me-2"></i>Por favor ingresa un solo número mayor a 0 y menor o igual a ${TOTAL_PAGES}.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        `
-        texto.insertAdjacentElement("beforebegin", div)
-        setTimeout(() => {
-            p_node = div.parentNode
-            p_node.removeChild(div)
-        }, 5000)
-    }
 }
 
 let cargarDatos = async () => {
@@ -125,8 +70,8 @@ let cargarDatos = async () => {
         </tr>
     `;
     THEAD.innerHTML = qu_thead;
-    this_page = 0
-    var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${this_page}).json`
+    thisPage = 0
+    var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${thisPage}).json`
     let data = await getJSONData(url)
     let li = document.getElementById('Ani-pitem-r');
     li.innerHTML = `1 de <span class="fw-bold">${TOTAL_PAGES}</span>`;
@@ -214,54 +159,80 @@ async function getJSONData(url) {
     return data;
 }
 
-async function goToNext() {
-    this_page = this_page + 1;
-    var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${this_page}).json`
-    let data = await getJSONData(url)
-    active()
-    paginacion(data)
-    texto.value = '';
-    let titulo = document.getElementById('Pagina-tabla');
-    titulo.textContent = `Página ${this_page + 1} de ${TOTAL_PAGES}`
-    let li = document.getElementById('Ani-pitem-r');
-    li.innerHTML = `${this_page + 1} de <span class="fw-bold">${TOTAL_PAGES}</span>`;
-    cargarGenreStats(tipo)
-    let seccion = document.querySelector('div.ani-plot')
-    cambiarPlot(seccion, null, false)
-    selectorg.selectedIndex = 0;
+async function mostrarPagina() {
+    let valor = texto.value
+    let regex = new RegExp("[1-9][0-9]*");
+    if (regex.test(valor)){
+        let page = parseInt(valor);
+        if (page > 0 && page <= TOTAL_PAGES) {
 
-    if (this_page === TOTAL_PAGES) {
-        let siguiente = document.querySelector("li#Btn-item-d")
-        siguiente.className = "page-item rounded-circle my-3 disabled"
+            thisPage = page - 1
+            active()
+            
+            var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${thisPage}).json`
+            let data = await getJSONData(url)
+            paginacion(data)
+            texto.value = '';
+            let titulo = document.getElementById('Pagina-tabla');
+            titulo.textContent = `Página ${valor} de ${TOTAL_PAGES}`
+            let li = document.getElementById('Ani-pitem-r');
+            li.innerHTML = `${valor} de <span class="fw-bold">${TOTAL_PAGES}</span>`;
+            cargarGenreStats(tipo)
+            let seccion = document.querySelector('div.ani-plot')
+            cambiarPlot(seccion, null, false)
+            selectorg.selectedIndex = 0;
+
+            if (thisPage === 0) document.querySelector("li#Btn-item-a").classList.add("disabled")
+            else document.querySelector("li#Btn-item-a").classList.remove("disabled")
+
+            if (thisPage === TOTAL_PAGES - 1) document.querySelector("li#Btn-item-s").classList.add("disabled")
+            else document.querySelector("li#Btn-item-s").classList.remove("disabled")
+
+        }
+        else {
+            aniAlert(texto, `Ingresa un número mayor a 0 y menor o igual a ${TOTAL_PAGES}.`)
+        }
     }
-    else if (this_page === 1) {
-        let anterior = document.querySelector("li#Btn-item-a")
-        anterior.className = "page-item rounded-circle my-3"
+    else {
+        aniAlert(texto, `Por favor ingresa un solo número mayor a 0 y menor o igual a ${TOTAL_PAGES}.`)
     }
 }
 
-async function goToPrevious() {
-    this_page = this_page - 1;
-    var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${this_page}).json`
-    let data = await getJSONData(url)
+async function goToNext() {
     active()
+    thisPage = thisPage + 1;
+    var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${thisPage}).json`
+    let data = await getJSONData(url)
     paginacion(data)
     texto.value = '';
     let titulo = document.getElementById('Pagina-tabla');
-    titulo.textContent = `Página ${this_page + 1} de ${TOTAL_PAGES}`
+    titulo.textContent = `Página ${thisPage + 1} de ${TOTAL_PAGES}`
     let li = document.getElementById('Ani-pitem-r');
-    li.innerHTML = `${this_page + 1} de <span class="fw-bold">${TOTAL_PAGES}</span>`;
+    li.innerHTML = `${thisPage + 1} de <span class="fw-bold">${TOTAL_PAGES}</span>`;
     cargarGenreStats(tipo)
     let seccion = document.querySelector('div.ani-plot')
     cambiarPlot(seccion, null, false)
     selectorg.selectedIndex = 0;
 
-    if (this_page === 0) {
-        let anterior = document.querySelector("li#Btn-item-a")
-        anterior.className = "page-item rounded-circle my-3 disabled"
-    }
-    else if (this_page === TOTAL_PAGES - 1) {
-        let siguiente = document.querySelector("li#Btn-item-d")
-        siguiente.className = "page-item rounded-circle my-3 ani-shadow"
-    }    
+    if (thisPage > 0) document.querySelector("li#Btn-item-a").classList.remove("disabled")
+    if (thisPage === TOTAL_PAGES - 1) document.querySelector("li#Btn-item-s").classList.add("disabled")
+}
+
+async function goToPrevious() {
+    active()
+    thisPage = thisPage - 1;
+    var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${thisPage}).json`
+    let data = await getJSONData(url)
+    paginacion(data)
+    texto.value = '';
+    let titulo = document.getElementById('Pagina-tabla');
+    titulo.textContent = `Página ${thisPage + 1} de ${TOTAL_PAGES}`
+    let li = document.getElementById('Ani-pitem-r');
+    li.innerHTML = `${thisPage + 1} de <span class="fw-bold">${TOTAL_PAGES}</span>`;
+    cargarGenreStats(tipo)
+    let seccion = document.querySelector('div.ani-plot')
+    cambiarPlot(seccion, null, false)
+    selectorg.selectedIndex = 0;
+    if (thisPage < TOTAL_PAGES - 1) document.querySelector("li#Btn-item-s").classList.remove("disabled")
+    if (thisPage === 0) document.querySelector("li#Btn-item-a").classList.add("disabled")
 }

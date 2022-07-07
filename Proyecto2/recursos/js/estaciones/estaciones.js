@@ -1,9 +1,10 @@
-var total_pages = 1;
+var totalPages = 1;
 var countElement = 25;
 const TBODY = document.querySelector('table.ani-table-info-1 tbody.ani-body');
 const LOAD = document.getElementById("Load-indicator");
 const BAR = document.querySelector("div#Progress-bar-1");
 let chyear = 0;
+let season = "";
 
 var thisPage = 0;
 
@@ -24,7 +25,7 @@ async function paginacion(data) {
 
         BAR.querySelector("div.progress-bar").style.width = progress.toString() + "vw"
         await sleep(80)
-        TBODY.appendChild(filaAnime(anime, contador++, countElement, thisPage));
+        TBODY.appendChild(filaAnime(anime, contador++, countElement, thisPage -1));
     }
     BAR.querySelector("div.progress-bar").style.width = "100vw"
     LOAD.textContent = "Cargado (〜￣▽￣)〜"
@@ -44,32 +45,31 @@ function getYear() {
     if (regex.test(text)) {
         thisPage = 1
         let y = parseInt(text, 10);
-        let season = SELECTOR.options[SELECTOR.selectedIndex].value
+        season = SELECTOR.options[SELECTOR.selectedIndex].value
         active()
         if (y !== chyear) {
             chyear = y
             updateChart();
             createDescriptionList()
+            reactivebtn("Btn-item-s")
+            reactivebtn("Btn-mostrar")
+            if (thisPage > 1) 
+                document.querySelector("li#Btn-item-a").classList.remove("disabled")
+            if (thisPage < totalPages) 
+                document.querySelector("li#Btn-item-d").classList.remove("disabled")
         }
-        cambiarPlot(season)
+        cambiarPlot()
         let tempo = SELECTOR.options[SELECTOR.selectedIndex].text
         document.querySelector('h5.ani-title-info').textContent = `TEMPORADA: ${tempo.toUpperCase()} ${y}`
-        cargarDatos(y, season)
+        cargarDatos(y)
     }
     else {
-        let div = document.createElement('div');
-        div.className = "alert alert-warning alert-dismissible fade show element-animated short fade-in"
-        div.role = "alert";
-        div.innerHTML = `
-            <i class="fa fa-exclamation-circle me-2"></i>Wow! Al parecer ingres&oacute; un año &quot;extra&ntilde;o&quot; o fuera del rango 1917 - 2023
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        `
-        YEAR.insertAdjacentElement("beforebegin", div)
-        setTimeout(() => {
-            p_node = div.parentNode
-            p_node.removeChild(div)
-        }, 5000)
+        aniAlert(YEAR, "Wow! Al parecer ingres&oacute; un año &quot;extra&ntilde;o&quot; o fuera del rango 1917 - 2023.")
     }
+}
+let reactivebtn = (tag) => {
+    let btn = document.getElementById(tag)
+    btn.classList.remove("disabled")
 }
 
 let active = () => {
@@ -81,70 +81,15 @@ let active = () => {
     BAR.classList.remove('d-none')
 }
 
-async function mostrarPagina() {
-    let valor = texto.value
-    let regex = new RegExp("[1-9][0-9]*");
-    if (regex.test(valor)){
-        let page = parseInt(valor);
-        if (page > 0 && page <= total_pages) {
-
-            thisPage = page - 1
-            
-            var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${thisPage}).json`
-            let data = await getJSONData(url)
-            active()
-            paginacion(data)
-            texto.value = '';
-            let titulo = document.getElementById('Pagina-tabla');
-            titulo.textContent = `Página ${valor} de ${total_pages}`
-            let li = document.getElementById('Ani-pitem-r');
-            li.innerHTML = `${valor} de <span class="fw-bold">${total_pages}</span>`;
-            cargarGenreStats(tipo)
-            let seccion = document.querySelector('div.ani-plot')
-            cambiarPlot(seccion, null, false)
-            selectorg.selectedIndex = 0;
-
-        }
-        else {
-            let div = document.createElement('div');
-            div.className = "alert alert-warning alert-dismissible fade show element-animated short fade-in"
-            div.role = "alert";
-            div.innerHTML = `
-                <i class="fa fa-exclamation-circle me-2"></i>Ingresa un número mayor a 0 y menor o igual a ${total_pages}.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            `
-            texto.insertAdjacentElement("beforebegin", div)
-            setTimeout(() => {
-                p_node = div.parentNode
-                p_node.removeChild(div)
-            }, 5000)
-        }
-    }
-    else {
-        let div = document.createElement('div');
-        div.className = "alert alert-warning alert-dismissible fade show element-animated short fade-in"
-        div.role = "alert";
-        div.innerHTML = `
-            <i class="fa fa-exclamation-circle me-2"></i>Por favor ingresa un solo número mayor a 0 y menor o igual a ${total_pages}.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        `
-        texto.insertAdjacentElement("beforebegin", div)
-        setTimeout(() => {
-            p_node = div.parentNode
-            p_node.removeChild(div)
-        }, 5000)
-    }
-}
-
-let cargarDatos = async (y, season) => {
+let cargarDatos = async (y) => {
     TBODY.innerHTML = ""
     const URL = `https://api.jikan.moe/v4/seasons/${y}/${season}?page=${thisPage}`
     let data = await getJSONData(URL)
     let li = document.getElementById('Ani-pitem-r');
-    total_pages = data["pagination"]["items"]["total"]
-    li.innerHTML = `1 de <span class="fw-bold">${total_pages}</span>`;
+    totalPages = data["pagination"]["last_visible_page"]
+    li.innerHTML = `1 de <span class="fw-bold">${totalPages}</span>`;
     let titulo = document.getElementById('Pagina-tabla');
-    titulo.textContent = `Página ${thisPage} de ${total_pages}`
+    titulo.textContent = `Página ${thisPage} de ${totalPages}`
     paginacion(data)
 }
 
@@ -241,16 +186,16 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('h5.ani-title-info').insertAdjacentElement("afterend",fig);
 })
 
-async function cambiarPlot(season){
+async function cambiarPlot(){
     let purl = "https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/otros/estacion.json"
     let data = await getJSONData(purl)
     document.querySelector("figure#Season-jp-info").style.display = "";
-    showSeasonpic(data[season], season)
+    showSeasonpic(data[season])
     document.querySelector("dd.season-act-1").innerText = data[season]["fecha"]
     document.querySelector("dd.season-act-2").innerText = data[season]["actividades"]
 }
 
-let showSeasonpic = (data, season) => {
+let showSeasonpic = (data) => {
     let url = data["img"]
     let dato = data["datos"]
     let img = document.getElementById("Season-desc-pic")
@@ -277,56 +222,68 @@ async function getJSONData(url) {
     return data;
 }
 
-async function goToNext() {
-    thisPage = thisPage + 1;
-    var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${thisPage}).json`
-    let data = await getJSONData(url)
-    active()
-    paginacion(data)
-    texto.value = '';
-    let titulo = document.getElementById('Pagina-tabla');
-    titulo.textContent = `Página ${thisPage + 1} de ${total_pages}`
-    let li = document.getElementById('Ani-pitem-r');
-    li.innerHTML = `${thisPage + 1} de <span class="fw-bold">${total_pages}</span>`;
-    cargarGenreStats(tipo)
-    let seccion = document.querySelector('div.ani-plot')
-    cambiarPlot(seccion, null, false)
-    selectorg.selectedIndex = 0;
+async function mostrarPagina() {
+    let valor = texto.value
+    let regex = new RegExp("[1-9][0-9]*");
+    if (regex.test(valor)){
+        let page = parseInt(valor);
+        if (page > 0 && page <= totalPages) {
 
-    if (thisPage === total_pages) {
-        let siguiente = document.querySelector("li#Btn-item-d")
-        siguiente.className = "page-item rounded-circle my-3 disabled"
+            thisPage = page
+            active()
+            
+            var url = `https://api.jikan.moe/v4/seasons/${chyear}/${season}?page=${thisPage}`
+            let data = await getJSONData(url)
+            paginacion(data)
+            texto.value = '';
+            let titulo = document.getElementById('Pagina-tabla');
+            titulo.textContent = `Página ${valor} de ${totalPages}`
+            let li = document.getElementById('Ani-pitem-r');
+            li.innerHTML = `${valor} de <span class="fw-bold">${totalPages}</span>`;
+            if (thisPage === totalPages) document.querySelector("li#Btn-item-s").classList.add("disabled")
+            else document.querySelector("li#Btn-item-s").classList.remove("disabled")
+            
+            if (thisPage === 1) document.querySelector("li#Btn-item-a").classList.add("disabled")
+            else document.querySelector("li#Btn-item-a").classList.remove("disabled")
+
+        }
+        else {
+            aniAlert(texto, `Ingresa un número mayor a 0 y menor o igual a ${totalPages}.`)
+        }
     }
-    else if (thisPage === 1) {
-        let anterior = document.querySelector("li#Btn-item-a")
-        anterior.className = "page-item rounded-circle my-3"
+    else {
+        aniAlert(texto, `Por favor ingresa un solo número mayor a 0 y menor o igual a ${totalPages}.`)
     }
 }
 
-async function goToPrevious() {
-    thisPage = thisPage - 1;
-    var url = `https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/${tipo}/${tipo}%20(${thisPage}).json`
-    let data = await getJSONData(url)
+async function goToNext() {
     active()
+    thisPage = thisPage + 1;
+    var url = `https://api.jikan.moe/v4/seasons/${chyear}/${season}?page=${thisPage}`
+    let data = await getJSONData(url)
     paginacion(data)
     texto.value = '';
     let titulo = document.getElementById('Pagina-tabla');
-    titulo.textContent = `Página ${thisPage + 1} de ${total_pages}`
+    titulo.textContent = `Página ${thisPage} de ${totalPages}`
     let li = document.getElementById('Ani-pitem-r');
-    li.innerHTML = `${thisPage + 1} de <span class="fw-bold">${total_pages}</span>`;
-    cargarGenreStats(tipo)
-    let seccion = document.querySelector('div.ani-plot')
-    cambiarPlot(seccion, null, false)
-    selectorg.selectedIndex = 0;
+    li.innerHTML = `${thisPage} de <span class="fw-bold">${totalPages}</span>`;
+    if (thisPage > 1) document.querySelector("li#Btn-item-a").classList.remove("disabled")
+    if (thisPage === totalPages) document.querySelector("li#Btn-item-s").classList.add("disabled")
+}
 
-    if (thisPage === 0) {
-        let anterior = document.querySelector("li#Btn-item-a")
-        anterior.className = "page-item rounded-circle my-3 disabled"
-    }
-    else if (thisPage === total_pages - 1) {
-        let siguiente = document.querySelector("li#Btn-item-d")
-        siguiente.className = "page-item rounded-circle my-3 ani-shadow"
-    }    
+async function goToPrevious() {
+    active()
+    thisPage = thisPage - 1;
+    var url = `https://api.jikan.moe/v4/seasons/${chyear}/${season}?page=${thisPage}`
+    let data = await getJSONData(url)
+    paginacion(data)
+    texto.value = '';
+    let titulo = document.getElementById('Pagina-tabla');
+    titulo.textContent = `Página ${thisPage} de ${totalPages}`
+    let li = document.getElementById('Ani-pitem-r');
+    li.innerHTML = `${thisPage} de <span class="fw-bold">${totalPages}</span>`;
+    if (thisPage < totalPages) document.querySelector("li#Btn-item-s").classList.remove("disabled")
+    if (thisPage === 1) document.querySelector("li#Btn-item-a").classList.add("disabled")
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
