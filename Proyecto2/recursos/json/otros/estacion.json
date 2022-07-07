@@ -2,17 +2,10 @@
     "winter": 
     {
         "fecha" : "Diciembre - Febrero",
-        "img": "https://images7.alphacoders.com/778/thumb-1920-778267.jpg",
+        "img": "https://www.xtrafondos.com/wallpapers/chica-anime-en-invierno-9164.jpg",
         "actividades": 
         [
-            "Sumergirse en las cálidas aguas de un Onsen",
-            "Practica un deporte de nieve",
-            "Visita uno de los innumerables festivales de nieve",
-            "Deleitarse con la decoración y las luces de Navidad",
-            "Ver los macacos de Jigokudani bañándose en las aguas termales",
-            "Acercarse a algún templo para ver una ceremonia de Setsubun",
-            "Contemplar la iluminación de los tejados de las casas de Shirakawa-go",
-            "Vivir la navidad japonesa"
+            "[Sumergirse en las cálidas aguas de un Onsen]\n[Practica un deporte de nieve]\n[Visita uno de los innumerables festivales de nieve]\n[Deleitarse con la decoración y las luces de Navidad]\n[Ver los macacos de Jigokudani bañándose en las aguas termales]\n[Acercarse a algún templo para ver una ceremonia de Setsubun]\n[Contemplar la iluminación de los tejados de las casas de Shirakawa-go]\n[Vivir la navidad japonesa]"
         ],
         "datos": 
         {
@@ -24,23 +17,10 @@
     "spring": 
     {
         "fecha" : "Marzo - Mayo",
-        "img": "https://images7.alphacoders.com/778/thumb-1920-778267.jpg",
+        "img": "https://wallpaperaccess.com/full/6396728.jpg",
         "actividades": 
         [
-            "Hinamatsuri",
-            "Festival de Omizutori",
-            "Disfrutar de los cerezos en flor o sakura y hacer hanami",
-            "Miyako Odori",
-            "Festival de las Flores",
-            "Festival de Takayama",
-            "Yayoi Matsuri",
-            "Festival de Hakata Dontaku",
-            "Hamamatsu Matsuri",
-            "Pesca con cormoranes o Ukai",
-            "Aoi Matsuri",
-            "Kanda Matsuri",
-            "Festival del Santuario Toshogu",
-            "Sanja Matsuri"
+            "[Hinamatsuri]\n[Festival de Omizutori]\n[Disfrutar de los cerezos en flor o sakura y hacer hanami]\n[Miyako Odori]\n[Festival de las Flores]\n[Festival de Takayama]\n[Yayoi Matsuri]\n[Festival de Hakata Dontaku]\n[Hamamatsu Matsuri]\n[Pesca con cormoranes o Ukai]\n[Aoi Matsuri]\n[Kanda Matsuri]\n[Festival del Santuario Toshogu]\n[Sanja Matsuri]"
         ],
         "datos":
         {
@@ -55,13 +35,7 @@
         "img": "https://images7.alphacoders.com/778/thumb-1920-778267.jpg",
         "actividades": 
         [
-            "Ver alguno de los miles de festividades tradicionales",
-            "Bailar en un Bon-odori",
-            "Subir al monte Fuji",
-            "Ver un espectáculo de Hanabi",
-            "Tanabata",
-            "Probar las comidas callejeras de Japón en Verano",
-            "Pasear vestido con Yukata"
+            "[Ver alguno de los miles de festividades tradicionales]\n[Bailar en un Bon-odori]\n[Subir al monte Fuji]\n[Ver un espectáculo de Hanabi]\n[Tanabata]\n[Probar las comidas callejeras de Japón en Verano]\n[Pasear vestido con Yukata]"
         ],
         "datos":
         {
@@ -73,18 +47,10 @@
     "fall": 
     {
         "fecha" : "Septiembre - Noviembre",
-        "img": "https://images7.alphacoders.com/778/thumb-1920-778267.jpg",
+        "img": "https://wallpaperaccess.com/full/2416967.jpg",
         "actividades": 
         [
-            "Danzas de otoño de geishas y maikos",
-            "Visitar el bosque de bambú de Arashiyama",
-            "Shichi go san",
-            "Contemplar las hojas de otoño",
-            "Tokyo Game Show",
-            "Festival de otoño de Nikko",
-            "Festival de Jidai Matsuri",
-            "Festival Nada no Kenka Matsuri",
-            "Hachiman Matsuri, el festival de otoño de Takayama"
+            "[Danzas de otoño de geishas y maikos]\n[Visitar el bosque de bambú de Arashiyama]\n[Shichi go san]\n[Contemplar las hojas de otoño]\n[Tokyo Game Show]\n[Festival de otoño de Nikko]\n[Festival de Jidai Matsuri]\n[Festival Nada no Kenka Matsuri]\n[Hachiman Matsuri, el festival de otoño de Takayama]"
         ],
         "datos":
         {

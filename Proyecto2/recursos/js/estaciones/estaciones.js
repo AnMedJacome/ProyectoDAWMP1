@@ -48,9 +48,12 @@ function getYear() {
         active()
         if (y !== chyear) {
             chyear = y
-            updateChart()
+            updateChart();
+            createDescriptionList()
         }
         cambiarPlot(season)
+        let tempo = SELECTOR.options[SELECTOR.selectedIndex].text
+        document.querySelector('h5.ani-title-info').textContent = `TEMPORADA: ${tempo.toUpperCase()} ${y}`
         cargarDatos(y, season)
     }
     else {
@@ -153,14 +156,20 @@ async function updateChart() {
     let smurl = await getJSONData(`https://api.jikan.moe/v4/seasons/${chyear}/summer`)
     await sleep(1000)
     let furl = await getJSONData(`https://api.jikan.moe/v4/seasons/${chyear}/fall`)
-    var ctx5 = document.querySelector(`canvas#pie-sesons-chart`).getContext("2d");
+    let pie = document.querySelector(`canvas#pie-sesons-chart`)
+    let pieParent = pie.parentNode
+    pieParent.removeChild(pie)
+    pie = document.createElement('canvas')
+    pie.id = "pie-sesons-chart"
+    pieParent.appendChild(pie)
+    var ctx5 = pie.getContext("2d");
     var myChart5 = new Chart(ctx5, {
         type: "pie",
         data: {
             labels: ["Invierno", "Primavera", "Verano", "Otoño"],
             datasets: [{
                 backgroundColor: [
-                    "rgba(226, 232, 197, 0.69)",
+                    "rgba(126, 154, 197, 0.69)",
                     "rgba(216, 105, 163, 0.69)",
                     "rgba(190, 174, 55, 0.69)",
                     "rgba(158, 58, 43, 0.69)"
@@ -185,41 +194,80 @@ async function updateChart() {
     });
 }
 
+function createDescriptionList() {
+    let dl = document.createElement("dl");
+    dl.className = "row mb-0";
+    dl.appendChild(createDT("Fecha:"));
+    dl.appendChild(createDD(1));
+    dl.appendChild(createDT("Actividades/Eventos por temporada en Japón:"));
+    dl.appendChild(createDD(2));
+    let seccion = document.getElementById("season-info-1")
+    seccion.innerHTML = ""
+    seccion.appendChild(dl);
+}
+
+function createDT(title) {
+    let dt = document.createElement("dt");
+    dt.className = "col-sm-4";
+    dt.textContent = title;
+    return dt;
+}
+
+function createDD(id){
+    let dd = document.createElement("dd");
+    dd.className = `col-sm-8 season-act-${id}`;
+    return  dd;
+
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    let fig = document.createElement("figure");
+    fig.id = "Season-jp-info"
+    fig.style.display = "none";
+    fig.className = "imghvr-slide-up mt-3 mx-2"
+        let img = document.createElement('img')
+        img.src = ""
+        img.id = "Season-desc-pic"
+        img.className = "ani-genre-pic"
+        img.display = "block"
+        img.alt = ""
+        img.backgroundColor = "#3d3017"
+        let fcaption = document.createElement("figcaption")
+            fcaption.id = "Season-pic-caption"
+            fcaption.className = "scrolldes-block"
+            fcaption.innerHTML = `---`
+    fig.appendChild(img);
+    fig.appendChild(fcaption);
+    document.querySelector('h5.ani-title-info').insertAdjacentElement("afterend",fig);
+})
+
 async function cambiarPlot(season){
     let purl = "https://anmedjacome.github.io/ProyectoDAWMP1/Proyecto2/recursos/json/otros/estacion.json"
     let data = await getJSONData(purl)
-    showSeasonpic(data, season)
+    document.querySelector("figure#Season-jp-info").style.display = "";
+    showSeasonpic(data[season], season)
+    document.querySelector("dd.season-act-1").innerText = data[season]["fecha"]
+    document.querySelector("dd.season-act-2").innerText = data[season]["actividades"]
 }
 
 let showSeasonpic = (data, season) => {
     let url = data["img"]
     let dato = data["datos"]
-    let fig = document.createElement("figure");
-    fig.className = "imghvr-slide-up mb-3 mx-2"
-        let img = document.createElement('img')
-        img.src = url
-        img.className = "ani-genre-pic"
-        img.display = "block"
-        img.alt = season
-        img.backgroundColor = "#3d3017"
-        let fcaption = document.createElement("figcaption")
-            fcaption.className = "scrolldes-block"
+    let img = document.getElementById("Season-desc-pic")
+    img.src = url
+    img.alt = season
+        let fcaption = document.getElementById("Season-pic-caption")
             fcaption.innerHTML = `
-                <h5>Cultura Japonesa</h5>   
-                <div class="border rounded p-4 pb-0 mb-4 ani-quotes-bg">
-                    <figure class="text-end">
-                        <blockquote class="blockquote">
-                            <p>${dato["texto"]}</p>
-                        </blockquote>
-                        <figcaption class="blockquote-footer">
-                            <a href="${dato["url"]}"> <cite title="Source Title">${dato["autor"]}</cite>
-                        </figcaption>
-                    </figure>
+                <h5>Cultura Japonesa</h5>
+                <div class="border rounded p-4 pb-0 mb-2">
+                    <blockquote class="blockquote">
+                        <p>${dato["texto"]}</p>
+                    </blockquote>
+                    <div class="blockquote-footer mt-4 text-end">
+                        <a href="${dato["url"]}" target="_blank> <cite title="Source Title">${dato["autor"]}</cite></a>
+                    </div>
                 </div>
             `
-    fig.appendChild(img);
-    fig.appendChild(fcaption);
-    return fig
 }
 
 async function getJSONData(url) {
