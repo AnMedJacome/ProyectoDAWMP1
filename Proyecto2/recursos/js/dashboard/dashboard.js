@@ -44,7 +44,7 @@ const COLORSTATS = [
 
 var contador = 1;
 
-let arreglo;
+var arreglo;
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -99,159 +99,21 @@ async function getArrayAniMan(andata, mandata)  {
     return both
 }
 
-(async function ($) {
-    "use strict";
-
+document.addEventListener("DOMContentLoaded", async () => {
     let load_text = LOAD.textContent
         
     if ((contador % 5) == 1) LOAD.textContent = load_text + "."
     else LOAD.textContent += "."
     let progress = contador++
+    let an_arreglo = await fetchValues("anime")
+    let man_arreglo = await fetchValues("manga")
+    arreglo = await getArrayAniMan(an_arreglo, man_arreglo)
 
-    BAR.querySelector("div.progress-bar").style.width = progress.toString() + "vw"
-    var spinner = async function () {
-        let an_arreglo = await fetchValues("anime")
-        let man_arreglo = await fetchValues("manga")
-        arreglo = await getArrayAniMan(an_arreglo, man_arreglo)
-        if (document.getElementById("Num-gnre-total") != null) {
-            var ctx2 = $("#Num-gnre-total").get(0).getContext("2d");
-            var myChart2 = new Chart(ctx2, {
-                type: "line",
-                data: {
-                    labels: GENEROS,
-                    datasets: [
-                        {
-                            label: "Anime",
-                            data: [
-                                (arreglo[0][0]).get("Action"), (arreglo[0][0]).get("Adventure"), (arreglo[0][0]).get("Avant Garde"), (arreglo[0][0]).get("Boys Love"), (arreglo[0][0]).get("Comedy"),
-                                (arreglo[0][0]).get("Drama"), (arreglo[0][0]).get("Fantasy"), (arreglo[0][0]).get("Girls Love"), (arreglo[0][0]).get("Gourmet"), (arreglo[0][0]).get("Horror"),
-                                (arreglo[0][0]).get("Mystery"), (arreglo[0][0]).get("Romance"), (arreglo[0][0]).get("Sci-Fi"), (arreglo[0][0]).get("Slice of Life"), (arreglo[0][0]).get("Sports"),
-                                (arreglo[0][0]).get("Supernatural"), (arreglo[0][0]).get("Suspense")
-                            ],
-                            backgroundColor: "rgba(252, 215, 139, 0.8)",
-                            fill: true,
-                            pointStyle: 'rectRot',
-                            pointRadius: 5,
-                            pointBorderColor: '#3d3017'
-                        },
-                        {
-                            label: "Manga",
-                            data: [
-                                (arreglo[1][0]).get("Action"), (arreglo[1][0]).get("Adventure"), (arreglo[1][0]).get("Avant Garde"), (arreglo[1][0]).get("Boys Love"), (arreglo[1][0]).get("Comedy"),
-                                (arreglo[1][0]).get("Drama"), (arreglo[1][0]).get("Fantasy"), (arreglo[1][0]).get("Girls Love"), (arreglo[1][0]).get("Gourmet"), (arreglo[1][0]).get("Horror"),
-                                (arreglo[1][0]).get("Mystery"), (arreglo[1][0]).get("Romance"), (arreglo[1][0]).get("Sci-Fi"), (arreglo[1][0]).get("Slice of Life"), (arreglo[1][0]).get("Sports"),
-                                (arreglo[1][0]).get("Supernatural"), (arreglo[1][0]).get("Suspense")
-                            ],
-                            backgroundColor: "rgba(227, 178, 86, 0.8)",
-                            fill: true,
-                            pointStyle: 'rectRot',
-                            pointRadius: 5,
-                            pointBorderColor: '#1C160B'
-                        }
-                    ]
-                },
-                options: {
-                        responsive: true,
-                        legend: {
-                            labels: {
-                                fontColor: "white",
-                                fontSize: 18
-                            }
-                        },
-                        scales: {
-                            y: {
-                                ticks: {
-                                    color: "#bd9448",
-                                    font: {
-                                      size: 10,
-                                      lineHeight: 1.2
-                                    },
-                                    stepSize: 400,
-                                    beginAtZero: true
-                                }
-                            },
-                            x: {
-                                ticks: {
-                                    color: "#e3b256",
-                                    font: {
-                                      size: 10,
-                                      lineHeight: 1.2
-                                    },
-                                    beginAtZero: true
-                                }
-                            }
-                        }
-                }
-            });
-        }
-    
-    
-        // Salse & Revenue Chart
-        if (document.getElementById("Num-demo-total") != null) {
-            var ctx1 = $("#Num-demo-total").get(0).getContext("2d");
-            var myChart1 = new Chart(ctx1, {
-                type: "bar",
-                data: {
-                    labels: DEMOGRAFIA,
-                    datasets: [
-                        {
-                            label: "Anime",
-                            data: [
-                                (arreglo[0][1]).get("Josei"), (arreglo[0][1]).get("Kids"), (arreglo[0][1]).get("Seinen"),
-                                (arreglo[0][1]).get("Shoujo"), (arreglo[0][1]).get("Shounen")
-                            ],
-                            backgroundColor: "rgba(252, 215, 139, 0.8)",
-                        },
-                        {
-                            label: "Manga",
-                            data:  [
-                                (arreglo[1][1]).get("Josei"), (arreglo[1][1]).get("Kids"), (arreglo[1][1]).get("Seinen"),
-                                (arreglo[1][1]).get("Shoujo"), (arreglo[1][1]).get("Shounen")
-                            ],
-                            backgroundColor: "rgba(227, 178, 86, 0.8)",
-                        },
-                    ]
-                    },
-                    options: {
-                        responsive: true,
-                        legend: {
-                            labels: {
-                                color: "white",
-                                font: {
-                                  size: 10,
-                                },
-                            }
-                        },
-                        scales: {
-                            y: {
-                                ticks: {
-                                    color: "#bd9448",
-                                    font: {
-                                      size: 10,
-                                      lineHeight: 1.2
-                                    },
-                                    stepSize: 400,
-                                    beginAtZero: true
-                                }
-                            },
-                            x: {
-                                ticks: {
-                                    color: "#e3b256",
-                                    font: {
-                                      size: 10,
-                                      lineHeight: 1.2
-                                    },
-                                    beginAtZero: true
-                                }
-                            }
-                        }
-                    }
-            });
-        }
-        
-        // Pie Chart
+    if (document.getElementById("Num-gnre-total") !== null) mostrarPorDemografia()
+    if (document.getElementById("Num-demo-total") != null) mostrarPorGenero()
+    if (document.getElementById("Stats-defecto") != null) {
         for(let i = 1 ; i < 11 ; i++) {
-            var ctx5 = $(`#pie-ani-chart-${i}`).get(0).getContext("2d");
+            var ctx5 = document.getElementById(`pie-ani-chart-${i}`).getContext("2d");
             var myChart5 = new Chart(ctx5, {
                 type: "pie",
                 data: {
@@ -279,7 +141,7 @@ async function getArrayAniMan(andata, mandata)  {
             });
         }
         for(let i = 1 ; i < 11 ; i++) {
-            var ctx5 = $(`#pie-man-chart-${i}`).get(0).getContext("2d");
+            var ctx5 = document.getElementById(`pie-man-chart-${i}`).getContext("2d");
             var myChart5 = new Chart(ctx5, {
                 type: "pie",
                 data: {
@@ -306,83 +168,11 @@ async function getArrayAniMan(andata, mandata)  {
                 }
             });
         }
-
-        BAR.querySelector("div.progress-bar").style.width = "100vw"
-        LOAD.textContent = "Cargado (〜￣▽￣)〜"
-        await sleep(1000);
-        $('#spinner').removeClass('show');
-    };
-    spinner();
-    
-})(jQuery);
-
-let ng = document.querySelector("select#Number-genres")
-
-function compararGeneros() {
-    let fg = document.querySelector("select#Format-genres")
-    let listaValGenres = []
-    let listaValNums = []
-    let numb = parseInt(ng.options[ng.selectedIndex].value)
-    for (let i = 1; i <= numb; i++) {
-        let s = document.querySelector(`select#genre-sel-${i}`)
-        let v = s.options[s.selectedIndex].value
-        if (!listaValGenres.includes(v)){
-            listaValGenres.push(v)
-            listaValNums.push((fg.options[fg.selectedIndex].value === "anime") ? arreglo[0][0].get(v) : arreglo[1][0].get(v))
-        }
     }
+    if (document.getElementById("Comparar-stats") != null) agregarOpcionesGenero()
 
-    if (listaValGenres.length === numb) {
-        // Doughnut Chart
-        let canvas = document.getElementById("doughnut-chart")
-        let parent = canvas.parentNode
-        parent.removeChild(canvas)
-        canvas = document.createElement("canvas")
-        canvas.id = "doughnut-chart"
-        parent.appendChild(canvas)
-        var ctx6 = canvas.getContext("2d");
-        var myChart6 = new Chart(ctx6, {
-            type: "doughnut",
-            data: {
-                labels: listaValGenres,
-                datasets: [{
-                    backgroundColor: COLORSTATS[numb - 2],
-                    data: listaValNums
-                }]
-            },
-            options: {
-                responsive: true,
-                legend: {
-                    labels: {
-                        color: "white",
-                        font: {
-                          size: 10,
-                        },
-                    }
-                }
-            }
-        });
-    }
-    else {
-        aniAlert(ng, `Al parecer un género se está repitiendo.\nPor favor elija ${numb} valores diferentes.`)
-    }
-}
-
-ng.addEventListener("change", () => {
-    let numb = parseInt(ng.options[ng.selectedIndex].value)
-    for (let i = 3; i < 6; i++) {
-        if (i <= numb) document.querySelector(`select#genre-sel-${i}`).disabled = false
-        else document.querySelector(`select#genre-sel-${i}`).disabled = true
-    }
-})
-
-document.addEventListener('DOMContentLoaded', () => {
-    for (let i = 1; i <= 5; i++) {
-        let selec = document.querySelector(`select#genre-sel-${i}`)
-        for (let g of GENEROS) {
-            let query = `<option value="${g}">${g}</option>`
-            selec.innerHTML += query
-        }
-        selec.querySelectorAll('option')[i - 1].selected = true
-    }
+    BAR.querySelector("div.progress-bar").style.width = "100vw"
+    LOAD.textContent = "Cargado (〜￣▽￣)〜"
+    await sleep(1000);
+    $('#spinner').removeClass('show');
 })
