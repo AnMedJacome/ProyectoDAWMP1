@@ -506,9 +506,18 @@
                 <div class="container-fluid pt-4 px-4">
                     <div class="ani-bg-table">
                         <div class="container-fluid">
+                            <h3 class="text-left">Escoger el formato para comparar</h3>
+                            <div class="row justify-content-start">
+                                <select id="Format-genres" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                    <option selected value="anime">Anime</option>
+                                    <option value="manga">Manga</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
                             <h3 class="text-left">Escoger el número de temas para comparar</h3>
                             <div class="row justify-content-start">
-                                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                <select id="Number-genres" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                                     <option selected value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
@@ -520,36 +529,31 @@
                             <div class="row justify-content-start my-3">
                                 <h5 class="text-left">Opci&oacute;n 1</h5>
                                 <select id="genre-sel-1" class="form-select form-select-lg form-select-per my-1" aria-label=".form-select-lg example">
-                                    <option selected value="Todos">Action</option>
                                 </select>
                             </div>
                             <div class="row justify-content-start my-3">
                                 <h5 class="text-left">Opci&oacute;n 2</h5>
-                                <select id="genre-sel-2" class="form-select form-select-lg form-select-per my-1" aria-label=".form-select-lg example" disabled>
-                                    <option selected value="Todos">Action</option>
+                                <select id="genre-sel-2" class="form-select form-select-lg form-select-per my-1" aria-label=".form-select-lg example">
                                 </select>
                             </div>
                             <div class="row justify-content-start my-3">
                                 <h5 class="text-left">Opci&oacute;n 3</h5>
                                 <select id="genre-sel-3" class="form-select form-select-lg form-select-per my-1" aria-label=".form-select-lg example" disabled>
-                                    <option selected value="Todos">Action</option>
                                 </select>
                             </div>
                             <div class="row justify-content-start my-3">
                                 <h5 class="text-left">Opci&oacute;n 4</h5>
                                 <select id="genre-sel-4" class="form-select form-select-lg form-select-per my-1" aria-label=".form-select-lg example" disabled>
-                                    <option selected value="Todos">Action</option>
                                 </select>
                             </div>
                             <div class="row justify-content-star my-3">
                                 <h5 class="text-left">Opci&oacute;n 5</h5>
                                 <select id="genre-sel-5" class="form-select form-select-lg form-select-per my-1" aria-label=".form-select-lg example" disabled>
-                                    <option selected value="Todos">Action</option>
                                 </select>
                             </div>
                         </div>
                         <div class="container-fluid justify-content-star my-5">
-                            <button onclick="" class="page-link btn-primario btn-rounded index-btn-primario-b ani-shadow">
+                            <button type="button" onclick="compararGeneros()" class="page-link btn-primario btn-rounded index-btn-primario-b ani-shadow">
                                 Comparar
                             </button>
                         </div>
@@ -579,14 +583,10 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.1"></script>
-    <script src="../lib/darkpan-1.0.0/lib/easing/easing.min.js"></script>
-    <script src="../lib/darkpan-1.0.0/lib/waypoints/waypoints.min.js"></script>
-    <script src="../lib/darkpan-1.0.0/lib/tempusdominus/js/moment.min.js"></script>
-    <script src="../lib/darkpan-1.0.0/lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="../lib/darkpan-1.0.0/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     
     <script src="../recursos/js/otros/footer.js"></script>
+    <script src="../recursos/js/otros/other.js"></script>
     <script src="../recursos/js/dashboard/dashboard.js"></script>
 </body>
 

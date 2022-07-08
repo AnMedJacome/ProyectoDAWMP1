@@ -17,8 +17,34 @@ const THEMES_T = [
 ]
 const LOAD = document.getElementById("Load-indicator");
 const BAR = document.querySelector("div#Progress-bar-1");
+const COLORSTATS = [
+    [
+    "rgba(252, 215, 139, 0.69)",
+    "rgba(61, 48, 23, 0.69)"
+    ],
+    [
+    "rgba(252, 215, 139, 0.69)",
+    "rgba(189, 148, 72, 0.69)",
+    "rgba(61, 48, 23, 0.69)"
+    ],
+    [
+    "rgba(252, 215, 139, 0.69)",
+    "rgba(252, 198, 96, 0.69)",
+    "rgba(125, 98, 47, 0.69)",
+    "rgba(61, 48, 23, 0.69)"
+    ],
+    [
+    "rgba(252, 215, 139, 0.69)",
+    "rgba(252, 198, 96, 0.69)",
+    "rgba(189, 148, 72, 0.69)",
+    "rgba(125, 98, 47, 0.69)",
+    "rgba(61, 48, 23, 0.69)"
+    ]
+]
 
 var contador = 1;
+
+let arreglo;
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -54,7 +80,7 @@ async function getNumAniMan(arreglo) {
             thm.set(it, parseInt(item["count"]))
         }
         
-        if ((contador % 5) == 1) LOAD.textContent = load_text + "."
+        if ((contador++ % 5) == 1) LOAD.textContent = load_text + "."
         else LOAD.textContent += "."
         BAR.querySelector("div.progress-bar").style.width = progress.toString() + "vw"
     }
@@ -86,8 +112,7 @@ async function getArrayAniMan(andata, mandata)  {
     var spinner = async function () {
         let an_arreglo = await fetchValues("anime")
         let man_arreglo = await fetchValues("manga")
-        let arreglo = await getArrayAniMan(an_arreglo, man_arreglo)
-        console.log(arreglo)
+        arreglo = await getArrayAniMan(an_arreglo, man_arreglo)
         if (document.getElementById("Num-gnre-total") != null) {
             var ctx2 = $("#Num-gnre-total").get(0).getContext("2d");
             var myChart2 = new Chart(ctx2, {
@@ -232,13 +257,7 @@ async function getArrayAniMan(andata, mandata)  {
                 data: {
                     labels: THEMES[i - 1],
                     datasets: [{
-                        backgroundColor: [
-                            "rgba(252, 215, 139, 0.69)",
-                            "rgba(252, 198, 96, 0.69)",
-                            "rgba(189, 148, 72, 0.69)",
-                            "rgba(125, 98, 47, 0.69)",
-                            "rgba(61, 48, 23, 0.69)"
-                        ],
+                        backgroundColor: COLORSTATS[3],
                         data: [
                             arreglo[0][2].get(THEMES[i - 1][0]), arreglo[0][2].get(THEMES[i - 1][1]),
                             arreglo[0][2].get(THEMES[i - 1][2]), arreglo[0][2].get(THEMES[i - 1][3]),
@@ -259,7 +278,6 @@ async function getArrayAniMan(andata, mandata)  {
                 }
             });
         }
-        console.log("LISTA MANGA")
         for(let i = 1 ; i < 11 ; i++) {
             var ctx5 = $(`#pie-man-chart-${i}`).get(0).getContext("2d");
             var myChart5 = new Chart(ctx5, {
@@ -267,13 +285,7 @@ async function getArrayAniMan(andata, mandata)  {
                 data: {
                     labels: THEMES[i - 1],
                     datasets: [{
-                        backgroundColor: [
-                            "rgba(252, 215, 139, 0.69)",
-                            "rgba(252, 198, 96, 0.69)",
-                            "rgba(189, 148, 72, 0.69)",
-                            "rgba(125, 98, 47, 0.69)",
-                            "rgba(61, 48, 23, 0.69)"
-                        ],
+                        backgroundColor: COLORSTATS[3],
                         data: [
                             arreglo[1][2].get(THEMES[i - 1][0]), arreglo[1][2].get(THEMES[i - 1][1]),
                             arreglo[1][2].get(THEMES[i - 1][2]), arreglo[1][2].get(THEMES[i - 1][3]),
@@ -294,23 +306,48 @@ async function getArrayAniMan(andata, mandata)  {
                 }
             });
         }
+
+        BAR.querySelector("div.progress-bar").style.width = "100vw"
+        LOAD.textContent = "Cargado (〜￣▽￣)〜"
+        await sleep(1000);
+        $('#spinner').removeClass('show');
+    };
+    spinner();
     
-    
+})(jQuery);
+
+let ng = document.querySelector("select#Number-genres")
+
+function compararGeneros() {
+    let fg = document.querySelector("select#Format-genres")
+    let listaValGenres = []
+    let listaValNums = []
+    let numb = parseInt(ng.options[ng.selectedIndex].value)
+    for (let i = 1; i <= numb; i++) {
+        let s = document.querySelector(`select#genre-sel-${i}`)
+        let v = s.options[s.selectedIndex].value
+        if (!listaValGenres.includes(v)){
+            listaValGenres.push(v)
+            listaValNums.push((fg.options[fg.selectedIndex].value === "anime") ? arreglo[0][0].get(v) : arreglo[1][0].get(v))
+        }
+    }
+
+    if (listaValGenres.length === numb) {
         // Doughnut Chart
-        var ctx6 = $("#doughnut-chart").get(0).getContext("2d");
+        let canvas = document.getElementById("doughnut-chart")
+        let parent = canvas.parentNode
+        parent.removeChild(canvas)
+        canvas = document.createElement("canvas")
+        canvas.id = "doughnut-chart"
+        parent.appendChild(canvas)
+        var ctx6 = canvas.getContext("2d");
         var myChart6 = new Chart(ctx6, {
             type: "doughnut",
             data: {
-                labels: ["Italy", "France", "Spain", "USA", "Argentina"],
+                labels: listaValGenres,
                 datasets: [{
-                    backgroundColor: [
-                        "rgba(252, 215, 139, 0.69)",
-                        "rgba(252, 198, 96, 0.69)",
-                        "rgba(189, 148, 72, 0.69)",
-                        "rgba(125, 98, 47, 0.69)",
-                        "rgba(61, 48, 23, 0.69)"
-                    ],
-                    data: [55, 49, 44, 24, 15]
+                    backgroundColor: COLORSTATS[numb - 2],
+                    data: listaValNums
                 }]
             },
             options: {
@@ -325,17 +362,27 @@ async function getArrayAniMan(andata, mandata)  {
                 }
             }
         });
-        BAR.querySelector("div.progress-bar").style.width = "100vw"
-        LOAD.textContent = "Cargado (〜￣▽￣)〜"
-        await sleep(1000);
-        $('#spinner').removeClass('show');
-    };
-    spinner();
+    }
+    else {
+        aniAlert(ng, `Al parecer un género se está repitiendo.\nPor favor elija ${numb} valores diferentes.`)
+    }
+}
 
-    // Sidebar Toggler
-    $('.sidebar-toggler-1').click(function () {
-        $('.sidebar, .content').toggleClass("open");
-        return false;
-    });
-    
-})(jQuery);
+ng.addEventListener("change", () => {
+    let numb = parseInt(ng.options[ng.selectedIndex].value)
+    for (let i = 3; i < 6; i++) {
+        if (i <= numb) document.querySelector(`select#genre-sel-${i}`).disabled = false
+        else document.querySelector(`select#genre-sel-${i}`).disabled = true
+    }
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+    for (let i = 1; i <= 5; i++) {
+        let selec = document.querySelector(`select#genre-sel-${i}`)
+        for (let g of GENEROS) {
+            let query = `<option value="${g}">${g}</option>`
+            selec.innerHTML += query
+        }
+        selec.querySelectorAll('option')[i - 1].selected = true
+    }
+})
