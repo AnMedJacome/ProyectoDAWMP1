@@ -126,3 +126,7 @@ figure:hover, select:hover {
 div.alert {
     transition: 0.5s;
 }
+
+.produc-cursor {
+    cursor: pointer;
+}

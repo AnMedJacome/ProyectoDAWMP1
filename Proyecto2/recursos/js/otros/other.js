@@ -17,25 +17,21 @@ function aniAlert(tag, mensaje) {
     }, 5000)
 }
 
-(function ($) {
-    "use strict";
 
-    // Spinner
-    var spinner = function () {
-        if (!!document.querySelector("div.fast")){
-            setTimeout(function () {
-                if ($('#spinner').length > 0) {
-                    $('#spinner').removeClass('show');
-                }
-            }, 20);
-        }
-    };
-    spinner();
+var spinner = function () {
+    if (!!document.querySelector("div.fast")){
+        setTimeout(function () {
+            document.querySelector('div#spinner').classList.remove('show');
+        }, 100);
+    }
+};
 
-    // Sidebar Toggler
-    $('.sidebar-toggler-1').click(function () {
-        $('.sidebar, .content').toggleClass("open");
-        return false;
-    });
-    
-})(jQuery);
+document.querySelector('a.sidebar-toggler-1').addEventListener("click", () => {
+    document.querySelector('div.content').classList.toggle("open");
+    document.querySelector('div.sidebar').classList.toggle("open");
+});
+
+
+console.log("DOMContentLoaded");
+spinner();
+console.log("DOMContentLoaded");

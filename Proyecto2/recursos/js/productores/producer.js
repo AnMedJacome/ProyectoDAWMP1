@@ -55,7 +55,7 @@ function filaCompany(company, contador, count_element, this_page) {
         cell =  document.createElement('td');
             ins = document.createElement('p');
             ins.Id = `Company-selected-${contador}`
-            ins.className = "enlace"
+            ins.className = "produc-cursor text-shadow-color-c"
             ins.textContent = "Mostrar"
             ins.addEventListener("click", async () => {
                 document.querySelector("h6.ani-title-info").textContent = `Animes producidos por ${nombre}`
